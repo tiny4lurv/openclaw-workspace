@@ -1,0 +1,32 @@
+{
+  "test-123": "adb6198b-0432-4625-a726-26b39a8ff133",
+  "test-abc": "8f681a18-86b6-4801-b93e-c6e64bb7b7ff",
+  "test-user-123": "19621312-c25e-4aaf-8da1-0c5fb75b4bc8",
+  "test-user-abc": "34cae11b-72b5-4557-a146-787953c17a4f",
+  "test-final": "9716bab8-bcc0-4be3-b01c-a90e72dc559c",
+  "test-xyz": "67d3cf50-89bb-4b76-9bfa-6c57fbbddd1a",
+  "test-final-456": "7480cf79-f5da-45cf-bb97-76f4e94ddb8c",
+  "user-abc": "agent:main:main",
+  "user-test-789": "agent:main:main",
+  "user-test-abc": "agent:main:main",
+  "employee-xyz": {
+    "sessionKey": "agent:main:dashboard:1e361ee8-2586-4f27-aa3b-45be0f7e3247",
+    "sessionFile": "/root/.openclaw/agents/main/sessions/14765621-3eed-48a1-b8e2-98a18e8d8992.jsonl",
+    "sessionId": "14765621-3eed-48a1-b8e2-98a18e8d8992"
+  },
+  "e2e-test-001": {
+    "sessionKey": "agent:main:dashboard:0ef8ebad-b417-4d45-8579-afe16c49fd15",
+    "sessionFile": "/root/.openclaw/agents/main/sessions/63d089e6-bbd4-4e25-8ae2-b2e6254929a9.jsonl",
+    "sessionId": "63d089e6-bbd4-4e25-8ae2-b2e6254929a9"
+  },
+  "test-fix-001": {
+    "sessionKey": "agent:main:dashboard:6971533d-73c0-47e6-b964-212d11ba341e",
+    "sessionFile": "/root/.openclaw/agents/main/sessions/de711b52-6cb5-4b72-89e9-c75fd891cd61.jsonl",
+    "sessionId": "de711b52-6cb5-4b72-89e9-c75fd891cd61"
+  },
+  "x": {
+    "sessionKey": "agent:main:dashboard:53995c3e-63f8-4951-8e66-d934cb04adc0",
+    "sessionFile": "/root/.openclaw/agents/main/sessions/5be623b4-dfcf-416b-9c9e-5020079cce81.jsonl",
+    "sessionId": "5be623b4-dfcf-416b-9c9e-5020079cce81"
+  }
+}

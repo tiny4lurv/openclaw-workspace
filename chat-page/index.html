@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask Dusk — Nava Healthcare Recruitment</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f7f7f5;
+      color: #1a1a1a;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #fff;
+      padding: 16px 24px;
+      border-bottom: 1px solid #e5e5e0;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: -0.3px;
+    }
+    header p {
+      font-size: 13px;
+      color: #666;
+      margin-top: 4px;
+    }
+    #chat-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .message {
+      max-width: 75%;
+      padding: 12px 16px;
+      border-radius: 16px;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    .message.user {
+      background: #2563eb;
+      color: #fff;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+    .message.dusk {
+      background: #fff;
+      border: 1px solid #e5e5e0;
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .message.dusk.error {
+      border-color: #ef4444;
+      color: #dc2626;
+      background: #fef2f2;
+    }
+    .typing-indicator {
+      display: flex;
+      gap: 5px;
+      padding: 16px 20px;
+      background: #fff;
+      border: 1px solid #e5e5e0;
+      border-radius: 16px;
+      border-bottom-left-radius: 4px;
+      align-self: flex-start;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .typing-indicator span {
+      width: 8px;
+      height: 8px;
+      background: #999;
+      border-radius: 50%;
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+    .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+    .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0s; }
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+    .hidden { display: none !important; }
+    #input-area {
+      padding: 16px 24px;
+      background: #fff;
+      border-top: 1px solid #e5e5e0;
+    }
+    .input-row {
+      display: flex;
+      gap: 12px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    #message-input {
+      flex: 1;
+      background: #f7f7f5;
+      border: 1px solid #e5e5e0;
+      border-radius: 24px;
+      padding: 12px 20px;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    #message-input:focus { border-color: #2563eb; }
+    #send-btn {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      padding: 12px 24px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #send-btn:hover { background: #1d4ed8; }
+    #send-btn:disabled { background: #93c5fd; cursor: not-allowed; }
+    .intro {
+      text-align: center;
+      padding: 32px 24px;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .intro strong { color: #1a1a1a; }
+    .footer {
+      text-align: center;
+      padding: 8px;
+      font-size: 12px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌆 Ask Dusk</h1>
+    <p>Nava Healthcare Recruitment — Employee Query Assistant</p>
+  </header>
+  <div id="chat-container">
+    <div class="intro">
+      <strong>Hi, I'm Dusk.</strong> I can help answer questions about Nava Healthcare Recruitment — our services, policies, compliance, or anything else in our knowledge base.<br><br>
+      Ask me anything.
+    </div>
+  </div>
+  <div id="typing" class="typing-indicator hidden">
+    <span></span><span></span><span></span>
+  </div>
+  <div id="input-area">
+    <div class="input-row">
+      <input type="text" id="message-input" placeholder="Ask about Nava..." autocomplete="off">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+  <div class="footer">Internal use only · Nava Healthcare Recruitment</div>
+
+  <script>
+    const chatContainer = document.getElementById('chat-container');
+    const messageInput = document.getElementById('message-input');
+    const sendBtn = document.getElementById('send-btn');
+    const typingIndicator = document.getElementById('typing');
+
+    const ACCESS_TOKEN = "nava-dusk-2026";
+    const RELAY_BASE = "http://204.168.204.198:8081";
+    let fingerprint = localStorage.getItem('dusk_fingerprint');
+    if (!fingerprint) {
+      fingerprint = crypto.randomUUID();
+      localStorage.setItem('dusk_fingerprint', fingerprint);
+    }
+
+    let currentTicket = null;
+    let pollingInterval = null;
+
+    function scrollToBottom() {
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    function addMessage(text, role) {
+      const div = document.createElement('div');
+      div.className = 'message ' + role;
+      div.textContent = text;
+      chatContainer.appendChild(div);
+      scrollToBottom();
+    }
+
+    function showTyping() {
+      typingIndicator.classList.remove('hidden');
+      chatContainer.appendChild(typingIndicator);
+      scrollToBottom();
+    }
+
+    function hideTyping() {
+      typingIndicator.classList.add('hidden');
+    }
+
+    function setInputEnabled(enabled) {
+      messageInput.disabled = !enabled;
+      sendBtn.disabled = !enabled;
+    }
+
+    async function sendMessage() {
+      const text = messageInput.value.trim();
+      if (!text) return;
+
+      // Add user message to chat
+      addMessage(text, 'user');
+      messageInput.value = '';
+      setInputEnabled(false);
+      showTyping();
+
+      try {
+        // Send to relay
+        const response = await fetch(RELAY_BASE + '/message', {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'X-Access-Token': ACCESS_TOKEN
+          },
+          body: JSON.stringify({ fingerprint, message: text })
+        });
+
+        const data = await response.json();
+        if (data.error) {
+          hideTyping();
+          addMessage('Error: ' + data.error, 'dusk error');
+          setInputEnabled(true);
+          return;
+        }
+
+        currentTicket = data.ticket;
+        startPolling();
+
+      } catch (err) {
+        hideTyping();
+        addMessage('Connection error. Please try again.', 'dusk error');
+        setInputEnabled(true);
+      }
+    }
+
+    function startPolling() {
+      pollingInterval = setInterval(pollForResponse, 2500);
+    }
+
+    async function pollForResponse() {
+      if (!currentTicket) {
+        clearInterval(pollingInterval);
+        return;
+      }
+
+      try {
+        const response = await fetch(RELAY_BASE + '/response?ticket=' + encodeURIComponent(currentTicket) + '&token=' + encodeURIComponent(ACCESS_TOKEN));
+        const data = await response.json();
+
+        if (data.response !== undefined) {
+          clearInterval(pollingInterval);
+          hideTyping();
+          addMessage(data.response, 'dusk');
+          currentTicket = null;
+          setInputEnabled(true);
+        }
+        // else: still pending, keep polling
+      } catch (err) {
+        clearInterval(pollingInterval);
+        hideTyping();
+        addMessage('Error retrieving response. Please try again.', 'dusk error');
+        currentTicket = null;
+        setInputEnabled(true);
+      }
+    }
+
+    sendBtn.onclick = sendMessage;
+    messageInput.onkeydown = (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    };
+  </script>
+</body>
+</html>

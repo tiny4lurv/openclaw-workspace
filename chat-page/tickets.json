@@ -1,0 +1,14 @@
+{
+  "5d1dc9c2-3e91-489a-ac9e-5bf52fc55150": {
+    "session_key": "7480cf79-f5da-45cf-bb97-76f4e94ddb8c",
+    "fingerprint": "test-final-456"
+  },
+  "b0d889ab-17a4-4eb1-90cb-be2ce3fffdad": {
+    "session_key": "agent:main:main",
+    "fingerprint": "user-abc"
+  },
+  "622d0fd2-0db2-4f70-8ebe-e3ca2379abed": {
+    "session_key": "agent:main:main",
+    "fingerprint": "user-test-789"
+  }
+}
