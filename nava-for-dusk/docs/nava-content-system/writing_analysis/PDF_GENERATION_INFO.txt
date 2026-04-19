@@ -1,0 +1,5 @@
+PDF Generation Note:
+To generate a PDF version of this report, you can:
+1. Use pandoc: pandoc /home/tiny4lurv/.openclaw/workspace/docs/nava-content-system/writing_analysis/writing_style_analysis_report.md -o /home/tiny4lurv/.openclaw/workspace/docs/nava-content-system/writing_analysis/writing_style_analysis_report.pdf
+2. Or use any markdown to PDF converter
+3. The JSON data file (writing_style_analysis_data.json) contains all analysis data for future reference

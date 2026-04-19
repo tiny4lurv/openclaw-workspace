@@ -1,0 +1,96 @@
+Source: https://navahc.com/eb-3-vs-tn/
+Title: EB-3 vs. TN Visa: A Guide for Healthcare Leaders
+Date: 2026-04-02
+Author: Tiny Manyonga
+
+Key Takeaways:
+- EB-3 and TN are not competitors; instead, they are solutions to different strategic questions.
+- TN costs $7,000 to $15,000 all-in; EB-3 costs $25,000 to $35,000 all-in; but raw comparison misses the vacancy cost math.
+- Five variables determine which pathway fits your facility: vacancy urgency, budget reality, commitment horizon, candidate origin, and retention objective.
+- EB-3 Rest of World changed to "Dates for Filing" to "Current" in early 2026; approvals may now clear in 2026 instead of late 2027 and beyond.
+- The parallel track approach, running both EB-3 and TN simultaneously, covers immediate gaps and long-term structural staffing needs.
+
+---
+
+Relying on travel nurses means you get to see a fresh face every 13 weeks or so; great for socialite extroverts, but not so much for continuity of care. Meanwhile, someone in your leadership meeting is still treating the EB-3 employment-based immigrant visa and the TN (Trade NAFTA) nonimmigrant visa as if you can only pick one. They are not the same menu. This false binary obscures the real strategic question: which pathway matches your actual staffing situation?
+
+EB-3 and TN are not competing solutions. They are parallel staffing pathways that serve different strategic needs within the same health system.
+
+EB-3 is a permanence play. It will take at least 3 years before the investment math works. TN is a speed play. Originating from the United-States-Mexico-Canada Agreement (USMCA), it allows for near-immediate arrival for Canadian and Mexican professionals. It will only take 2-6 months before your candidate is on unit. The moment you treat those as competitors, you have already lost the staffing conversation you should be having.
+
+In most cases, for hospitals and regional health systems alike, the answer is not one or the other. It is both.
+
+---
+
+## You are Asking the Wrong Question
+
+The binary framing of EB-3 versus TN is an inaccurate perception of the reality on the ground. It views two fundamentally different immigration policies as if they are alternatives on the same menu when, in reality, they answer different strategic questions. EB-3 is a permanent residency pathway, while TN is a temporary work authorization mechanism for professionals from Canada and Mexico. Treating them as equivalents is like comparing a mortgage to a hotel reservation and asking which is better. The answer depends entirely on whether you are trying to build something permanent or bridge something immediate.
+
+There are five variables that actually determine which pathway fits a facility. Most leaders have never seen all five laid out at once, and none of them work in isolation.
+
+Vacancy urgency: If the position needs to be filled within six months, the TN pathway is probably the most viable path forward. Because Canadian citizens can often apply for TN status directly at a U.S. Port of Entry, the "Speed-to-Start" is unrivaled. On the other hand, EB-3 timelines, even under the best conditions, take 12 to 48 months. A facility in crisis mode does not have the luxury of a pipeline built for permanence. Regardless, the clinician shortage is a long-term concern that cannot be solved using the TN pathway.
+
+Budget reality: From a budgetary perspective, TN all-in costs run $7,000 to $15,000 per candidate. EB-3 all-in costs run $25,000 to $35,000. The delta is real, and it matters. But the comparison is incomplete without factoring in what an open requisition actually costs per month while you wait.
+
+Commitment horizon: EB-3 only makes financial sense if the facility is prepared to employ the nurse for the full three-year term minimum. Anything shorter means the investment never breaks even. If the facility has a history of restructuring or layoffs, the permanence argument collapses.
+
+Candidate origin: TN is restricted to Canadian and Mexican nationals under the USMCA framework. The name itself refers to "Trade National" or "Trade NAFTA" (the predecessor to USMCA). EB-3 draws from the global pool. If a facility needs a specific nationality profile, or if the candidate pool in Canada or Mexico happens to match your needs, TN has a geographic advantage. If not, TN is simply not an option.
+
+Retention objective: Non-immigrant intent is the structural ceiling on TN retention. By definition, a TN holder must maintain the intent to return their home country. The moment a TN nurse starts thinking about their next career move, the incentive structure that kept them committed to a facility evaporates. EB-3 permanence aligns the nurse's legal status with their professional future.
+
+The false binary falls apart the moment you run these five variables against your actual staffing situation. Most health systems discover they need both tracks, not one or the other.
+
+Stop asking which pathway is better. Start asking which pathway matches what your unit actually needs.
+
+---
+
+## The Math You Have Never Seen Laid Out
+
+Typically, in a highly competitive market, CFOs evaluate international recruitment through the narrow lens of procurement fees; however, the true economic anchor consists of both direct and opportunity costs associated with a vacancy. While the total costs for TN and EB-3 represent a fixed investment, they are often (and wrongly) compared against a fluctuating and inflated agency rate that drains operational margins in real-time. In high-acuity environments like acute care or specialty surgical centers, the "cost of doing nothing" is rarely captured on a single line item.
+
+So, what does an open requisition actually cost while you wait for your new clinician? A single open registered nurse position, unfilled for six months, typically generates $40,000 to $80,000 in accumulated additional costs and lost revenue through overtime, PRN pools, agency premiums, empty beds, and under-utilized services such as labs or pharmacy services. If your facility has ten open reqs in specialty units, the vacancy costs during an EB-3 wait easily reach half a million dollars annually. The fixed investment for a permanent hire starts looking competitive against that math, but only if the facility actually stays the course for the full three-year term. The facilities that abandon EB-3 halfway through and switch to travel nurses have the worst of both worlds: the EB-3 sunk cost plus the ongoing agency premium, with nothing to show for either.
+
+The parallel track strategy resolves this tension entirely. Run TN for the positions that need to be filled in the next six months to stop the immediate hemorrhaging of capital, and run EB-3 for the permanent staffing base the facility needs to build over the next three years. These are not competing pipelines. They are separate pipelines serving different strategic objectives within the same system. A 300-bed acute care hospital running both tracks might use TN nurses to stabilize a high-turnover department immediately, while simultaneously building a permanent core of EB-3 nurses who will serve as the "culture carriers" for the next decade.
+
+The cost comparison only favors TN when the time horizon is short. EB-3 wins on permanence and long-term cost per clinician per year. The facility that runs both tracks intelligently is not choosing between two options. It is building a staffing infrastructure that covers both the urgent and the structural.
+
+The math only favors TN if you stop running it after six months. Run it to three years and the numbers tell a different story.
+
+---
+
+## 2026 Forecast: Understanding the Most Recent Bulletins
+
+The State Department visa bulletin in early 2026 introduced a major shift that directly affects healthcare staffing. For EB-3 Rest of World (ROW) candidates, the "Dates for Filing" have been changed to "Current". In practical terms, this means the backlog that bogged down hiring for healthcare facilities is clearing, allowing any candidate with an approved labor certification to submit their final paperwork immediately. For facilities with international cases in progress, this represents the most aggressive forward motion in years. Nurses who were mathematically projected to arrive in late 2027 are now on track to clear for arrival in 2026. This twelve-month acceleration represents a massive recovery of capital that was previously budgeted for extended agency premiums.
+
+However, this acceleration is geographically specific. The India EB-3 backlog continues to operate under a different reality entirely. Unlike the rest of the world, the priority date for India-born applicants remains fixed in 2012 or 2013; meaning the queue for those candidates is not moving in any practical sense. The story that illustrates this better than any policy brief is the 2019 Midwest facility that sponsored four international nurses through the EB-3 process simultaneously. Three of the four candidates withdrew from the process over the following four years, worn down by the uncertainty and the drawn-out timeline. Only one of the nurses received her green card in 2023. The facility, which had budgeted for four permanent hires, ended up with one. That is not a processing delay; it is attrition, and it is the structural risk that makes the India-born EB-3 pathway something that requires frank conversation with candidates before commitment.
+
+Furthermore, the Healthcare Workforce Resilience Act provisions in recent immigration policy resolutions have opened a secondary pathway that staffing planners should be tracking. The recaptured pool includes approximately 25,000 nursing slots and 15,000 physician slots from previously approved immigrant petitions that were never utilized. Facilities that are monitoring their visa bulletin position carefully may find that candidates caught in the recaptured pool can be advanced faster than the standard queue would suggest. This is not a guarantee and it is not uniformly distributed, but the bulletin movement suggests the recapture mechanism is active and functioning for healthcare categories.
+
+Finally, premium processing is an option, although it feels bizarre to have such an option when considering that the roles in question are often a matter of life and death for US citizens. Premium processing under Form I-907 remains at $2,965 per filing, allowing a facility to request USCIS adjudication within 15 business days for eligible underlying filings. For TN candidates where employment authorization timing is the bottleneck, this fee buys certainty and speed. For EB-3 Schedule A filings, premium processing accelerates the I-140 approval, which then feeds into the consular notification process. The $2,965 is not trivial, but against a $40,000 annual vacancy cost for a hard-to-fill specialty unit, it is a rounding error.
+
+Geography remains the single most deterministic variable in the entire immigration planning equation. A candidate born in the Philippines moves faster through the EB-3 queue than one born in India, purely as a function of demand and backlog. Rest of World candidates, which includes most of the global nursing talent pool outside India and China, are now moving faster than they have in the prior five-year window. Facilities that are treating EB-3 as uniformly slow are operating using outdated information. The correct frame for 2026 is: it depends entirely on the candidate's country of birth.
+
+The bulletin tells the whole story if you know how to read it. For most facilities in 2026, the signal is faster approvals for ROW candidates and a recapture pool that is actively moving.
+
+---
+
+## The Right Answer Depends on the Question
+
+The framing of EB-3 versus TN as a binary choice evaporates once you align the pathway to the actual staffing objective. Here is how that alignment works in practice.
+
+EB-3 is the right answer when permanence is the objective. When a facility is building a long-term staffing base rather than filling a temporary gap, EB-3 candidates who arrive as green card holders are structurally committed in a way that no temporary work authorization can replicate. The retention data on EB-3 international nurses reliably outperforms domestic new hires over a three-year horizon, primarily because the investment required from both sides creates mutual accountability. Large cohorts of 10 or more nurses moving through the EB-3 pipeline simultaneously generate the critical mass needed to shift unit culture in a lasting direction. Facilities that have made the three-year commitment and stayed the course are the ones reporting the highest satisfaction with the international recruitment model. The key phrase is "stayed the course".
+
+TN is the right answer when speed is the governing variable. When a facility needs a candidate on unit within six months, or when the target population happens to be Canadian or Mexican nationals who qualify under USMCA, the TN pathway delivers where EB-3 cannot. TN also serves as an effective pressure valve for facilities that are in a genuine staffing crisis and cannot afford the luxury of a multi-year pipeline build. The risk of TN is using it as a permanent solution to a structural problem, which is the exact error that created the travel nurse dependency in the first place.
+
+The facility that is serious about solving its staffing problem runs both tracks simultaneously. One pipeline for speed and near-term coverage. The other is for permanence and long-term culture building. Different populations, different timelines, and different strategic objectives. Still, these tracks operate inside the same HR workflow and the same staffing plan. The parallel track approach is not a twice-as-hard version of choosing one pathway. It is a more sophisticated version of doing the right thing for the right reason on the right timeline.
+
+There is no wrong choice between EB-3 and TN. There is only the choice that corresponds to your actual staffing situation, and the choice to stop pretending only one track exists.
+
+---
+
+Nava Healthcare runs both tracks. We have the TN pipeline for candidates who can move quickly, and the EB-3 pipeline for candidates where permanence is the objective. We do not think you should have to choose, and you do not. If you are ready to look at your staffing situation honestly and map it to the right immigration pathway, we can have that conversation today. No commitment required. Just the math.
+
+Sources:
+- Department of State Visa Bulletin — April 2026 (https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin/2026/visa-bulletin-for-april-2026.html)
+- USCIS Premium Processing (https://www.uscis.gov/forms-and-filing/filing-checklist/premium-processing)
+- Healthcare Workforce Resilience Act (https://www.congress.gov/bill/117th-congress/senate-bill-3594)
