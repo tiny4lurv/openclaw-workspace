@@ -20,8 +20,21 @@ DIR = os.path.dirname(os.path.abspath(__file__))
 
 app = Flask(__name__, static_folder=DIR)
 
-
 # --- Config ---
+QR_NOTEBOOK = Path("/root/.openclaw/workspace/memory/qr-notebook.md")
+NAMES_FILE = Path("/root/.openclaw/workspace/chat-page/names.json")
+NAMES_FILE.parent.mkdir(parents=True, exist_ok=True)
+if not NAMES_FILE.exists():
+    NAMES_FILE.write_text("{}")
+
+INIT_MESSAGE = (
+    "You are Dusk. Keep your answer to exactly 2 sentences. Plain text only — no bold, no bullets, no markdown. "
+    "Read memory/qr-notebook.md before answering. Answer only from what you read there. "
+    "If the answer is not in the QR-Notebook, reply with exactly: I don't know that. "
+    "Do not web-search. Do not guess. Do not ramble."
+    # Name instruction injected at message time via prefixed_message
+)
+
 GATEWAY_URL = "ws://127.0.0.1:18789/__openclaw__/gateway"
 SESSION_STORE = Path("/root/.openclaw/workspace/chat-page/sessions.json")
 SESSION_STORE.parent.mkdir(parents=True, exist_ok=True)
@@ -31,6 +44,9 @@ if not SESSION_STORE.exists():
 PENDING_FILE = Path("/root/.openclaw/workspace/chat-page/pending.json")
 if not PENDING_FILE.exists():
     PENDING_FILE.write_text("{}")
+
+INTERVIEWS_DIR = Path("/root/.openclaw/workspace/chat-page/interviews")
+INTERVIEWS_DIR.mkdir(parents=True, exist_ok=True)
 
 MAX_POLL_WAIT = 120
 POLL_INTERVAL = 1
@@ -87,6 +103,31 @@ def create_isolated_session():
     
     return session_key, session_file
 
+def init_session(session_key):
+    """Send initialization message to a new session to load QR-Notebook and set rules."""
+    ws = ws_connect()
+    req_id = str(uuid.uuid4())[:8]
+    send_req = {
+        "type": "req",
+        "id": req_id,
+        "method": "sessions.send",
+        "params": {
+            "key": session_key,
+            "message": INIT_MESSAGE,
+            "idempotencyKey": req_id
+        }
+    }
+    ws.send(json.dumps(send_req))
+    try:
+        while True:
+            resp = json.loads(ws.recv())
+            if resp.get("id") == req_id and resp.get("type") == "res":
+                break
+    except Exception:
+        pass
+    ws.close()
+
+
 def get_or_create_session(fingerprint):
     """Map fingerprint to session. Creates a new isolated session if needed."""
     sessions = load_json(SESSION_STORE)
@@ -132,6 +173,17 @@ def get_pending(ticket):
     if ticket in pending and pending[ticket]["response"] is not None:
         return pending[ticket]["response"]
     return None
+
+def cleanup_stale_pending():
+    """Remove pending entries older than 5 minutes (no response received)."""
+    now = time.time()
+    pending = load_json(PENDING_FILE)
+    stale = [tid for tid, data in pending.items()
+             if now - data.get("timestamp", 0) > 300]
+    for tid in stale:
+        del pending[tid]
+    if stale:
+        save_json(PENDING_FILE, pending)
 
 # --- Rate limiting tracking ---
 RATE_FILE = Path("/root/.openclaw/workspace/chat-page/rate_limits.json")
@@ -353,6 +405,57 @@ def wait_for_response(session_key, session_file, message, ticket):
     set_response(ticket, "Sorry, I'm taking longer than expected. Please try again.")
 
 
+# --- Interview helpers ---
+
+def save_interview(fingerprint, qna):
+    """Save interview Q&A to a JSON file. Returns filename."""
+    names = load_json(NAMES_FILE)
+    name = names.get(fingerprint)
+    
+    timestamp = time.strftime("%Y-%m-%d_%H%M%S")
+    short_ts = timestamp.split("_")[1] + timestamp.split("_")[2]  # HHMMSS
+    filename = f"{timestamp}_{short_ts[-3:]}.json"
+    filepath = INTERVIEWS_DIR / filename
+    
+    interview_data = {
+        "name": name or "Unknown",
+        "fingerprint": fingerprint,
+        "started_at": qna.get("started_at", time.strftime("%Y-%m-%dT%H:%M:%SZ")),
+        "completed_at": time.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "qna": qna.get("qna", [])
+    }
+    save_json(filepath, interview_data)
+    return filename
+
+
+def notify_main_session(message):
+    """Send a message to the main Dusk session via gateway WebSocket."""
+    try:
+        ws = ws_connect()
+        req_id = str(uuid.uuid4())[:8]
+        send_req = {
+            "type": "req",
+            "id": req_id,
+            "method": "sessions.send",
+            "params": {
+                "key": "agent:main:dashboard:default",
+                "message": message,
+                "idempotencyKey": req_id
+            }
+        }
+        ws.send(json.dumps(send_req))
+        try:
+            while True:
+                resp = json.loads(ws.recv())
+                if resp.get("id") == req_id and resp.get("type") == "res":
+                    break
+        except Exception:
+            pass
+        ws.close()
+    except Exception:
+        pass  # Non-critical if main session notification fails
+
+
 # --- Routes ---
 
 @app.route("/")
@@ -364,7 +467,7 @@ def index():
 def handle_message():
     """
     Receive a message from the public page.
-    Body: { "fingerprint": "uuid", "message": "text" }
+    Body: { "fingerprint": "uuid", "message": "text", "interview_mode": bool, "interview_data": {...} }
     Returns: { "ticket": "uuid" }
     """
     client_ip = get_client_ip()
@@ -381,6 +484,8 @@ def handle_message():
 
     fingerprint = data.get("fingerprint")
     message = data.get("message", "").strip()
+    interview_mode = data.get("interview_mode", False)
+    interview_data = data.get("interview_data")
 
     if not fingerprint or not message:
         return jsonify({"error": "missing fingerprint or message"}), 400
@@ -392,10 +497,44 @@ def handle_message():
 
     add_pending(ticket, session_key, fingerprint)
 
+    # Load name for this fingerprint
+    names = load_json(NAMES_FILE)
+    user_name = names.get(fingerprint)
+
+    # Build name context for prefixed message
+    if user_name:
+        name_context = f"The user's name is {user_name}."
+    else:
+        name_context = "You don't know their name yet. Ask for it early in the conversation."
+
+    # Prepend INIT_MESSAGE + name context to user message
+    prefixed_message = INIT_MESSAGE + "\n\n" + name_context + "\n\nUser question: " + message
+
+    # Handle interview mode
+    if interview_mode and interview_data:
+        # Store Q&A as it comes in
+        qna_file_key = f"interview_{fingerprint}"
+        pending = load_json(PENDING_FILE)
+        if qna_file_key not in pending:
+            pending[qna_file_key] = {"qna": [], "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ")}
+        pending[qna_file_key]["qna"].append({
+            "q": interview_data.get("question", ""),
+            "a": message
+        })
+        pending[qna_file_key]["fingerprint"] = fingerprint
+        pending[qna_file_key]["name"] = user_name
+        save_json(PENDING_FILE, pending)
+
+        # Check for [INTERVIEW_COMPLETE] signal in message from agent's perspective
+        # We check the incoming message for the completion signal (agent sends it to us)
+        # Actually, the agent sends [INTERVIEW_COMPLETE] in the response to the user.
+        # We detect it in the response before delivering it to the user.
+        pass
+
     try:
         thread = threading.Thread(
             target=wait_for_response,
-            args=(session_key, session_file, message, ticket),
+            args=(session_key, session_file, prefixed_message, ticket),
             daemon=True
         )
         thread.start()
@@ -413,6 +552,7 @@ def get_response():
     Poll for response to a ticket.
     Query: ?ticket=uuid&token=xyz
     Returns: { "response": "text" } or { "pending": true }
+    Also checks for [INTERVIEW_COMPLETE] and handles interview completion.
     """
     # Rate limit check on polling too
     client_ip = get_client_ip()
@@ -425,6 +565,32 @@ def get_response():
 
     response = get_pending(ticket)
     if response is not None:
+        # Check for interview completion signal
+        if "[INTERVIEW_COMPLETE]" in response:
+            # Clean up the signal from what we return to the user
+            response = response.replace("[INTERVIEW_COMPLETE]", "").strip()
+            
+            # Get interview data and save
+            pending = load_json(PENDING_FILE)
+            qna_file_key = "interview_" + pending.get(ticket, {}).get("fingerprint", "")
+            interview_pending = pending.get(qna_file_key)
+            
+            if interview_pending:
+                fp = interview_pending.get("fingerprint")
+                filename = save_interview(fp, interview_pending)
+                
+                # Notify main session
+                name = interview_pending.get("name", "Unknown")
+                notify_main_session(
+                    f"Interview complete with {name} (fingerprint: {fp})\n"
+                    f"Review at: /root/.openclaw/workspace/chat-page/interviews/{filename}"
+                )
+                
+                # Clean up
+                if qna_file_key in pending:
+                    del pending[qna_file_key]
+                    save_json(PENDING_FILE, pending)
+        
         return jsonify({"response": response})
 
     return jsonify({"pending": True})
