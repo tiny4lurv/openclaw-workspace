@@ -18,7 +18,7 @@ from websockets.exceptions import ConnectionClosed
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 
-app = Flask(__name__, static_folder=DIR)
+app = Flask(__name__, static_folder=DIR, static_url_path='')
 
 # --- Config ---
 QR_NOTEBOOK = Path("/root/.openclaw/workspace/memory/qr-notebook.md")
@@ -28,12 +28,21 @@ if not NAMES_FILE.exists():
     NAMES_FILE.write_text("{}")
 
 INIT_MESSAGE = (
-    "You are Dusk. Keep your answer to exactly 2 sentences. Plain text only — no bold, no bullets, no markdown. "
-    "Read memory/qr-notebook.md before answering. Answer only from what you read there. "
-    "If the answer is not in the QR-Notebook, reply with exactly: I don't know that. "
-    "Do not web-search. Do not guess. Do not ramble."
+    "You are Dusk, the Nava Healthcare Recruitment assistant. "
+    "First read memory/qr-notebook.md. If the answer is not there, search the full RAG corpus at nava-for-dusk/rag/clean_txt/ — check all .txt files. "
+    "Answer only from what you read in those files. "
+    "If the answer is not in the QR-Notebook OR the RAG corpus, reply with exactly: I don't know that. "
+    "Do not web-search. Do not guess. "
+    "Never mention, reference, or hint at internal files, notebooks, or resources in your responses. "
+    "Never say phrases like 'from the QR-Notebook', 'according to the RAG corpus', 'I checked memory files', or anything similar. "
+    "Do not describe your research process, the files you checked, or what you are looking up. Just answer the question directly. "
     # Name instruction injected at message time via prefixed_message
+    # Session resume instruction injected at message time via prefixed_message
 )
+
+# Track mtime of qr-notebook.md per session for auto-reload
+_session_notebook_mtime = {}
+_NOTEBOOK_PATH = Path("/root/.openclaw/workspace/memory/qr-notebook.md")
 
 GATEWAY_URL = "ws://127.0.0.1:18789/__openclaw__/gateway"
 SESSION_STORE = Path("/root/.openclaw/workspace/chat-page/sessions.json")
@@ -162,10 +171,27 @@ def add_pending(ticket, session_key, fingerprint):
     pending[ticket] = {"session_key": session_key, "fingerprint": fingerprint, "response": None, "timestamp": time.time()}
     save_json(PENDING_FILE, pending)
 
+def clean_for_display(text):
+    """Strip code formatting while preserving all readable structure (headings, bold, bullets)."""
+    import re
+    # Remove code block fences
+    text = re.sub(r'^```.*$', '', text, flags=re.MULTILINE)
+    # Remove inline code markers (replace with no-marker text)
+    text = re.sub(r'`([^`]+)`', r'\1', text)
+    # Convert markdown bold/italic to HTML
+    text = re.sub(r'\*{3}([^*]+)\*{3}', r'<em><strong>\1</strong></em>', text)  # ***bold italic***
+    text = re.sub(r'\*{2}([^*]+)\*{2}', r'<strong>\1</strong>', text)           # **bold**
+    text = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', text)                       # *italic*
+    text = re.sub(r'_{2}([^_]+)_{2}', r'<strong>\1</strong>', text)           # __bold__
+    text = re.sub(r'_([^_]+)_', r'<em>\1</em>', text)                            # _italic_
+    # Collapse excessive newlines (more than 2) but keep paragraph breaks
+    text = re.sub(r'\n{3,}', r'\n\n', text)
+    return text.strip()
+
 def set_response(ticket, response):
     pending = load_json(PENDING_FILE)
     if ticket in pending:
-        pending[ticket]["response"] = response
+        pending[ticket]["response"] = clean_for_display(response)
         save_json(PENDING_FILE, pending)
 
 def get_pending(ticket):
@@ -352,6 +378,130 @@ def ws_connect():
     return ws
 
 
+def inject_refresh_notice(session_key, session_file):
+    """
+    Send a lightweight system event to the agent to re-read the QR-Notebook.
+    Used when the notebook file has been updated since the session was created.
+    Returns True if injected successfully, False otherwise.
+    """
+    try:
+        ws = ws_connect()
+        req_id = str(uuid.uuid4())[:8]
+        refresh_msg = (
+            "[SYSTEM] The qr-notebook.md file has been updated. "
+            "Re-read memory/qr-notebook.md now to pick up the latest information. "
+            "Confirm with: DONE"
+        )
+        send_req = {
+            "type": "req",
+            "id": req_id,
+            "method": "sessions.send",
+            "params": {
+                "key": session_key,
+                "message": refresh_msg,
+                "idempotencyKey": req_id
+            }
+        }
+        ws.send(json.dumps(send_req))
+        # Just wait for ack, don't wait for agent response
+        try:
+            while True:
+                resp = json.loads(ws.recv())
+                if resp.get("id") == req_id and resp.get("type") == "res":
+                    break
+        except Exception:
+            pass
+        ws.close()
+        return True
+    except Exception:
+        return False
+
+
+def get_session_summary(session_file):
+    """
+    Read the last user message from a session file and return it.
+    Returns (last_user_message, days_since_last_activity) or (None, 0) if unavailable.
+    """
+    import datetime
+    if not session_file or not Path(session_file).exists():
+        return None, 0
+    try:
+        lines = Path(session_file).read_text().strip().split("\n")
+        last_user_msg = None
+        for line in reversed(lines):
+            if not line.strip():
+                continue
+            try:
+                msg = json.loads(line)
+                if msg.get("type") == "message" and msg.get("message", {}).get("role") == "user":
+                    content = msg.get("message", {}).get("content", "")
+                    if isinstance(content, str) and content.strip():
+                        last_user_msg = content.strip()
+                        break
+            except Exception:
+                continue
+        if not last_user_msg:
+            return None, 0
+        # Calculate days since last activity from file mtime
+        mtime = Path(session_file).stat().st_mtime
+        now = time.time()
+        days_elapsed = (now - mtime) / 86400
+        return last_user_msg, days_elapsed
+    except Exception:
+        return None, 0
+
+
+def inject_resume_greeting(session_key, session_file, user_name, last_topic, days_elapsed):
+    """
+    Send a greeting message for a resuming session before the user's new question.
+    Greets the user by name, acknowledges how long it's been, and reminds them of their last topic.
+    Returns True if injected successfully, False otherwise.
+    """
+    try:
+        ws = ws_connect()
+        req_id = str(uuid.uuid4())[:8]
+        
+        # Format the time acknowledgment
+        if days_elapsed < 1:
+            time_note = "about a day ago"
+        elif days_elapsed < 7:
+            time_note = f"{int(days_elapsed)} day{'s' if int(days_elapsed) != 1 else ''} ago"
+        elif days_elapsed < 30:
+            time_note = f"about {int(days_elapsed / 7)} week{'s' if int(days_elapsed / 7) != 1 else ''} ago"
+        else:
+            time_note = f"a while ago"
+        
+        name_greeting = f"Hey {user_name}, welcome back!" if user_name else "Hey there, welcome back!"
+        
+        resume_msg = (
+            f"[SYSTEM RESUME] {name_greeting} I last heard from you {time_note}. "
+            f"Your previous question was: {last_topic}. "
+            f"If this is a new topic, just carry on — no need to revisit it. "
+            f"If you want to pick up where you left off, I'm ready for that."
+        )
+        send_req = {
+            "type": "req",
+            "id": req_id,
+            "method": "sessions.send",
+            "params": {
+                "key": session_key,
+                "message": resume_msg,
+                "idempotencyKey": req_id
+            }
+        }
+        ws.send(json.dumps(send_req))
+        try:
+            while True:
+                resp = json.loads(ws.recv())
+                if resp.get("id") == req_id and resp.get("type") == "res":
+                    break
+        except Exception:
+            pass
+        ws.close()
+        return True
+    except Exception:
+        return False
+
 def wait_for_response(session_key, session_file, message, ticket):
     """Connect, send message, poll session file for new assistant response."""
     line_count_before = get_line_count(session_file)
@@ -460,7 +610,11 @@ def notify_main_session(message):
 
 @app.route("/")
 def index():
-    return send_file(os.path.join(DIR, "index.html"))
+    response = send_file(os.path.join(DIR, "index.html"))
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
+    return response
 
 @app.route("/message", methods=["POST"])
 @require_token
@@ -505,10 +659,37 @@ def handle_message():
     if user_name:
         name_context = f"The user's name is {user_name}."
     else:
-        name_context = "You don't know their name yet. Ask for it early in the conversation."
+        name_context = "You don't know their name yet. Within the first two exchanges, ask what they want to be called and use it. Do not reintroduce yourself or repeat your name — it is already on the screen."
+
+    # Session resume check: detect returning user and inject greeting if needed
+    resume_context = ""
+    if session_file and Path(session_file).exists():
+        mtime = Path(session_file).stat().st_mtime
+        days_elapsed = (time.time() - mtime) / 86400
+        if days_elapsed > 1:
+            last_topic, _ = get_session_summary(session_file)
+            if last_topic and user_name:
+                inject_resume_greeting(session_key, session_file, user_name, last_topic, days_elapsed)
+                # Format the time acknowledgment for the main message
+                if days_elapsed < 7:
+                    time_note = f"{int(days_elapsed)} days"
+                elif days_elapsed < 30:
+                    time_note = f"about {int(days_elapsed / 7)} weeks"
+                else:
+                    time_note = "a while"
+                resume_context = f"[SYSTEM NOTE: This is a returning user. You already greeted them and reminded them it has been {time_note} since their last message about: {last_topic}. Proceed with their new question below.]"
+
 
     # Prepend INIT_MESSAGE + name context to user message
-    prefixed_message = INIT_MESSAGE + "\n\n" + name_context + "\n\nUser question: " + message
+    prefixed_message = INIT_MESSAGE + "\n\n" + name_context + "\n" + resume_context + "\n\nUser question: " + message
+
+    # Auto-refresh: check if qr-notebook.md has been updated since this session last saw it
+    current_mtime = _NOTEBOOK_PATH.stat().st_mtime
+    session_mtime = _session_notebook_mtime.get(fingerprint, 0)
+    if current_mtime > session_mtime:
+        # Notebook updated — inject refresh notice before the user's message
+        inject_refresh_notice(session_key, session_file)
+        _session_notebook_mtime[fingerprint] = current_mtime
 
     # Handle interview mode
     if interview_mode and interview_data:
