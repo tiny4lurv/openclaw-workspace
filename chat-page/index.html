@@ -23,6 +23,7 @@
       gap: 10px;
     }
     #brand-bar img { height: 80px; width: auto; }
+    #brand-logo { display: block; cursor: pointer; }
     #brand-bar p { font-size: 13px; color: #666; margin: 0; }
     #chat-container {
       flex: 1;
@@ -169,6 +170,7 @@
 
       /* Logo: smaller on phone */
       #brand-bar img { height: 48px; }
+      #brand-logo { display: block; }
       #brand-bar p { font-size: 12px; }
 
       /* Messages: wider on small screens */
@@ -202,7 +204,9 @@
 </head>
 <body>
   <div id="brand-bar">
-    <img src="nava-logo.png?v=2" alt="Nava Healthcare">
+    <a href="#" id="brand-logo" title="Refresh">
+      <img src="nava-logo.png?v=2" alt="Nava Healthcare">
+    </a>
     <p>Employee Query Assistant</p>
   </div>
 
@@ -431,6 +435,12 @@
         setInputEnabled(true);
       }
     }
+
+    // Brand logo → refresh page
+    document.getElementById('brand-logo').onclick = (e) => {
+      e.preventDefault();
+      window.location.reload();
+    };
 
     // Wire up buttons
     document.querySelectorAll('.prompt-btn').forEach(btn => {
