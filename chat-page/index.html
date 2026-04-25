@@ -24,7 +24,21 @@
     }
     #brand-bar img { height: 80px; width: auto; }
     #brand-logo { display: block; cursor: pointer; }
-    #brand-bar p { font-size: 13px; color: #666; margin: 0; }
+    #brand-bar p { font-size: 13px; color: #666; margin: 0; flex: 1; }
+    #contact-btn {
+      margin-left: auto;
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    #contact-btn:hover { background: #1d4ed8; }
     #chat-container {
       flex: 1;
       overflow-y: auto;
@@ -199,6 +213,7 @@
 
       /* Brand bar: tighter */
       #brand-bar { padding: 6px 12px; }
+      #contact-btn { padding: 6px 14px; font-size: 12px; }
     }
   </style>
 </head>
@@ -208,6 +223,7 @@
       <img src="nava-logo.png?v=2" alt="Nava Healthcare">
     </a>
     <p>Employee Query Assistant</p>
+    <a href="https://navahc.com/contact/" id="contact-btn" target="_blank" rel="noopener">Contact Us</a>
   </div>
 
   <div id="chat-container">
