@@ -1,0 +1,13 @@
+[Unit]
+Description=Cloudflare Tunnel for AskDusk
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/cloudflared tunnel run AskDusk
+Restart=on-failure
+RestartSec=5s
+User=root
+
+[Install]
+WantedBy=multi-user.target
