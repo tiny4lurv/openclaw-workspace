@@ -38,6 +38,7 @@ INIT_MESSAGE = (
     "Answer from what you read. Do not say you need to check something — check it and answer.\n"
     "If the answer is not in any of those files, say exactly: I don't know that.\n"
     "Never mention file names, notebooks, or internal resources in your replies.\n"
+    "Do not announce what you have read, what files you are using, or confirm your setup. Just answer the question.\n"
     "Do not web-search. Do not guess. Just answer directly.\n\n"
     "---\n\n"
     "ARTICLE RECOMMENDATION RULES:\n\n"
@@ -511,7 +512,7 @@ def handle_message():
         threading.Thread(target=create_and_init_session_background, args=(fingerprint,), daemon=True).start()
         return jsonify({"immediate_response": clean_for_display(canned), "remaining": remaining})
 
-    # CASE 2: Waiting for name (user just typed their name, OR clicked a button)
+    # CASE 2: Waiting for name (user just typed their name, OR sent a follow-up question)
     elif user.get('state') == "waiting_for_name":
         # Intercept button clicks even when waiting for name
         if message.startswith('BTN:'):
@@ -531,18 +532,35 @@ def handle_message():
                 canned = CANNNED_RESPONSES.get(btn_id, "Hi! What's your name?")
             return jsonify({"immediate_response": clean_for_display(canned), "remaining": remaining})
 
-        # Normal name entry
-        name = message
-        db.set_user_name(fingerprint, name)
-        db.create_user_state(fingerprint, state="active", name=name)
-        first_context = user.get('first_context', '')
+        # If it looks like a real question (contains a question mark or is long enough to be a sentence),
+        # treat it as a message — save name as unknown and forward the question to the session.
+        # Otherwise treat as a name.
+        is_question = '?' in message or len(message.split()) >= 5
 
-        prefixed_message = (
-            INIT_MESSAGE + "\n\n"
-            f"The user's name is {name}. They just provided it.\n"
-            f"Their first context / question was: {first_context}\n\n"
-            f"Reply naturally to their first context, addressing them by their name {name}."
-        )
+        if is_question:
+            # Save name as unknown, but forward the question as the actual message
+            db.set_user_name(fingerprint, "")
+            db.create_user_state(fingerprint, state="active", name="")
+            first_context = user.get('first_context', '')
+
+            prefixed_message = (
+                INIT_MESSAGE + "\n\n"
+                f"The user's first context was: {first_context}\n\n"
+                f"Their actual follow-up message is: {message}\n\n"
+                f"Reply to their follow-up message naturally."
+            )
+        else:
+            # Normal name entry
+            name = message
+            db.set_user_name(fingerprint, name)
+            db.create_user_state(fingerprint, state="active", name=name)
+            first_context = user.get('first_context', '')
+
+            prefixed_message = (
+                INIT_MESSAGE + "\n\n"
+                f"The user's name is {name}. Their first message was: {first_context}\n\n"
+                f"Reply naturally to their first message, addressing them by name if appropriate."
+            )
 
         try:
             session_key, session_file = wait_for_session(fingerprint, timeout=30)
