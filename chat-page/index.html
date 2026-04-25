@@ -364,6 +364,17 @@
     // User clicks a prompt button
     async function handleButtonClick(btnId) {
       hidePrompts();
+
+      // Show a dummy user message representing the button click
+      const buttonLabels = {
+        '1': 'Tell me about your services',
+        '2': 'What issues does Nava tackle?',
+        '3': 'Give me a surprising finding'
+      };
+      if (buttonLabels[btnId]) {
+        addMessage(buttonLabels[btnId], 'user');
+      }
+
       showTyping();
 
       const data = await sendToRelay('BTN:' + btnId);
