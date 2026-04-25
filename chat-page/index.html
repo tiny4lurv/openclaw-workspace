@@ -24,7 +24,8 @@
     }
     #brand-bar img { height: 80px; width: auto; }
     #brand-logo { display: block; cursor: pointer; }
-    #brand-bar p { font-size: 13px; color: #666; margin: 0; flex: 1; }
+    #brand-bar p { font-size: 13px; color: #666; margin: 0; flex: 1; white-space: nowrap; }
+    .brand-mobile { display: none; }
     #contact-btn {
       margin-left: auto;
       background: #2563eb;
@@ -213,7 +214,14 @@
 
       /* Brand bar: tighter */
       #brand-bar { padding: 6px 12px; }
+      #brand-bar p { font-size: 12px; }
       #contact-btn { padding: 6px 14px; font-size: 12px; }
+    }
+
+    @media (max-width: 400px) {
+      .brand-desktop { display: none; }
+      .brand-mobile { display: inline; }
+      #brand-bar p { font-size: 11px; }
     }
   </style>
 </head>
@@ -222,13 +230,16 @@
     <a href="#" id="brand-logo" title="Refresh">
       <img src="nava-logo.png?v=2" alt="Nava Healthcare">
     </a>
-    <p>Employee Query Assistant</p>
+    <p id="brand-title">
+      <span class="brand-desktop">Ask Dusk &mdash; Nava Healthcare Recruitment</span>
+      <span class="brand-mobile">Ask Dusk</span>
+    </p>
     <a href="https://navahc.com/contact/" id="contact-btn" target="_blank" rel="noopener">Contact Us</a>
   </div>
 
   <div id="chat-container">
     <div class="intro">
-      <strong>Hi, I'm Dusk.</strong> I can help answer questions about Nava Healthcare Recruitment — our services, policies, compliance, or anything else in our knowledge base.<br><br>
+      <strong>Hi, I'm Dusk.</strong> I can answer questions about Nava Healthcare Recruitment — our services, policies, compliance, or anything else in our knowledge base.<br><br>
       Ask me anything or click any option below to explore.
     </div>
   </div>
