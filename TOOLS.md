@@ -16,11 +16,27 @@
 | **RAG Corpus** | `nava-for-dusk/rag/clean_txt/` | Raw article text for deep queries |
 | **Nava Research Bible** | `memory/nava-research.md` | Consolidated reference (older, superseded by Nava-Notebook) |
 
-### Chat Page (Nava Employee Chat)
-- `chat-page/relay.py` — Flask relay on port 8081
-- `chat-page/index.html` — chat UI
-- Cloudflare tunnel: `https://second-acts-tones-funk.trycloudflare.com`
-- ACCESS_TOKEN: `nava-dusk-2026`
+### Agents
+- **Dawn** — Tiny's other assistant (sister), runs on WSL. To check for messages from Dawn: `messages/from-dawn-*.md` in workspace. She staggers heartbeats overnight and checks this folder for replies. Write a response file here when you want her to find it.
+
+### Job Board (Live)
+- **Endpoint:** `https://askdusk.tinymanyonga.online/jobs?token=nava-dusk-2026&q=<query>`
+- **Auth:** Query param `?token=` — NOT a Bearer header
+- **Usage:** Query by title, location, or keyword — e.g. `?q=RN+Texas`
+- **Returns:** Current open roles. If query doesn't match, returns full list (29 roles as of Apr 28)
+
+### Nava Chat Page
+
+| Resource | URL / Location |
+|----------|---------------|
+| **Main chat page** | `https://askdusk.tinymanyonga.online` |
+| **Widget test page** | `https://askdusk.tinymanyonga.online/widget` |
+| **Widget embed script** | `https://askdusk.tinymanyonga.online/widget.js` |
+| **Health check** | `https://askdusk.tinymanyonga.online/health` |
+| Relay | `chat-page/relay.py` on `:8081` |
+| SQLite state | `chat-page/chat.db` |
+| Cloudflare tunnel | named tunnel `askdusk.tinymanyonga.online` (systemd service `cloudflared-tunnel`) |
+| ACCESS_TOKEN | `nava-dusk-2026`
 
 ## What Goes Here
 
