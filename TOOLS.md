@@ -20,10 +20,14 @@
 - **Dawn** — Tiny's other assistant (sister), runs on WSL. To check for messages from Dawn: `messages/from-dawn-*.md` in workspace. She staggers heartbeats overnight and checks this folder for replies. Write a response file here when you want her to find it.
 
 ### Job Board (Live)
-- **Endpoint:** `https://askdusk.tinymanyonga.online/jobs?token=nava-dusk-2026&q=<query>`
-- **Auth:** Query param `?token=` — NOT a Bearer header
-- **Usage:** Query by title, location, or keyword — e.g. `?q=RN+Texas`
-- **Returns:** Current open roles. If query doesn't match, returns full list (29 roles as of Apr 28)
+- **Endpoint:** `https://askdusk.tinymanyonga.online/jobs`
+- **Auth:** `X-Access-Token: nava-dusk-2026` (header, not query param)
+- **Params:** `role` (title keyword), `state` (US state code, e.g. TX), `keywords` (comma-separated)
+- **Examples:**
+  - `?role=RN&state=TX` — RN jobs in Texas
+  - `?role=nurse&state=FL` — nursing roles in Florida
+  - `?keywords=physical+therapy,PRN` — PRN physical therapy roles anywhere
+- **Response:** Plain text list: `Title — Location | Compensation | Type | Facility`
 
 ### Nava Chat Page
 
