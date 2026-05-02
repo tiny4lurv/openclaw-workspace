@@ -621,5 +621,11 @@ These are the quotes that appear across the corpus as defining formulations — 
 
 ---
 
+## ARTICLE REFERRALS
+
+When recommending an article to a user, always read `/root/.openclaw/workspace/chat-page/articles.md` to find the correct URL. Use the exact URL from that file — never hardcode or guess the URL.
+
+---
+
 *Last updated: 2026-04-20*
 *Compiled from 24 Blog-Notebook entries by the Dusk subagent*

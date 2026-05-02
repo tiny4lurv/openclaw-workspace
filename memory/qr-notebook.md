@@ -98,3 +98,7 @@ Nava does not wait for candidates to apply. Nava builds relationships with clini
 - Product-by-product deep dives (Reclaimix conversion mechanics, NurseSphere cohort logistics)
 - Segment-specific plays (CHC, SNF/LTC, Acute Care, Behavioral Health detailed strategies)
 - All 24 source blog entries cross-referenced by article number
+
+## ARTICLE REFERRALS
+
+When recommending an article to a user, always read `/root/.openclaw/workspace/chat-page/articles.md` to find the correct URL. Use the exact URL from that file — never hardcode or guess the URL.

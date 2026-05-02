@@ -10,3 +10,4 @@
 {"type":"memory.recall.recorded","timestamp":"2026-04-28T10:02:08.029Z","query":"job board endpoint access token","resultCount":1,"results":[{"path":"memory/2026-04-28.md","startLine":1,"endLine":11,"score":0.9594688934625071}]}
 {"type":"memory.recall.recorded","timestamp":"2026-04-28T18:18:35.458Z","query":"Nava Healthcare LinkedIn page URL","resultCount":1,"results":[{"path":"memory/2026-04-19.md","startLine":23,"endLine":51,"score":0.7919908306516866}]}
 {"type":"memory.recall.recorded","timestamp":"2026-05-02T07:37:23.926Z","query":"session notes history reading","resultCount":1,"results":[{"path":"memory/2026-04-24.md","startLine":29,"endLine":44,"score":0.8205259924877532}]}
+{"type":"memory.recall.recorded","timestamp":"2026-05-02T09:07:10.928Z","query":"compliance failures Nava healthcare recruitment","resultCount":1,"results":[{"path":"memory/2026-04-24.md","startLine":1,"endLine":21,"score":0.8483739738973394}]}
