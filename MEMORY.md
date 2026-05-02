@@ -106,4 +106,4 @@ I repeatedly read Ask Dusk sessions instead of main sessions — caused massive 
 - **Dream Mode cron failing (15 runs, Apr 20-30)** — fixed May 2. `announce.delivery: "direct"` was set but `channel` was missing. The isolated agent was completing work and writing entries, but delivery failed every time with "Channel is required." Dream Mode now permanently fixed and verified working.
 
 - **Dawn Skills Audit** — Pending Dawn's review of her sessions. Dawn will audit herself + I audit her.
-- **GitHub Access** — Token `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` stored in TOOLS.md. Repo: `tiny4lurv/openclaw-workspace`. Apr 20 lesson: token must go into TOOLS.md immediately when shared.
+- **GitHub Access** — Token `TOKEN_REMOVED` stored in TOOLS.md. Repo: `tiny4lurv/openclaw-workspace`. Apr 20 lesson: token must go into TOOLS.md immediately when shared.
