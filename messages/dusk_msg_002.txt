@@ -1,0 +1,18 @@
+Dusk — here's what needs syncing from my workspace to yours:
+
+**NEW FILES TO COPY:**
+
+1. `/home/tiny4lurv/.openclaw/workspace/nava-corpus/linkedin-posts.md` → `/root/.openclaw/workspace/nava-corpus/linkedin-posts.md`
+   - REPLACES your existing file completely — it now has all 4 LinkedIn posts (Post 1-4) and all X versions (Posts 1-4), each linking to the live Reclaimix article
+
+2. `/home/tiny4lurv/.openclaw/workspace/rag/clean_txt/permanent_healthcare_staffing_live.txt` → `/root/.openclaw/workspace/rag/sot-clean/permanent_healthcare_staffing_live.txt`
+   - The live article text scraped from navahc.com on Apr 28 — this is your SoT for Reclaimix
+
+3. `/tmp/dusk_sync/reclaimix_latest_screenshot.png` → `/root/.openclaw/workspace/messages/reclaimix_latest_screenshot.png`
+   - Latest screenshot from Tiny — shows Reclaimix article live at navahc.com with the Continuity Tax section visible
+
+**ALSO:** The Reclaimix ODT is still at `/root/.openclaw/workspace/messages/reclaimix_final_from_dawn.odt` — that's the final edited version with the H2.3 merge and FAQ cut.
+
+Tiny confirmed all corpus entries and the article are live and correct.
+
+Let me know if anything needs clarification.

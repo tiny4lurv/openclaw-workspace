@@ -1,0 +1,235 @@
+The Structural Role and Financial Architecture of Agency Conversion Fees in Healthcare Staffing: A Comprehensive Analysis of Market Dynamics, Regulatory Shifts, and Institutional Responses
+
+The modern healthcare labor economy is defined by a profound and persistent structural tension between clinical operational necessity and fiscal sustainability. At the epicenter of this tension lies the agency conversion fee—a contractual and financial mechanism that serves as both a protective instrument for staffing providers and a significant economic barrier for healthcare organizations. While these fees have historically been justified as a means to recover the investment made in sourcing and vetting talent, their current function within the United States healthcare system is increasingly scrutinized as an impediment to workforce stabilization. As turnover costs for registered nurses (RNs) reached record levels in 2024 and 2025, the strategic role of the conversion fee has shifted from a routine administrative charge to a pivotal variable in the broader "make-or-buy" decision-making process for hospital executives.1
+
+The average cost of turnover for a single bedside registered nurse escalated to $61,110 in 2025, representing an 8.6% increase from the prior year.1 For the average hospital, each percentage change in the RN turnover rate now represents a financial impact of approximately $289,000 to $295,000 per year.1 In this environment, the conversion fee—typically a percentage of the nurse's annual salary or a flat buyout amount—functions as a form of "financial friction" that prevents hospitals from transitioning high-performing temporary staff into permanent roles. This friction is compounded by federal tax regulations, specifically the Internal Revenue Service (IRS) 12-month rule, which creates a "forced exit" mechanism that often terminates assignments regardless of the preferences of the hospital or the clinician.4
+
+The Mechanical and Contractual Foundations of Conversion Fee Structures
+
+The mechanics of conversion fees are dictated by the Master Service Agreements (MSAs) established between healthcare facilities and staffing agencies. These contracts are engineered to protect the agency’s primary asset: the clinical professional. The fee is presented not as a penalty, but as a "placement fee" or "recruitment cost recovery" intended to compensate the agency for the loss of ongoing billable revenue from the contingent worker.3
+
+Typology of Fee Structures and Calculation Methodologies
+
+The specific structure of conversion fees varies across the industry, but they generally fall into three distinct categories: flat fees, percentage-of-salary models, and sliding scales based on hours worked. Each model carries different implications for hospital budgeting and recruitment strategy.
+
+The percentage-of-salary model is the most traditional approach. Agencies typically charge between 15% and 25% of the candidate's first-year annualized salary.3 For a registered nurse with an anticipated salary of $90,000, a 20% conversion fee results in an immediate $18,000 expenditure for the hospital. In more specialized sectors or executive-level placements, these percentages can climb as high as 35%.7
+
+A more sophisticated mechanical approach is the "sliding scale" or "tiered" conversion fee. This structure recognizes that the agency derives profit from the hourly "bill rate" markup while the nurse is on contract. Consequently, the conversion fee decreases as the clinician completes more hours at the facility. A common public contract schedule, such as that utilized by major staffing firms like Insight Global, illustrates this time-decaying cost structure: 0 to 320 hours worked triggers a 23% fee; 321 to 640 hours triggers 19%; 641 to 959 hours triggers 15%; and 960 or more hours (approximately 26 weeks) allows for a $0 conversion.8
+
+Contractual Justifications and the "Liquidated Damages" Framework
+
+Staffing agencies justify these fees as essential to their business model, citing the extensive costs of recruitment, background checks, license verification, and credentialing—processes that can cost upwards of $500 to $650 per clinician before they ever step onto a hospital floor.9 Within contract language, these fees are frequently characterized as "liquidated damages".10
+
+In legal terms, liquidated damages are a predetermined sum that the parties agree will be paid in the event of a breach, particularly when actual damages are difficult to calculate at the time of contracting.10 By framing the fee as liquidated damages, agencies attempt to protect themselves against hospitals "poaching" clinicians directly after the agency has incurred the risk and expense of placement. However, courts increasingly evaluate these clauses through a "reasonableness" test. Under the Restatement of Contracts, if a fee is found to be "unreasonably large," it may be declared an unenforceable penalty rather than a legitimate damage estimate.10 In 2018, for instance, a class action involving Filipino nurses centered on the allegation that a $25,000 buyout fee was an unlawful restriction on trade rather than a reasonable estimation of loss.10
+
+The Strategic Role of Fees as Deterrent Instruments
+
+Beyond their function as cost-recovery mechanisms, conversion fees are strategically deployed as deterrent instruments. By making the transition of a nurse from contract to permanent staff economically punishing, agencies ensure a steady stream of premium billable hours. This dynamic creates a "friction" that can lead to sub-optimal staffing decisions at the bedside.
+
+Economic Punishment vs. Retention Incentivization
+
+Conversion fees are often set at levels that rival or exceed the cost of standard recruitment, effectively making it just as expensive for a hospital to keep a nurse they have already trained and integrated as it is to find a new one.3 This creates a perverse incentive: hospitals may choose to let a highly-qualified traveler's contract expire and start the recruitment process over with a different candidate to avoid the upfront conversion fee, even if the "vacancy gap" costs the facility more in the long run through lost productivity and orientation expenses.12
+
+The deterrence factor is most visible in shorter-term contracts. Agreements often penalize faster hiring decisions with higher fees, which discourages facilities from converting clinicians during the first 13-week assignment.6 This results in a "wait-and-see" behavior among hospital administrators who might want to hire a nurse after 30 days but are contractually compelled to wait until the 180-day or 270-day mark to avoid a 20% salary penalty.6
+
+The Role of Vendor Management Systems (VMS) in Fee Mediation
+
+The emergence of Vendor Management Systems (VMS) has added another layer to the fee mechanicals. A VMS acts as a platform that handles the procurement and invoicing of contingent labor for a hospital. Historically, VMS fees ranged from 2% to 6%, but in the current market, some providers take as much as 20% of the bill rate.9 This "VMS cut" eats into the agency’s margin, often leading agencies to insist on higher conversion fees to make up for the revenue lost to the platform provider.9 This layering of fees further inflates the "buyout" price, making the permanent hire of a traveler a complex multi-party financial negotiation.
+
+The IRS 12-Month Rule: A Structural Forced-Exit Mechanism
+
+The financial barrier of the conversion fee is only one half of a "structural pincer" that complicates nurse retention. The second half is the Internal Revenue Service (IRS) regulation concerning the "tax home," which serves as a natural limit on how long a travel nurse can remain at a single facility without significant tax consequences.4
+
+Tax Home Determination and the "Itinerant" Risk
+
+For a travel nurse to qualify for tax-free stipends for housing, meals, and incidentals—which often comprise 30% to 50% of their total compensation—they must maintain a "tax home" elsewhere.4 To prove this, the nurse must demonstrate they have a permanent residence where they pay real expenses and return to regularly.4 If a nurse stays in one metropolitan area for more than 12 months, the IRS considers that location to be their "indefinite" place of business.4
+
+At the moment an assignment becomes "indefinite," all stipends and reimbursements become taxable income.4 This transition is based on expectation, not just the calendar. If a nurse signs a contract extension that will bring their total tenure at a facility to 13 months, the stipends become taxable the moment that extension is signed, not after the 12th month passes.4
+
+The Intersection of Tax Liability and Conversion Barriers
+
+This creates a structural "forced exit" at the one-year mark. If a hospital wants to keep a traveler beyond 12 months, the nurse faces a massive decrease in take-home pay because they lose their tax-free stipends.15 For most travelers, this "compensation cliff" is so steep—often a 20% to 30% drop in net earnings—that they choose to leave the facility for a new assignment at least 50 miles away to "reset" their tax-free eligibility.15
+
+From the hospital’s perspective, the IRS rule acts as a mandatory turnover mechanism. Even if the hospital is willing to waive the conversion fee, or if the fee has already "decayed" to zero after 1,000 hours, the nurse may still refuse to stay because the staff salary offered by the hospital cannot match the "blended rate" of a tax-advantaged travel contract.20 Consequently, the 12-month rule forces a cycle of "churn" that costs the hospital $61,110 in turnover expenses for a new hire, simply to replace a traveler who was already integrated but could no longer stay for tax reasons.1
+
+Quantifying Hospital Financial Exposure (2023-2025)
+
+To understand the hospital response to conversion fees, one must look at the total "all-in" financial exposure associated with nurse vacancies and the use of contingent labor. The data from 2023 through 2025 shows a market in a state of expensive stabilization.
+
+Nurse Turnover Costs and Regional Variance
+
+The national average turnover rate for staff RNs sat at 16.4% in 2024, a slight decrease of 2.4% from the prior year.1 While the rate is decreasing, the cost per departure continues to rise. The average cost of turnover for one bedside RN grew from $56,300 in 2023 to $61,110 in 2024—an 8.6% increase.1
+
+For a typical hospital, this level of churn results in annual losses between $3.9 million and $5.8 million.23 In high-acuity departments like telemetry, step-down, and emergency services, turnover is even more severe, with cumulative five-year rates between 113% and 121%, meaning these departments essentially replace their entire nursing staff every four years.1
+
+Hourly Cost Analysis: Travel vs. Staff Roles
+
+A primary driver of hospital financial stress is the "premium labor gap." During the height of the pandemic, travel nurse rates rose to as high as $150 per hour—triple the national average for staff nurses.22 By 2024-2025, rates have normalized but remains high. The average hourly bill rate for a travel nurse was approximately $89.78 in 2024, down from $106.63 in 2023.24 Even with this decline, contract labor costs average roughly 150% of the cost of a full-time salaried employee.26
+
+The "all-in" cost of an agency conversion includes the one-time fee ($15k-$25k), the cost of a three-month orientation period ($61k turnover cost), and the administrative burden of credentialing.1 When a CFO evaluates a conversion, they are often comparing a $20,000 fee against the $295,000 annual cost of a single percentage point of turnover.2 For many facilities, "buying out" the contract is mathematically superior to letting the nurse leave, yet the immediate cash outlay is often blocked by capital expenditure freezes.13
+
+The Emergence of Competitive Alternatives: The Zero-Fee Model
+
+The friction created by traditional agency fees has birthed a new category of technology-enabled staffing platforms that explicitly target "hire-away" fees as a market differentiator. Platforms like ShiftMed, Nursa, and CareRev are disrupting the legacy "VMS-Agency" model.
+
+ShiftMed and the "Open Shift Management" Paradigm
+
+ShiftMed markets itself not as a staffing agency, but as an AI-powered "Open Shift Management" platform.28 Their primary value proposition to hospitals is the total elimination of conversion fees. By providing access to a network of 450,000+ W-2 healthcare professionals, ShiftMed allows hospitals to "try before they buy".29
+
+Market evidence suggests this approach is gaining significant share. In 2025, health systems using ShiftMed filled over 630,000 shifts and generated $189 million in documented savings.28 Critically, ShiftMed reports that 18% of the on-demand clinicians on its platform ultimately transition into permanent roles at the facilities they serve.28 By eliminating the $20,000 conversion fee, ShiftMed strengthens the internal hiring pipeline of the hospital while simultaneously reducing reliance on high-cost travel contracts that carry tax-forced exits.28
+
+Nursa and the Per Diem Advantage
+
+Nursa similarly targets the conversion fee as an "inefficiency." Nursa connects facilities directly with local per diem clinicians, avoiding the overhead of "travel" packages.32 Nursa's model encourages "hire-away" behavior; they report that 33% of clinicians on their platform are actively seeking full-time roles and 10% are open to accepting a job offer if they enjoy the facility.32 By charging only for shifts worked and never for a permanent hire, Nursa presents a "frictionless" alternative to the traditional agency model that hospitals describe as their "biggest fiscal challenge".27
+
+Response from Traditional Incumbents
+
+Traditional giants like AMN Healthcare and Aya Healthcare are not sitting idle. They are increasingly pivoting toward "technology and workforce solutions" segments. AMN’s Technology segment, which includes the ShiftWise Flex VMS, provided more than 40% of the company's profit contribution in 2024, despite a 5% decrease in segment revenue.34 Aya Healthcare's acquisition of Flexwise in 2023 was a direct strategic move to provide real-time staffing insights and workforce optimization tools that compete with the digital-first upstarts.36 The market is shifting from "selling a nurse" to "selling a platform" that manages a mix of internal, local, and travel labor.
+
+Regulatory and Legislative Movement Against Conversion Fees
+
+The most significant threat to the conversion fee model is not just market competition, but direct government intervention. In response to pandemic-era price spikes, several states have enacted laws that prohibit or severely cap the fees staffing agencies can charge.
+
+New York’s Article 29-K Prohibition
+
+Under New York’s Public Health Law Article 29-K, which took effect August 1, 2023, the state has imposed a comprehensive ban on permanent hire fees for "temporary health care staffing agencies".37 The legislation requires agencies to register with the Department of Health (DOH) and explicitly prohibits:
+
+"...the payment of liquidated damages, employment fees or other compensation should the health care personnel be hired as a permanent employee of a health care entity." 38
+
+This law applies to agencies providing certified nurse aides (CNAs) and direct care staff to hospitals and nursing homes.37 Furthermore, New York has capped the amount an agency can charge a facility at 15% above the hourly rate paid to the healthcare professional (or 30% during emergencies), effectively squeezing the agency margin that traditionally funded the "recruitment cost" justification for conversion fees.40
+
+Illinois and the Proliferation of Transparency Laws
+
+Illinois has enacted similar measures through HB 4666 (the Nurse Agency Licensing Act), which also bans conversion fees, buy-out fees, and non-compete covenants.42 Any covenant not to compete entered into after July 1, 2022, between an agency and a nurse is considered void and illegal.42 These legislative moves signify a major shift in public policy: clinician mobility is being prioritized over the contractual property rights of staffing firms. The trend suggests that conversion fees may soon be prohibited in other high-turnover states as healthcare systems lobby for relief from "contingent labor traps."
+
+The Nurse's Perspective: Loyalty, Dependency, and the Compensation Cliff
+
+Understanding the conversion fee problem requires looking at the nurse's relationship with the agency. For most clinicians, the agency is not a source of loyalty, but rather an "administrative utility" that provides access to higher wages and better work-life balance.24
+
+Loyalty vs. Administrative Dependency
+
+Nursing trade literature suggests that travel nurses are increasingly focused on "relationships with recruiters" as a deciding factor, yet this is often transactional.24 When a conversion opportunity arises, nurses face a conflict of interest. While 18% of on-demand clinicians transition to staff, many others resist because the hospital's permanent compensation package cannot compete with agency rates.22
+
+The "relationship" is often one of dependency on the agency’s ability to navigate state licensing and credentialing. Nurses frequently feel "trapped" by agency contracts that threaten them with the same liquidated damages if they attempt to quit or go staff.10 In the forum literature, nurses often express frustration with "non-compete" clauses that prevent them from taking a staff job at a hospital they have grown to love during a 13-week assignment.
+
+The "Compensation Cliff" Analysis
+
+Evidence shows that nurses frequently resist conversion to permanent status because agency compensation—especially the tax-free stipend portion—far exceeds staff salaries.
+
+When a hospital asks a traveler to convert, they are often asking the nurse to take a $20,000 to $30,000 "pay cut" in take-home cash in exchange for a pension and health insurance that the nurse may not value as highly as immediate liquidity.22 This "compensation gap" makes the conversion fee even more galling for hospitals: they must pay a $20,000 fee to the agency and offer a $15,000 sign-on bonus to the nurse just to get them to agree to a lower hourly wage.2
+
+Hospital Behavioral Patterns: Let Expire vs. Convert
+
+Hospitals' actual behavior in the face of these fees reveals a cautious, data-driven approach. While the 2024 NSI report shows hospitals added 153,000 RNs to their rolls in 2023, much of this was from new graduates rather than traveler conversions.23
+
+Strategic Contract Expiration
+
+Data suggests that many hospitals prefer to let contracts expire or "wait out" the clock rather than pay a conversion fee. In a 2023 executive survey, 75% of CFOs said nursing costs were the top driver of margin pressure.27 Consequently, hospitals often use a "trial period" strategy: they keep a traveler for exactly 1,000 hours (the typical sliding-scale threshold for a $0 fee) and then offer a permanent role.8 If the nurse hits the 12-month IRS limit before that threshold is reached, the hospital often lets them leave and recruits a new traveler, effectively accepting a "vacancy gap" rather than paying the conversion fee.12
+
+The Rise of Internal Travel Teams
+
+A significant behavioral shift among large health systems is the creation of "internal travel teams".44 Systems like UPMC allow nurses to travel within their own network of hospitals, offering higher pay and assignment flexibility without an external agency intermediary.44 These internal programs eliminate:
+
+Agency bill rate markups (saving 30%+).
+
+Conversion fees (saving $20k+ per hire).
+
+The IRS 12-month rule "forced exit" (since the nurse can move to a different city within the same employer's umbrella).44
+
+Conclusion: The Sunsetting of the Conversion Fee Era
+
+The agency conversion fee, long a staple of the healthcare staffing industry, is facing an existential crisis. The convergence of three powerful forces—regulatory prohibition (New York/Illinois), disruptive zero-fee technology platforms (ShiftMed/Nursa), and the rise of internal hospital travel pools—is fundamentally eroding the fee’s structural role.
+
+While agencies continue to justify these fees through the lens of recruitment cost recovery and liquidated damages, hospital financial data from 2024 and 2025 demonstrates that the "deterrence" effect of these fees is causing systemic harm by forcing turnover and preventing the stabilization of the permanent workforce.1 The IRS 12-month rule acts as a powerful catalyst in this problem, ensuring that the "conversion decision" is always made under the pressure of a looming tax liability for the clinician.4
+
+As hospitals continue to face turnover costs exceeding $61,000 per nurse and vacancy fill times of nearly three months, the market is moving toward a more "frictionless" model of labor allocation.1 The future of healthcare staffing likely lies in "Open Shift Management" and "platform-based" solutions that prioritize long-term retention over one-time placement fees. For traditional agencies to survive, they must evolve from being "toll-takers" on the path to permanent employment to being "value-add" partners that help hospitals manage the complex reality of a modern, mobile, and highly-tax-sensitive clinical workforce.
+
+Works cited
+
+Cost of Nurse Turnover - Wisconsin Center for Nursing, accessed April 14, 2026, https://wicenterfornursing.org/cost-of-nurse-turnover/
+
+2026 NSI National Health Care Retention & RN Staffing Report, accessed April 14, 2026, https://www.nsinursingsolutions.com/documents/library/nsi_national_health_care_retention_report.pdf
+
+Healthcare Staffing Agency Costs: Pricing & Fees Explained - Nursa, accessed April 14, 2026, https://nursa.com/facility/articles/healthcare-staffing-agency-costs
+
+IRS Travel Nurse Rules: Tax Home, Stipends & 12-Month Rule - Advantis Medical, accessed April 14, 2026, https://advantismed.com/blog/travel-nurse-tax-home
+
+How Long Can a Travel Nurse Stay in One Place?, accessed April 14, 2026, https://www.jacksonnursing.com/blog/how-long-can-a-travel-nurse-stay-in-one-place/
+
+How Much Do Temp to Perm Agencies Typically Charge? - Activated Scale, accessed April 14, 2026, https://www.activatedscale.com/blog/temp-perm-agency-rates
+
+Average Staffing Agency Markup in 2025: Placement Fees and ..., accessed April 14, 2026, https://www.theresource.com/2025/10/27/average-staffing-agency-markup-in-2025/
+
+Insight Global Pricing 2026: How Much Does Their Talent Cost? | South, accessed April 14, 2026, https://www.hireinsouth.com/post/insight-global-pricing
+
+Sample Breakdown of a Travel Nursing Pay Package - BluePipes Blog, accessed April 14, 2026, https://blog.bluepipes.com/sample-breakdown-of-a-travel-nursing-pay-package/
+
+Liquidated Damages Clauses in Employment Agreements - American Bar Association, accessed April 14, 2026, https://www.americanbar.org/content/dam/aba/publications/aba_journal_of_labor_employment_law/v34/number-2/liquidated-damages-clauses.pdf
+
+Liquidated Damages Clauses in Restrictive Covenant Agreements - Weil, Gotshal & Manges LLP, accessed April 14, 2026, https://www.weil.com/~/media/mailings/2019/q1/employer-update_061719.pdf
+
+Temp-to-Perm Fee Structure: Transitioning Staffing Agency Employees to Permanent Employment - Activated Scale, accessed April 14, 2026, https://www.activatedscale.com/blog/temp-to-perm-fee-structure-staffing-transition
+
+The Hidden Price of an Empty Shift - Medical Temporaries, Inc., accessed April 14, 2026, https://medtemps.com/the-hidden-price-of-an-empty-shift/
+
+Ringo VMS - Healthcare Workforce Management vs Works by Trusted Health, accessed April 14, 2026, https://marketplace.aviahealth.com/compare/25902/25757
+
+Tax Home for Travel Nurses: A Guide to Maximizing Your Tax-Free Stipends in 2025, accessed April 14, 2026, https://avanihealthstaff.com/tax-home-for-travel-nurses-a-guide-to-maximizing-your-tax-free-stipends-in-2025
+
+Travel Nurse Taxes Explained: Stipends, Tax Homes & the 30-Day Rule, accessed April 14, 2026, https://junxionmedstaffing.com/travel-nurse-taxes-explained/
+
+A guide to IRS Travel Nurse Stipend Rules - Engine, accessed April 14, 2026, https://engine.com/business-travel-guide/travel-nurse-stipend
+
+Understanding 2023 Travel Nursing Tax Rules | Vivian Community Hub, accessed April 14, 2026, https://www.vivian.com/community/money-taxes/understanding-travel-nursing-tax-rules/
+
+How Are Travel Nurses Taxed in 2025? | Betternurse.org, accessed April 14, 2026, https://betternurse.org/travel-nurse-taxes/
+
+Blended Rate: Travel Nurse Pay 101 - Trusted Talent, accessed April 14, 2026, https://www.trustedtalent.com/blended-rate-travel-nurse/
+
+How Does Travel Nurse Pay Work? (Pay Package Breakdown) - CatSol Healthcare Staffing, accessed April 14, 2026, https://catsol.com/guides/travel-nurse-pay-breakdown/
+
+Is Travel Nursing Dead? A Look At Travel Nursing In 2024 - TravelNursing.org, accessed April 14, 2026, https://www.travelnursing.org/is-travel-nursing-dead-a-look-at-the-state-of-the-profession/
+
+NSI National Health Care Retention Report | PDF - Scribd, accessed April 14, 2026, https://www.scribd.com/document/778510043/NSI-National-Health-Care-Retention-Report
+
+After pandemic boom, travel nursing finds new footing | Staffing Industry Analysts, accessed April 14, 2026, https://www.staffingindustry.com/editorial/healthcare-staffing-report/after-pandemic-boom-travel-nursing-finds-new-footing
+
+Travel nurse revenue plummets for second year, survey shows - Staffing Industry Analysts, accessed April 14, 2026, https://www.staffingindustry.com/editorial/healthcare-staffing-report/travel-nurse-revenue-plummets-for-second-year-survey-shows
+
+The State of Healthcare Staffing in 2025: Trends, Challenges, and ..., accessed April 14, 2026, https://viva-it.com/insights/the-state-of-healthcare-staffing-in-2025-trends-challenges-solutions-for-a-sustainable-workforce/
+
+Healthcare Executives' Views on Contract Nursing Labor - Nursa, accessed April 14, 2026, https://nursa.com/reports/healthcare-executives-opinions-contract-workers
+
+ShiftMed Report Finds "Open Shift Management" Presents Multi ..., accessed April 14, 2026, https://www.shiftmed.com/press-releases/shiftmed-report-open-shift-savings/
+
+Health Systems and Hospitals - ShiftMed, accessed April 14, 2026, https://www.shiftmed.com/solutions/health-systems-and-hospitals/
+
+ShiftMed | Healthcare Workforce Management Solutions, accessed April 14, 2026, https://www.shiftmed.com/
+
+ShiftMed Report Finds "Open Shift Management" Presents Multi-Billion Dollar Savings for U.S. Health Systems - PR Newswire, accessed April 14, 2026, https://www.prnewswire.com/news-releases/shiftmed-report-finds-open-shift-management-presents-multi-billion-dollar-savings-for-us-health-systems-302711963.html
+
+How to hire a full-time nurse at your facility - Nursa, accessed April 14, 2026, https://nursa.com/facility/articles/nurse-hiring
+
+Crisis response staffing for healthcare facilities - Nursa, accessed April 14, 2026, https://nursa.com/facility/solutions/crisis-response-staffing
+
+AMN HEALTHCARE SERVICES, INC. AR 2024 - ProxyVote.com, accessed April 14, 2026, https://materials.proxyvote.com/Approved/001744/20250304/AR_599158/INDEX.HTML
+
+AMN Healthcare Announces Fourth Quarter and Full Year 2024 ..., accessed April 14, 2026, https://ir.amnhealthcare.com/news-releases/news-release-details/amn-healthcare-announces-fourth-quarter-and-full-year-2024/
+
+Nursing Resource Allocation Market Report 2026, accessed April 14, 2026, https://www.researchandmarkets.com/reports/6072011/nursing-resource-allocation-market-report
+
+Staffing Agencies Barred from Charging Permanent Hire Fees ..., accessed April 14, 2026, https://leadingageny.org/topics/workforce-issues-and-regulations/laws-and-regulations/staffing-agencies-barred-from-charging-permanent-hire-fees-under-new-law/
+
+Temporary Health Care Staffing Agencies Can No Longer Charge for Hiring Their Personnel, accessed April 14, 2026, https://www.barclaydamon.com/alerts/temporary-health-care-staffing-agencies-can-no-longer-charge-for-hiring-their-personnel
+
+NY's 2023-2024 State Budget Law, Health Care Update, Leah Ranke, accessed April 14, 2026, https://insights.colliganlaw.com/post/102ieag/nys-2023-2024-state-budget-law-health-care-update
+
+NY State Senate Bill 2025-S5462, accessed April 14, 2026, https://www.nysenate.gov/legislation/bills/2025/S5462
+
+NY A04621 - BillTrack50, accessed April 14, 2026, https://www.billtrack50.com/billdetail/1578481
+
+Publications | Koley Jessen, accessed April 14, 2026, https://www.koleyjessen.com/insights/publications/illinois-law-increasing-oversight-of-medical-staffing-agencies
+
+Travel Nursing Salary & Benefits 2024 - TravelNursing.org, accessed April 14, 2026, https://www.travelnursing.org/salary-and-benefits/
+
+Advancing the Calculation of Nurse Turnover Costs: A Methodological Approach Using the RETAIN Framework - PMC, accessed April 14, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC12833433/

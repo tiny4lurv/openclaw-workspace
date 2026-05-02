@@ -1,7 +1,7 @@
 # QR-NOTEBOOK — NAVA HEALTHCARE
 
 ## WHO IS NAVA
-Nava Healthcare Recruitment is a **systems partner** — not a transactional staffing vendor, but a structural partner that redesigns hiring architecture around a facility's clinical needs, operational rhythms, and long-term workforce goals. Three products: **Flagship Recruitment** (permanent placement, retention-based billing), **Reclaimix™** (converts agency nurses on the floor into permanent employees), and **NurseSphere™** (EB-3 international nurse recruitment with Schedule A processing).
+Nava Healthcare Recruitment is a **systems partner** — not a transactional staffing vendor, but a structural partner that redesigns hiring architecture around a facility's clinical needs, operational rhythms, and long-term workforce goals. Three products: **Flagship Recruitment** (permanent placement of US-based nurses), **Reclaimix™** (converts agency nurses on the floor into permanent employees), and **NurseSphere™** (international recruitment via TN and EB-3 pathways).
 
 ## THE ONE-LINER
 *"We do not fill seats; we build resilient clinical teams by acting as an integrated extension of your own leadership."*
@@ -38,9 +38,9 @@ Healthcare hiring was engineered for post-Great Recession surplus conditions and
 ## KEY TERMS
 
 - **Day Zero:** Verbal offer acceptance → first safe shift. Four owners: HR (credentials), IT (access), unit lead (schedule/preceptor), preceptor (3-shift progression). Pre-boarding alone delivers 11% better retention.
-- **Flagship Recruitment:** Retention-based billing: invoice at 30 days (floor staff), 60 days (management). Zero upfront risk; Nava's success is structurally tied to client retention.
+- **Flagship Recruitment:** Permanent placement of US-based nurses into healthcare facilities. Retention-based billing (invoice at 30 days for floor staff, 60 days for management). Zero upfront risk. Built for facilities that want to hire permanently without using agencies.
 - **Reclaimix™:** Converts agency nurses already on the floor into permanent employees. Addresses root cause of agency dependency — not finding good agency nurses, but never converting the ones you have.
-- **NurseSphere™:** EB-3 green card international recruitment. 6,000-hour minimum commitment (~3 years), Schedule A processing, cohort pipelines up to 100 nurses. For building permanent embedded workforce, not 13-week coverage.
+- **NurseSphere™:** International nurse recruitment via two parallel pathways — TN (temporary, 2–6 months for urgent needs) and EB-3 green card (permanent, 3+ years for culture-building). Schedule A processing for EB-3, cohort pipelines up to 100 nurses. Both pathways offer immediate staffing relief while building toward permanence.
 - **Schedule A Processing:** Expedited labor certification for RNs — bypasses standard PERM process. The operational mechanism that makes EB-3 viable on a facility timeline.
 - **Ripple Effect:** Cascading damage from high agency utilization: supervisory tax → morale erosion → burnout → permanent staff departure → deeper agency dependence.
 - **Backfill Spiral:** Reactive hiring cascade — vacancy → overtime → burnout → more departures → worse staffing → repeat.
@@ -52,6 +52,16 @@ Healthcare hiring was engineered for post-Great Recession surplus conditions and
 - **Parallel Track Strategy:** Running EB-3 and TN simultaneously — TN for urgent 2–6 month vacancies, EB-3 for permanent culture-building over 3+ years. Not competitors; complements.
 - **Translation Tax:** Hidden 56% efficiency loss from interpreter model — variable cost, moral injury, clinical nuance filtered. Concordance Strategy inverts this.
 - **Skin in the Game:** Nava's financial structure — revenue earned only after successful integration. Structural realignment from transaction to partnership.
+
+## HOW NAVA SOURCES CANDIDATES
+
+Nava does not wait for candidates to apply. Nava builds relationships with clinicians before a role even opens.
+
+- **Proactive outreach to passive candidates** — Nava maintains active relationships with pre-qualified professionals so they never start sourcing from zero when a req comes in
+- **Active vs. passive pool** — 70% of candidates are passive (not looking); job boards only reach the 30% who are active. Nava goes where the talent actually is
+- **Job boards are supplementary** — not primary. The 500:1 applicant-to-hire ratio proves job boards are proof of failed screening, not successful sourcing
+- **Human Intelligence Model** — Nava builds rapport with clinicians AND healthcare leaders (charge nurses, DONs, CNOs) who can provide reference-level insight into behavioral patterns
+- **Relational Framework** — vetting through genuine rapport-building, not keyword matching. EQ, resilience, communication style, and cultural fit assessed before a role is on the table
 
 ## WHAT TO SAY VS. WHAT NOT TO SAY
 

@@ -1,0 +1,321 @@
+TWO RESEARCH PAPERS: RESEARCH2 2 HOURSExecutive Summary
+
+This report provides a neutral, exploratory analysis of the relationship between high utilization of contingent (temporary or agency) healthcare staff and the incidence of adverse patient outcomes. The analysis is based on a synthesis of quantitative, qualitative, and risk management literature published between 2020 and 2025.
+
+The key quantitative finding is a consistent negative association between high agency staff utilization and a broad range of hospital quality and patient safety metrics. Recent (2022-2025) research indicates that increased agency staff use is significantly correlated with lower overall hospital quality scores, lower patient satisfaction (HCAHPS) ratings, and poorer clinical performance scores.1
+
+Furthermore, a critical 2022 longitudinal study on in-hospital mortality makes a crucial distinction: while higher staffing levels of permanently employed Registered Nurses (RNs)—including both regular staff and internal bank/float pool staff—are associated with a statistically significant reduction in inpatient mortality, the hours supplied by external agency
+
+An Exploratory Analysis of Causal Links Between Contingent Healthcare Staffing and Adverse Patient Outcomes (2020-2025)
+
+RNs have no significant association with mortality outcomes.2 This challenges the assumption that agency staff are 1:1 substitutes for permanent staff in preventing patient harm.
+
+This analysis then identifies five primary causal mechanisms cited in 2022-2025 literature that explain why these correlations exist:
+
+Disrupted Care Continuity: A rotating temporary workforce fractures the longitudinal nurse-patient relationship, impairing the ability of the clinical team to detect subtle patient deterioration and increasing the risk of "failure-to-rescue".3
+
+System & Protocol Unfamiliarity: Temporary staff, lacking deep familiarity with a facility's specific Electronic Health Record (EHR) systems, medication protocols, and safety bundles (e.g., CAUTI, CLABSI), introduce "system friction" and increase the likelihood of "workarounds" that lead to errors.4
+
+Fractured Team Dynamics: Effective teamwork, which correlates strongly with effective communication ($r = 0.925$) 6, is eroded. Temporary staff are outside the "institutional culture," which can lead to communication breakdowns, particularly during high-risk patient handoffs.6
+
+Increased Supervisory Load: A "supervisory tax" is imposed on senior permanent staff, who must divert time and cognitive bandwidth from their own patient assignments to orient, supervise, and correct temporary staff.7
+
+The Workforce Instability Cycle: The most significant causal finding is that high agency staff utilization is an accelerant of the staffing crisis, not a solution. A 2024 study found that facilities with high agency use had 7% significantly higher turnover among permanent RNs.8 This creates a "vicious cycle" where agency use drives permanent staff burnout and turnover, worsening the initial shortage and forcing greater reliance on contingent staff.
+
+The report concludes that high contingent staffing is a significant, independent risk factor for adverse patient outcomes and workforce destabilization. Strategic recommendations focus on prioritizing permanent staff retention, building robust internal float pools, and implementing "de-risking" strategies (such as block booking and enhanced orientation) when temporary staff use is unavoidable.
+
+Part 1: The Quantitative Association: Contingent Staffing, Mortality, and Failure-to-Rescue
+
+This section addresses the quantitative link between contingent staffing models and the highest-level patient outcomes: in-hospital mortality and failure-to-rescue. The analysis moves beyond the established relationship between general nurse staffing and outcomes 2 to parse the specific, differential impact of contingent versus permanent staff on patient survival.
+
+1.1 Differentiating the Impact: Agency RNs vs. Employed RNs on In-Hospital Mortality
+
+The central finding in recent high-quality, longitudinal research (2022-2025) is a critical distinction based on nurse contract type. A retrospective longitudinal study published in 2022 examining nurse staffing and inpatient mortality in the English National Health Service (NHS) revealed a striking and nuanced discovery.2
+
+The study found a statistically significant association between the RN "fill-rate" (the percentage of planned nursing hours that are actually worked) and inpatient mortality. However, this protective effect was found only for RNs who were hospital employees (Odds Ratio $0.9883$, $95\%$ Confidence Interval $0.9773$ to $0.9996$).2 This effect held true for both nurses on regular shifts and those employed by the hospital's internal "bank" (a float pool of trust-employed staff).
+
+Conversely, the study found no statistically significant association between inpatient mortality and the hours supplied by external agency workers.2
+
+This finding is paramount. It directly challenges the long-held administrative assumption that a "filled shift" is a "safe shift," regardless of who fills it. The data indicate that agency RNs, while filling a gap on the roster, are not effective substitutes for permanently employed RNs in the specific function of preventing inpatient mortality. This aligns with broader research conclusions that investing in permanent RNs over temporary workers is the more cost-effective strategy for improving patient outcomes.11 This distinction forms the quantitative foundation for exploring why this difference exists.
+
+1.2 Failure-to-Rescue: A Systemic, Not Individual, Consequence
+
+Failure-to-rescue (FTR)—defined as the inability to recognize the signs of and respond to a patient's clinical deterioration 12—is a key nursing-sensitive outcome. The 2022-2025 literature identifies it as a failure of team and system processes, not just individual competence.
+
+Recent systematic reviews have established a clear, positive association between higher educational levels of the permanent nursing staff (i.e., a higher proportion of RNs with a Bachelor of Science in Nursing) and lower (better) rates of FTR.14 While one 2024 review notes that the link between nurse experience and adverse events is "inconsistently related" 14, the literature on FTR points toward a systemic cause.
+
+Detecting subtle patient deterioration is not a function of a single data point but of recognizing a change from a patient's known baseline. This recognition is a primary function of care continuity.3 Mobilizing a life-saving response, in turn, is a function of integrated team dynamics and shared communication protocols.6
+
+This provides a robust framework for understanding the link between contingent staffing and FTR. A high proportion of rotating, temporary staff, by definition, fractures the care continuity required to establish a patient's baseline. A nurse on a single shift, seeing the patient for the first time, lacks the longitudinal context to determine if a patient's mild confusion is a new, ominous sign or a chronic, documented condition.
+
+Furthermore, a temporary nurse is less integrated into the unit's team dynamics and communication "language," potentially delaying or fumbling the escalation of care. Therefore, an increase in FTR on a unit with high agency use is not necessarily a failure of the individual temporary nurse's clinical skill, but rather a predictable failure of the fragmented system that high agency utilization creates.
+
+Part 2: The Relationship: Contingent Staffing and Nursing-Sensitive Patient Outcomes
+
+This section details the quantitative link between contingent staffing and a broad array of nursing-sensitive quality indicators, including overall quality scores, hospital-acquired infections (HAIs), patient falls, and medication errors.
+
+2.1 Overall Hospital Quality and Patient Experience Scores
+
+The negative association with contingent staffing is not limited to discrete clinical outcomes but extends to top-line metrics of hospital quality. A recent cross-sectional analysis (2021-2022 data) found that increased use of agency staff was significantly and negatively associated with six out of eight tested quality measures.1
+
+These negative associations included critical, publicly-reported metrics such as:
+
+The Hospital Consumer Assessment of Healthcare Providers and Systems (HCAHPS) star rating.
+
+The overall Hospital Compare rating.
+
+The hospital's Total Performance Score (TPS).
+
+TPS sub-domains, including the "clinical domain score" and, notably, the "person and community engagement domain score".1
+
+This HCAHPS finding is particularly telling. HCAHPS is a measure of the patient's perception of their care, including their perception of communication clarity, provider responsiveness, and care coordination. The quantitative data 1 suggests that the internal, systemic friction caused by high contingent staffing—such as disjointed handoffs, fragmented team dynamics 6, and a lack of consistent nurse-patient relationships—is not invisible to the patient. Patients appear to perceive this lack of cohesion, which in turn lowers their satisfaction and their "person and community engagement" scores.
+
+2.2 Hospital-Acquired Infections (HAIs): CAUTI and CLABSI
+
+While the reviewed 2022-2025 literature does not provide a direct quantitative study linking agency staff utilization specifically to Catheter-Associated Urinary Tract Infection (CAUTI) or Central Line-Associated Bloodstream Infection (CLABSI) rates, it provides a strong and logical inferential link.
+
+First, the literature consistently associates inadequate staffing and low nurse staffing levels with higher rates of hospital-acquired infections (HAIs) in general.2
+
+Second, the prevention of device-associated infections like CAUTI 17 and CLABSI 19 is known to be highly protocol-driven. Patient safety in this domain relies on strict, consistent, and meticulous adherence to evidence-based insertion and maintenance "bundles."
+
+The hypothesized causal mechanism, explored further in Part 3, is a degradation in system-wide protocol fidelity. Temporary staff, who are inherently less familiar with a facility's specific equipment, supply locations, and EHR-based charting requirements for bundle compliance, represent a risk to this fidelity. This "facility-specific knowledge gap" 4 can lead to minor, inadvertent deviations from protocol, creating system-level risk and increasing the likelihood of device-related infections.
+
+2.3 Nursing-Sensitive Indicators: Patient Falls and Medication Errors
+
+A similar inferential link exists for patient falls and medication errors.
+
+Patient Falls: The literature consistently associates "inadequate staffing" 9 and "higher patient-to-nurse ratios" 22 with increased frequencies of patient falls. A 2022-2025 cross-sectional study noted that nurses who were forced to perform non-nursing tasks—a proxy for high workload and poor staff allocation—were more likely to encounter patient falls.22 An NHS Borders report provided a real-world example, explicitly linking a significant upward trend in inpatient falls to "unprecedented workforce challenges" within their inpatient areas.23
+
+Medication Errors: The link between high workload and medication errors is also well-established.22 A 2022 systematic review of longitudinal studies cited earlier text-mining analysis of incident reports, which found a clear contribution of staffing levels to medication administration errors.24
+
+Modern prevention of these two adverse events is deeply reliant on a human-system interface. Preventing medication errors, for example, relies on the nurse's correct use of the EHR 25, the automated medication dispensing system, and the Barcode Medication Administration (BCMA) scanner.26 Preventing falls relies on correct use of the facility-specific fall-risk assessment tool and adherence to the "fall bundle" interventions.27
+
+A temporary nurse, even if clinically skilled, is a "low-familiarity" user interacting with a "high-complexity" system. This gap in facility-specific knowledge creates a high risk of "workarounds" 5—a primary driver of patient safety incidents. The temporary nurse may be slower, need to ask for help (taxing permanent staff, as detailed in Part 4), or inadvertently bypass a key safety check, representing a direct causal mechanism for increased medication errors and patient falls.
+
+2.4 Methodological Note: Addressing Reverse Causality and Confounding Variables
+
+A neutral, critical analysis must address the issue of endogeneity, or reverse causality.28 The question is: Does high agency use cause poor outcomes? Or do hospitals with pre-existing poor outcomes (e.g., due to poor management or high burnout) hire more agency staff out of desperation?
+
+The 2022-2025 literature shows researchers are actively addressing this methodological challenge. Multiple recent studies 1 now employ lagged independent and control variables to strengthen causal inference.
+
+This method works by using the prior year's agency staffing data (e.g., 2021 contract staff cost data) to predict the current year's patient outcomes (e.g., 2022 quality scores).1 This technique establishes temporal precedence, demonstrating that the high agency utilization came before the measured decline in quality.
+
+This methodological rigor is significant. It breaks the "chicken-and-egg" loop of simple correlation. It suggests that high agency utilization is a leading indicator of future adverse outcomes and workforce instability, not just a concurrent indicator of a hospital already in distress. This substantially strengthens the argument that high contingent staffing is a contributing cause of adverse patient outcomes, not merely a correlated symptom. Furthermore, these studies control for other key confounding variables, such as hospital characteristics (e.g., size, teaching status, ownership) 10 and patient characteristics (e.g., acuity) 29, to isolate the independent effect of the staffing variable.
+
+Table 1: Summary of Recent Quantitative Associations (2020-2025)
+
+Part 3: Causal Mechanisms (The "Why"): Fractures in the Clinical Foundation
+
+This section transitions from the "What" (correlation) to the "Why" (causal mechanisms). It explores how the presence of a rotating, temporary workforce fundamentally erodes the non-clinical foundations of safe care: continuity, system knowledge, and team cohesion. The following table summarizes these "on the ground" factors.
+
+Table 2: Identified Causal Mechanisms and Workplace Factors (2022-2025)
+
+3.1 The Continuity Deficit: Impaired Detection of Subtle Patient Deterioration
+
+Qualitative research from 2022-2025 emphasizes that for patients with complex needs, "care continuity" and "consistent ways to ensure patients have central contact points" are vital for safe care.3 "Rapid patient deterioration" is cited as a primary source of stress and difficulty for nurses.3
+
+This highlights the first causal mechanism. The detection of subtle deterioration—such as new-onset confusion, a slight change in breathing patterns, or a minor shift in affect—is often not about a single-point-in-time vital signs check. Instead, it is about a nurse recognizing a deviation from a known baseline. This baseline ("Mrs. Smith is usually much more talkative," "This level of grogginess is new for him") is established and held in the memory of the permanent nurse who has cared for that patient over consecutive shifts.
+
+High contingent staff utilization, which prizes "filling a shift" over "assignment continuity," systematically destroys this longitudinal knowledge. An agency nurse, seeing the patient for the first and only time, has no baseline. They can only assess the "here and now." This "continuity deficit" directly impairs the unit's collective ability to detect subtle deterioration early, leading to a higher incidence of failure-to-rescue (see 1.2).
+
+3.2 System Friction: Protocol, EHR, and Facility-Specific Knowledge Gaps
+
+Modern patient safety is built on high-reliability systems, including complex EHRs, BCMA, and specific clinical protocols.25 These systems, however, are not "plug-and-play." Each hospital has an idiosyncratic configuration. Onboarding and orientation are therefore critical to ensuring the "correct usage" of these tools 41 and bridging knowledge gaps.34 The implementation of EHRs, for example, is noted for its high complexity and "large implementation costs".4
+
+This introduces the second causal mechanism. A temporary nurse, even if clinically brilliant, is an inexperienced user of the facility's specific systems. They will be slower at EHR navigation 25, potentially leading to documentation delays or errors in the wrong fields. They will be unfamiliar with the hospital's specific medication formulary, the physical location of supplies, or the nuances of its dispensing system.4
+
+This "system friction" forces the temporary nurse into a binary choice, both of which increase risk:
+
+They can constantly ask questions, which increases the permanent staff's supervisory load (see 4.1).
+
+They can develop "workarounds" 5 to bypass steps they do not understand or find inefficient.
+
+These workarounds are a well-documented and direct source of patient safety incidents, particularly medication errors. Therefore, high agency use directly imports system-level risk by introducing a high volume of "low-familiarity" users into a "high-complexity" safety environment.
+
+3.3 The Team Dynamics Disruption: Communication Handoffs and Institutional Culture
+
+Effective communication is the bedrock of teamwork and patient safety.36 A 2024 quantitative study confirmed this, finding a very strong positive correlation ($r = 0.925$, $p < 0.01$) between effective communication and teamwork among nurses.6 A critical dimension of this effective communication is the "transmission of institutional culture".6 A 2024 study 6 defines this as "the set of distinctive and stable traits that define the identity of each institution."
+
+This is the third causal mechanism. Temporary staff are, by definition, outside this institutional culture. They do not share this "identity" 6 or the "mutual trust" and "positive relationships" that effective supervision and teamwork require.7
+
+This creates what one study 22 calls a "communication chasm." Permanent staff may be less likely to trust the clinical judgment or handoff report of an unknown temporary nurse. The temporary nurse, in turn, may be hesitant to speak up or challenge a permanent provider, even when they spot a potential error. This communication breakdown is most dangerous during high-risk transfers of care, such as patient handoffs.42 It leads to a "disconnected" 43 and fragmented team, where critical information is lost, assumptions are made, and the risk of error is magnified.
+
+Part 4: Causal Mechanisms (The "Why"): The Hidden Burden on Permanent Staff
+
+This section analyzes the second-order, indirect effects of contingent staffing: the "hidden work" and psychological burden imposed on the permanent staff who must work alongside them. This burden not only increases risk in the immediate shift but also creates a vicious cycle of workforce instability.
+
+4.1 The Supervisory Load: Training, Onboarding, and Performance Management
+
+The fourth causal mechanism is the "supervisory tax" that high agency use imposes on permanent staff. A rapid evidence review 7 on clinical supervision identified numerous barriers to effectively supervising external or agency staff. These include:
+
+"Lack of time and heavy workloads" for the permanent staff supervisor.
+
+"Lack of trusting relationships and ongoing support" between the two parties.
+
+"Lack of management/organizational support" for this supervisory function.
+
+"Misunderstanding" due to differences in roles, responsibilities, professional language, and codes of conduct.7
+
+Agency nurses, lacking facility-specific knowledge (see 3.2), require a high degree of orientation and supervision. This "hidden work"—which is not "free"—falls disproportionately on the most senior permanent staff, typically the Charge Nurse or a senior RN. This work includes answering constant questions about the EHR, explaining the medication system, co-signing orders, and "double-checking" the temporary nurse's work.
+
+This "supervisory tax" is a significant, unmeasured burden added on top of the permanent nurse's own patient assignment and documentation workload. This directly drives up the permanent staff's workload, stress 37, and burnout 38, leading to their care being rushed and increasing the likelihood of their errors. It is an indirect but powerful mechanism for patient harm.
+
+4.2 The Workforce Instability Cycle: Agency Use as a Driver of Permanent Staff Turnover
+
+This is the fifth and most critical causal finding of the 2022-2025 literature, as it creates a destabilizing feedback loop. A 2024 retrospective, observational study of 35,200 nursing homes (using 2021–2023 data) provided a direct quantitative link between agency use and permanent staff turnover.8
+
+The study found that facilities classified as "high utilizers" (top 25%) of agency nursing staff had:
+
+7% significantly higher turnover among permanent RNs ($p < 0.001$).
+
+1.9% significantly higher turnover among permanent CNAs ($p < 0.001$).
+
+This finding quantifies the end-result of the mechanisms described in 4.1 (supervisory load) and 3.3 (team disruption). The increased "supervisory tax" and team friction, often combined with perceived pay inequities, drive up burnout 38 and intent to leave 39 among the permanent staff.
+
+This reveals a "vicious cycle" of contingent staffing. The causal chain operates as follows:
+
+Initial State: A hospital has a staffing shortage and relies on temporary staff as a "solution."
+
+Causal Link 7: The presence of temporary staff increases the "supervisory load" and disrupts team dynamics for the remaining permanent staff.
+
+Causal Link 37: This increased burden and friction drives up burnout and job dissatisfaction among permanent staff.
+
+Quantitative Outcome 8: This burnout and dissatisfaction manifests as quantifiably higher permanent staff turnover (e.g., 7% higher for RNs).
+
+The Vicious Cycle: This higher turnover worsens the original staffing shortage, forcing the hospital to hire even more expensive, disruptive agency staff to fill the new vacancies.
+
+This model demonstrates that high contingent staffing, when used as a long-term strategy, is not a solution to a staffing shortage. It is a causal accelerant of the shortage, creating a feedback loop that progressively destabilizes the workforce, increases costs, and degrades patient safety.
+
+Part 5: Synthesis, Insights, and Strategic Recommendations
+
+This final section synthesizes the quantitative "What" and the qualitative "Why" into a unified model of risk and provides actionable, evidence-based recommendations for a senior executive audience.
+
+5.1 Synthesis of Evidence: A Causal Model of Contingent Staffing and Patient Risk
+
+The 2020-2025 evidence demonstrates that high contingent staffing is not merely correlated with adverse patient outcomes but is linked through a series of robust, identifiable causal mechanisms. The risk model is multi-layered:
+
+Direct Risk: There is a direct quantitative link between high agency use and poorer outcomes in hospital-wide quality scores, patient satisfaction ratings, falls, and medication errors.1
+
+Causal Mechanisms: These correlations are explained by fractures in the clinical foundation. Temporary staff, through no fault of their own, import risk by having:
+
+Knowledge & Continuity Deficits: They lack the continuity to detect subtle patient deterioration 3 and the system-specific knowledge (EHR, protocols) to navigate high-reliability processes without error.4
+
+Team & Supervision Burdens: Their presence fragments team culture 6 and imposes a "supervisory tax" on permanent staff 7, diverting time and energy from direct patient care.
+
+The Vicious Cycle (The "Accelerant"): The most significant finding is that these burdens actively drive permanent staff out of the organization 8, creating a feedback loop that makes the underlying workforce instability progressively worse.
+
+5.2 Key Insights for Risk Management and Quality Improvement
+
+Insight 1: Agency Staff Are Not 1:1 Substitutes. The finding that employed RNs reduce mortality while agency RNs have no significant effect 2 is a profound strategic insight. For risk management and budgeting purposes, a "filled" shift on the roster does not equal a "safe" shift if the fill-rate relies heavily on external agency staff. The type of contract is a critical quality metric that must be tracked.
+
+Insight 2: Risk Is Likely Non-Linear. The "high utilizer" (top 25%) methodology 8 suggests that risk is not linear. A hospital may be able to absorb a low level of agency use (e.g., <5% of total hours). However, the data suggest there is a "tipping point" beyond which a unit's culture, supervisory capacity, and team cohesion break, triggering the cascade of permanent staff turnover and adverse events. The key for risk management is to identify and stay below this unit-level ratio.
+
+Insight 3: Agency Use Is a Leading Indicator of Risk. The use of lagged variables in recent research 1 means that a rising agency-use-to-permanent-staff ratio should be treated by Quality and Safety Committees as a leading indicator of future adverse events and permanent staff turnover.44 It is a "red flag" for impending decline, not a lagging symptom of it.
+
+5.3 Strategic Recommendations for Workforce Optimization
+
+Based on this evidence, the following strategic recommendations are proposed:
+
+Prioritize Permanent Staff Retention Above All Else. The evidence is clear that agency use can be an accelerant of permanent staff turnover.8 Therefore, the most effective patient safety and financial strategy is an aggressive, multi-pronged focus on retaining the current permanent workforce. Resources should be directed to addressing the root causes of burnout 37 and improving the work environment, as this provides a greater return on investment for patient safety than "backfilling" with temporary staff.
+
+Build Internal Capacity (Internal Float Pools). The evidence from 2022 2 provides a clear solution. Trust-employed bank staff (internal float pools) do have the same protective effect on mortality as regular staff, while external agency staff do not. This is because internal-pool staff retain crucial institutional knowledge (EHR, protocols, culture). Organizations should prioritize building, incentivizing, and expanding a robust internal float pool before turning to more expensive, higher-risk external agencies.
+
+De-Risk Agency Use When Unavoidable. When external agency staff must be used, the goal must be to mitigate the known causal mechanisms of harm:
+
+Mitigate System-Knowledge Gaps: Mandate and pay for a comprehensive orientation for all temporary staff. This orientation must be standardized and focus on high-risk, facility-specific systems: the EHR, BCMA/medication systems, and fall/infection bundles.4
+
+Mitigate Continuity Gaps: Prioritize "block booking"—securing the same agency nurse for a multi-week contract on a single unit—over "shift-by-shift" booking of different individuals. This allows the temporary nurse to build a degree of care continuity and team integration.3
+
+Mitigate the Supervisory Burden: Acknowledge the "supervisory tax".7 On units with a high percentage of temporary staff, the Charge Nurse's patient assignment should be reduced or eliminated. This officially redesignates their role as a "supervisor" and "resource" whose primary function is to support the temporary staff and de-risk the entire unit.
+
+Works cited
+
+An Analysis of Hospital Agency Staffing and Quality Outcomes | RMHP, accessed November 11, 2025, https://www.dovepress.com/when-agency-fails-an-analysis-of-the-association-between-hospital-agen-peer-reviewed-fulltext-article-RMHP
+
+(PDF) Nurse staffing and inpatient mortality in the English National ..., accessed November 11, 2025, https://www.researchgate.net/publication/363892179_Nurse_staffing_and_inpatient_mortality_in_the_English_National_Health_Service_a_retrospective_longitudinal_study
+
+BMJ Support Palliat Care Last 6 Issues, accessed November 11, 2025, https://spcare.bmj.com/rss/recent.xml
+
+Abstract-Book-2024.pdf - European Health Management Association, accessed November 11, 2025, https://ehma.org/app/uploads/2023/10/Abstract-Book-2024.pdf
+
+Do contemporary patient assessment requirements align with expert nursing practice? - ResearchGate, accessed November 11, 2025, https://www.researchgate.net/publication/374289303_Do_contemporary_patient_assessment_requirements_align_with_expert_nursing_practice
+
+Enhancing Healthcare Efficiency: The Relationship Between ..., accessed November 11, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC11857919/
+
+Enablers and barriers to effective clinical supervision in the ..., accessed November 11, 2025, https://bmjopen.bmj.com/content/11/9/e052929
+
+Agency Nursing Staff Utilization and Turnover in Nursing Homes: A ..., accessed November 11, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC11855161/
+
+The Impact of Toxic Leadership on Nurse Retention: A Scoping Review - PMC - NIH, accessed November 11, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC12469713/
+
+Nurse staffing levels and patient outcomes: A systematic review of longitudinal studies, accessed November 11, 2025, https://www.researchgate.net/publication/361878409_Nurse_staffing_levels_and_patient_outcomes_A_systematic_review_of_longitudinal_studies
+
+Cost-effectiveness of eliminating hospital understaffing by nursing staff: a retrospective longitudinal study and economic evaluation | BMJ Quality & Safety, accessed November 11, 2025, https://qualitysafety.bmj.com/content/early/2025/04/23/bmjqs-2024-018138
+
+RCN International Nursing Research Conference 2024, accessed November 11, 2025, https://www.rcn.org.uk/-/media/Royal-College-Of-Nursing/Documents/Events/2024/Research24/BOA-INRC-2024.pdf
+
+East and North Hertfordshire NHS Trust Trust Board Part I (Public Session), accessed November 11, 2025, https://www.enherts-tr.nhs.uk/wp-content/uploads/2022/07/ENHT-Public-Trust-Board-papers-6-July-2022.pdf
+
+A bachelor's degree for entering the nursing profession: A scoping ..., accessed November 11, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC11080422/
+
+The Impact of Toxic Leadership on Nurse Retention: A Scoping Review - Preprints.org, accessed November 11, 2025, https://www.preprints.org/manuscript/202507.2361/download/final_file
+
+The Impact of Toxic Leadership on Nurse Retention: A Scoping Review - Preprints.org, accessed November 11, 2025, https://www.preprints.org/manuscript/202507.2361/v1/download
+
+nhs-fife-clinical-governance-committee-meeting-papers-20230113.pdf, accessed November 11, 2025, https://www.nhsfife.org/media/hqp1qtdc/nhs-fife-clinical-governance-committee-meeting-papers-20230113.pdf
+
+CURRICULUM VITAE - UMEXPERT - Universiti Malaya, accessed November 11, 2025, https://umexpert.um.edu.my/sasheela.html
+
+Systematic review and meta‑analysis of outcomes associated with incisional and organ/space surgical site infections in abdominal surgery patients - ResearchGate, accessed November 11, 2025, https://www.researchgate.net/publication/396448248_Systematic_review_and_meta-analysis_of_outcomes_associated_with_incisional_and_organspace_surgical_site_infections_in_abdominal_surgery_patients
+
+ANNUAL REPORT 2024 - Mumbai - KEM Hospital, accessed November 11, 2025, https://www.kem.edu/wp-content/uploads/2025/Annual-Report-2024_ebook.pdf
+
+APPLICATION FOR CERTIFICATE OF PUBLIC ADVANTAGE - IN.gov, accessed November 11, 2025, https://www.in.gov/health/cshcr/files/Redacted-COPA-Application-with-Attachments.pdf
+
+(PDF) Nurse workload and patient safety in hospital settings: A cross ..., accessed November 11, 2025, https://www.researchgate.net/publication/383986869_Nurse_workload_and_patient_safety_in_hospital_settings_A_cross-sectional_study
+
+Borders NHS Board - NHS Borders - NHS Scotland, accessed November 11, 2025, https://www.nhsborders.scot.nhs.uk/media/829897/board-agenda-and-papers-071021-public.pdf
+
+Improved staffing policies and practices in healthcare based on a ..., accessed November 11, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC11471616/
+
+VIRTUAL/TELECONFERENCE BOARD OF NURSING Virtual, 4822 Madison Yards Way, Madison Contact: Brad Wojciechowski (608) 266-2112 May - DSPS - Wisconsin.gov, accessed November 11, 2025, https://dsps.wi.gov/Documents/BoardCouncils/NUR/20250508NUROpenSession.pdf
+
+A systematic review of the impact of health information technology on nurses' time - PMC, accessed November 11, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC7309250/
+
+Impact of Fall Prevention on Nurses and Care of Fall Risk Patients - PMC - NIH, accessed November 11, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC5946811/
+
+The Impact of Internal Service Quality on Preventable Adverse Events in Hospitals, accessed November 11, 2025, https://www.researchgate.net/publication/318769354_The_Impact_of_Internal_Service_Quality_on_Preventable_Adverse_Events_in_Hospitals
+
+The effect of data aggregation on estimations of nurse staffing and patient outcomes - NIH, accessed November 11, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC8586488/
+
+Ripple effects of hospital team faultlines on patient outcomes - PMC - PubMed Central, accessed November 11, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC10666119/
+
+Does workforce diversity, equity, and inclusion prevent patient safety incidents: a double machine learning approach - White Rose Research Online, accessed November 11, 2025, https://eprints.whiterose.ac.uk/id/eprint/223930/3/JAIS_Manuscript_Final_proof.pdf
+
+BRIDGING THE Patient-Center outcome Research INFRASTRUCTURE AND TECHNOLOGY - https: // aspe . hhs . gov., accessed November 11, 2025, https://aspe.hhs.gov/sites/default/files/documents/dd18db1a8cff2f8236b998b890d7ac97/aspe-crn-report.pdf
+
+Physicians' Occupational Licensing and the Quantity-Quality Trade-Off - GitHub Pages, accessed November 11, 2025, https://cristobalotero.github.io/files/physicians.pdf
+
+Untitled - KPJ Healthcare - ListedCompany.com, accessed November 11, 2025, https://kpj.listedcompany.com/newsroom/KPJHB_SR_2022.pdf
+
+(PDF) The Impact of Toxic Leadership on Nurse Retention: A Scoping Review, accessed November 11, 2025, https://www.researchgate.net/publication/395689429_The_Impact_of_Toxic_Leadership_on_Nurse_Retention_A_Scoping_Review
+
+Teamwork in Healthcare: Key Discoveries Enabling Safer, High-Quality Care - PMC - NIH, accessed November 11, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC6361117/
+
+Nurse stress and patient safety in the ICU: physician- led observational mixed- methods study | BMJ Open Quality, accessed November 11, 2025, https://bmjopenquality.bmj.com/content/bmjqir/14/2/e003109.full.pdf
+
+Nurse Burnout and Patient Safety, Satisfaction, and Quality of Care: A Systematic Review and Meta-Analysis - NIH, accessed November 11, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC11539016/
+
+Nurse staffing and nurse outcomes: A systematic review and meta-analysis - PubMed, accessed November 11, 2025, https://pubmed.ncbi.nlm.nih.gov/29685321/
+
+Predictors and Outcomes of Burnout Among Primary Care Providers ..., accessed November 11, 2025, https://www.researchgate.net/publication/337333881_Predictors_and_Outcomes_of_Burnout_Among_Primary_Care_Providers_in_the_United_States_A_Systematic_Review
+
+SPECIAL BULLETIN - arm@moh.gov.et - MINISTRY OF HEALTH - Ethiopia, accessed November 11, 2025, https://arm.moh.gov.et/Special_Bulletin-27th_Oct_14.pdf
+
+Patient safety culture: Insights from a cross-sectional study among healthcare professionals, accessed November 11, 2025, https://pmc.ncbi.nlm.nih.gov/articles/PMC11844972/
+
+the experience of knowledge workers in remote environments during the covid-19 pandemic - DUNE - University of New England, accessed November 11, 2025, https://dune.une.edu/cgi/viewcontent.cgi?article=1037&context=edu_diss
+
+Health and Community Services Advisory Board Part A - Meeting in ..., accessed November 11, 2025, https://www.gov.je/SiteCollectionDocuments/Health%20and%20wellbeing/HCS%20Board%20Pack%20Part%20A%20Papers%2025%20July%202024.pdf
+
+Group Board - St George's Hospital, accessed November 11, 2025, https://www.stgeorges.nhs.uk/wp-content/uploads/2023/07/Final-Pack-Public-Board-Meeting-7-July-2023.1.pdf

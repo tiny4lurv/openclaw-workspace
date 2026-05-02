@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask Dusk | Nava Healthcare Recruitment</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    /* NAVA COLOR PALETTE */
+    :root {
+      --navy-deep:   #122A38;
+      --navy-mid:    #214358;
+      --navy-light:  #334858;
+      --coral:       #FF9583;
+      --coral-dark:  #e67a6e;
+      --white:       #ffffff;
+      --white-muted: rgba(255,255,255,0.6);
+      --white-dim:   rgba(255,255,255,0.8);
+      --charcoal:    #333333;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--navy-deep);
+      color: var(--white);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* BRAND BAR */
+    #brand-bar {
+      background: var(--navy-deep);
+      padding: 10px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    #brand-bar img { height: 56px; width: auto; }
+    #brand-logo { display: block; cursor: pointer; flex-shrink: 0; }
+    #brand-title {
+      font-size: 14px;
+      color: var(--white-muted);
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .brand-desktop { color: var(--white-muted); }
+    .brand-mobile { display: none; }
+    #contact-btn {
+      margin-left: auto;
+      background: var(--coral);
+      color: var(--navy-deep);
+      border: none;
+      border-radius: 20px;
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    #contact-btn:hover { background: var(--coral-dark); }
+
+    /* CHAT AREA */
+    #chat-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* INTRO */
+    .intro {
+      text-align: center;
+      padding: 28px 16px 12px;
+      color: var(--white-muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .intro strong { color: var(--white); }
+
+    /* MESSAGES */
+    .message {
+      max-width: 78%;
+      padding: 12px 18px;
+      border-radius: 16px;
+      line-height: 1.6;
+      font-size: 15px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .message.user {
+      background: var(--coral);
+      color: var(--navy-deep);
+      font-weight: 500;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+    .message.dusk {
+      background: var(--white);
+      color: var(--charcoal);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+    .message.dusk.error {
+      border: 1px solid #ef4444;
+      color: #dc2626;
+      background: #fef2f2;
+    }
+
+    /* TYPING INDICATOR */
+    .typing-indicator {
+      display: flex;
+      gap: 5px;
+      padding: 16px 20px;
+      background: var(--white);
+      border-radius: 16px;
+      border-bottom-left-radius: 4px;
+      align-self: flex-start;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+    .typing-indicator span {
+      width: 8px; height: 8px;
+      background: #999;
+      border-radius: 50%;
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+    .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+    .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0s; }
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+    .hidden { display: none !important; }
+
+    /* PROMPT BUTTONS */
+    .prompts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 0 16px 20px;
+      max-width: 720px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .prompts.hidden { display: none; }
+    .prompt-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--white);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: left;
+      line-height: 1.5;
+    }
+    .prompt-btn strong { color: var(--white); display: block; margin-bottom: 4px; }
+    .prompt-btn small { color: var(--white-muted); font-size: 12px; }
+    .prompt-btn:hover {
+      border-color: var(--navy-deep);
+      background: rgba(255,149,131,0.1);
+      transform: translateY(-1px);
+    }
+    .prompt-btn:active { transform: translateY(0); }
+
+    /* INPUT AREA */
+    #input-area {
+      padding: 16px 20px;
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .input-row {
+      display: flex;
+      gap: 12px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    #message-input {
+      flex: 1;
+      background: var(--navy-deep);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 24px;
+      padding: 12px 20px;
+      font-size: 15px;
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    #message-input::placeholder { color: var(--white-muted); }
+    #message-input:focus { border-color: var(--navy-deep); }
+    #send-btn {
+      background: var(--coral);
+      color: var(--navy-deep);
+      border: none;
+      border-radius: 24px;
+      padding: 12px 24px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    #send-btn:hover { background: var(--coral-dark); }
+    #send-btn:disabled { background: rgba(255,149,131,0.4); cursor: not-allowed; }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 8px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--navy-deep); }
+    ::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--coral); }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .prompts { grid-template-columns: 1fr; padding: 0 12px 16px; }
+      #brand-bar img { height: 44px; }
+      #brand-bar { padding: 8px 12px; }
+      .message { max-width: 88%; font-size: 14px; padding: 10px 14px; }
+      .intro { padding: 20px 12px 10px; font-size: 13px; }
+      #input-area { padding: 12px 16px; padding-bottom: max(12px, env(keyboard-inset-bottom, 12px)); }
+      #message-input { padding: 10px 16px; }
+      #send-btn { padding: 10px 18px; }
+      .brand-desktop { display: none; }
+      .brand-mobile { display: inline; }
+      #brand-title { font-size: 12px; }
+      #contact-btn { padding: 6px 14px; font-size: 12px; }
+    }
+
+    /* MARKDOWN TABLE STYLES */
+    .md-table-wrap { overflow-x: auto; margin: 12px 0; }
+    .md-table-wrap table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    .md-table-wrap th { background: rgba(255,255,255,0.08); color: var(--navy-deep); font-weight: 600; text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    .md-table-wrap td { padding: 7px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); color: var(--charcoal); }
+    .md-table-wrap tr:last-child td { border-bottom: none; }
+    .md-table-wrap tr:hover td { background: rgba(255,255,255,0.03); }
+
+    /* EMBEDDED MODE — hide brand bar, transparent bg */
+    body.embedded { background: var(--navy-deep); }
+    body.embedded #brand-bar { background: transparent; border: none; padding: 0; visibility: hidden; height: 0; min-height: 0; overflow: hidden; }
+    body.embedded #chat-container { flex: 1; min-height: 0; }
+  </style>
+</head>
+<body>
+  <div id="brand-bar">
+    <a href="#" id="brand-logo" title="Refresh">
+      <img src="nava-logo-white.svg" alt="Nava Healthcare" style="height:45px; width:auto;">
+    </a>
+    <p id="brand-title">
+      <span class="brand-desktop">Ask Dusk &mdash; Nava Healthcare Recruitment</span>
+      <span class="brand-mobile">Ask Dusk</span>
+    </p>
+    <a href="https://navahc.com/contact/" id="contact-btn" target="_blank" rel="noopener">Contact Us</a>
+  </div>
+
+  <div id="chat-container">
+    <div class="intro">
+      <strong>Hi, I'm Dusk.</strong> I can answer questions about Nava Healthcare Recruitment — our services, policies, compliance, or anything else in our knowledge base.<br><br>
+      Ask me anything or click any option below to explore.
+    </div>
+  </div>
+
+  <div id="prompts" class="prompts">
+    <button class="prompt-btn" id="btn-1" data-btn="1">
+      <strong>Flagship Recruitment, NurseSphere &amp; Reclaimix</strong>
+      <small>How Nava builds clinical teams</small>
+    </button>
+    <button class="prompt-btn" id="btn-2" data-btn="2">
+      <strong>Systemic Issues Nava Tackles</strong>
+      <small>E.g. The Ripple Effect: How one vacancy cascades</small>
+    </button>
+    <button class="prompt-btn" id="btn-3" data-btn="3">
+      <strong>A Surprising Finding</strong>
+      <small>Did you know: A single bad RN hire costs $61,100+ in replacement costs?</small>
+    </button>
+  </div>
+
+  <div id="typing" class="typing-indicator hidden">
+    <span></span><span></span><span></span>
+  </div>
+
+  <div id="input-area">
+    <div class="input-row">
+      <input type="text" id="message-input" placeholder="Ask about Nava..." autocomplete="off">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <div class="footer">Internal use only · Nava Healthcare Recruitment</div>
+
+  <script>
+    const RELAY_BASE = "https://askdusk.tinymanyonga.online";
+    const ACCESS_TOKEN = "nava-dusk-2026";
+
+    let fingerprint = localStorage.getItem('dusk_fingerprint');
+    if (!fingerprint) {
+      fingerprint = crypto.randomUUID();
+      localStorage.setItem('dusk_fingerprint', fingerprint);
+    }
+
+    let state = localStorage.getItem('dusk_state') || 'idle';
+
+    const chatContainer = document.getElementById('chat-container');
+    const messageInput = document.getElementById('message-input');
+    const sendBtn = document.getElementById('send-btn');
+    const typingIndicator = document.getElementById('typing');
+    const promptsDiv = document.getElementById('prompts');
+
+
+    // Detect if embedded in parent (WordPress)
+    if (window.location.search.includes('embedded=true')) {
+      document.body.classList.add('embedded');
+    }
+
+    function scrollToBottom() {
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    function parseMarkdown(text) {
+      // Convert markdown tables to styled HTML tables
+      const tableRegex = /^\|.*\|\n\|[-| :]+\|\n((?:\|.*\|\n?)*)/gm;
+      text = text.replace(tableRegex, (match, rows) => {
+        const lines = rows.trim().split('\n');
+        let html = '<div class="md-table-wrap"><table>';
+        lines.forEach((line, idx) => {
+          const cells = line.split('|').filter(c => c.trim() !== '');
+          const tag = idx === 0 ? 'th' : 'td';
+          html += '<tr>' + cells.map(c => `<${tag}>${c.trim()}</${tag}>`).join('') + '</tr>';
+        });
+        html += '</table></div>';
+        return html;
+      });
+      // Bold, italic, line breaks
+      text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
+      text = text.replace(/\n/g, '<br>');
+      return text;
+    }
+
+    function addMessage(text, role) {
+      const div = document.createElement('div');
+      div.className = 'message ' + role;
+      div.innerHTML = parseMarkdown(text);
+      chatContainer.appendChild(div);
+      scrollToBottom();
+    }
+
+    async function streamMessage(text, role) {
+      const div = document.createElement('div');
+      div.className = 'message ' + role;
+      chatContainer.appendChild(div);
+      scrollToBottom();
+      
+      // Split text into paragraphs, stream each with a 2s pause between them
+      const paragraphs = text.split(/\n\n/);
+      
+      for (let p = 0; p < paragraphs.length; p++) {
+        const para = paragraphs[p];
+        const words = para.split(/(\s+)/);
+        let currentText = '';
+        
+        for (let i = 0; i < words.length; i++) {
+          currentText += words[i];
+          // Rebuild accumulated text including current paragraph
+          const fullText = paragraphs.slice(0, p).join('\n\n') + (p > 0 ? '\n\n' : '') + currentText;
+          div.innerHTML = parseMarkdown(fullText) + '<span style="border-right: 3px solid var(--coral); margin-left: 2px;"></span>';
+          scrollToBottom();
+          
+          if (words[i].trim().length > 0) {
+            const delay = Math.max(15, Math.min(50, words[i].length * 10));
+            await new Promise(r => setTimeout(r, delay));
+          }
+        }
+        
+        // Finalize this paragraph without cursor
+        const finalText = paragraphs.slice(0, p + 1).join('\n\n');
+        div.innerHTML = parseMarkdown(finalText);
+        scrollToBottom();
+        
+        // Pause after paragraph — varies by sentence count
+        // short (≤2 sentences) = 2s, medium (3) = 3s, long (≥4) = 4s
+        if (p < paragraphs.length - 1) {
+          const sentenceCount = paragraphs[p].split(/[.!?]+\s+/).filter(s => s.trim().length > 0).length;
+          let pause = 2000;
+          if (sentenceCount >= 4) pause = 4000;
+          else if (sentenceCount >= 3) pause = 3000;
+          await new Promise(r => setTimeout(r, pause));
+        }
+      }
+    }
+
+    function hidePrompts() {
+      promptsDiv.classList.add('hidden');
+    }
+
+    function showTyping() {
+      typingIndicator.classList.remove('hidden');
+      chatContainer.appendChild(typingIndicator);
+      scrollToBottom();
+    }
+
+    function hideTyping() {
+      typingIndicator.classList.add('hidden');
+    }
+
+    function setInputEnabled(enabled) {
+      messageInput.disabled = !enabled;
+      sendBtn.disabled = !enabled;
+    }
+
+    function setState(newState) {
+      state = newState;
+      localStorage.setItem('dusk_state', state);
+    }
+
+    async function sendToRelay(message) {
+      const response = await fetch(RELAY_BASE + '/message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Access-Token': ACCESS_TOKEN
+        },
+        body: JSON.stringify({ fingerprint, message })
+      });
+      return response.json();
+    }
+
+    async function pollForResponse(ticket) {
+      try {
+        const resp = await fetch(RELAY_BASE + '/response?ticket=' + encodeURIComponent(ticket) + '&token=' + encodeURIComponent(ACCESS_TOKEN));
+        const data = await resp.json();
+        if (data.response !== undefined) {
+          hideTyping();
+          await streamMessage(data.response, 'dusk');
+          hidePrompts();
+          setState('active');
+          setInputEnabled(true);
+          messageInput.focus();
+          return;
+        }
+      } catch (err) {
+        hideTyping();
+        addMessage('Connection error. Please try again.', 'dusk error');
+        setInputEnabled(true);
+        messageInput.focus();
+      }
+      setTimeout(() => pollForResponse(ticket), 2500);
+    }
+
+    async function handleButtonClick(btnId) {
+      hidePrompts();
+
+      const buttonLabels = {
+        '1': 'Tell me about your services',
+        '2': 'What issues does Nava tackle?',
+        '3': 'Give me a surprising finding'
+      };
+      if (buttonLabels[btnId]) {
+        addMessage(buttonLabels[btnId], 'user');
+      }
+
+      showTyping();
+      const data = await sendToRelay('BTN:' + btnId);
+
+      const immediateResponse = data.immediate_response;
+
+      if (immediateResponse) {
+        // 6 second delay before precanned responses only
+        await new Promise(r => setTimeout(r, 6000));
+        hideTyping();
+        await streamMessage(immediateResponse, 'dusk');
+        setState('waiting_for_name');
+        messageInput.placeholder = 'Type your message...';
+        messageInput.focus();
+      } else if (data.error) {
+        hideTyping();
+        addMessage('Error: ' + data.error, 'dusk error');
+      }
+    }
+
+    async function handleTextMessage(text) {
+      const msgText = text || messageInput.value.trim();
+      if (!msgText) return;
+      window._msgSendTime = Date.now();
+
+      addMessage(msgText, 'user');
+      if (!text) messageInput.value = '';
+      setInputEnabled(false);
+      showTyping();
+
+      if (state === 'waiting_for_name') {
+        // First session response — set flag before sending so delay is applied
+        window._isFirstSessionResponse = true;
+        const data = await sendToRelay(msgText);
+        if (data.ticket) {
+          pollForResponse(data.ticket);
+          return;
+        } else if (data.error) {
+          hideTyping();
+          addMessage('Error: ' + data.error, 'dusk error');
+          setInputEnabled(true);
+          messageInput.focus();
+          return;
+        }
+        hideTyping();
+        setState('active');
+        setInputEnabled(true);
+        messageInput.placeholder = 'Ask about Nava...';
+        messageInput.focus();
+        return;
+      }
+
+      if (state === 'idle') {
+        window._isFirstSessionResponse = true;
+        const data = await sendToRelay(msgText);
+        hideTyping();
+
+        if (data.immediate_response) {
+          hidePrompts();
+          await streamMessage(data.immediate_response, 'dusk');
+          setState('waiting_for_name');
+          messageInput.placeholder = 'Type your message...';
+          setInputEnabled(true);
+          messageInput.focus();
+          return;
+        }
+
+        if (data.ticket) {
+          hidePrompts();
+          setState('active');
+          messageInput.placeholder = 'Ask about Nava...';
+          pollForResponse(data.ticket);
+          return;
+        }
+
+        if (data.error) {
+          addMessage('Error: ' + data.error, 'dusk error');
+          setInputEnabled(true);
+          messageInput.focus();
+          return;
+        }
+      }
+
+      const data = await sendToRelay(msgText);
+      if (data.ticket) {
+        hidePrompts();
+        pollForResponse(data.ticket);
+        return;
+      } else if (data.error) {
+        hideTyping();
+        addMessage('Error: ' + data.error, 'dusk error');
+        setInputEnabled(true);
+        messageInput.focus();
+      }
+    }
+
+    document.getElementById('brand-logo').onclick = (e) => {
+      e.preventDefault();
+      window.location.reload();
+    };
+
+    document.querySelectorAll('.prompt-btn').forEach(btn => {
+      btn.addEventListener('click', () => handleButtonClick(btn.getAttribute('data-btn')));
+    });
+
+    sendBtn.onclick = () => handleTextMessage();
+    messageInput.onkeydown = (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        handleTextMessage();
+      }
+    };
+
+    if (state === 'waiting_for_name') {
+      messageInput.placeholder = 'Type your message...';
+    } else if (state === 'active') {
+      hidePrompts();
+    }
+  </script>
+</body>
+</html>

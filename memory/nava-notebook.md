@@ -26,7 +26,7 @@ The author of all source material is **Tiny Manyonga**, who writes with a consis
 
 Nava operates three distinct product lines, each addressed in the corpus:
 
-**Flagship Recruitment** — Nava's core permanent placement service built on relational vetting, Role Brief methodology, Day Zero management, and retention-based billing (payment only at 30 days for floor staff, 60 days for management roles). This is the foundation; all other products extend from it.
+**Flagship Recruitment** — Nava's core permanent placement service for US-based nurses, built on relational vetting, Role Brief methodology, Day Zero management, and retention-based billing (payment only at 30 days for floor staff, 60 days for management roles). This is the foundation; all other products extend from it.
 
 **Reclaimix™** — Nava's conversion product: turns agency nurses already working in a facility into permanent employees. The pitch is concrete: replacing an agency nurse with a permanent hire saves approximately $100,000 per nurse per year. Reclaimix addresses the root reason facilities are over-reliant on agency labor in the first place — they never converted the ones they liked. See `Entry #08`, `Entry #10`.
 

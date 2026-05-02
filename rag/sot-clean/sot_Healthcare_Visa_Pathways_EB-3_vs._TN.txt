@@ -1,0 +1,249 @@
+Healthcare Workforce Stabilization Through Immigration: A Statement of Trade on the TN and EB-3 Visa Pathways (2025–2026)
+
+The United States healthcare infrastructure is currently navigating a period of structural labor volatility defined by an intensifying misalignment between clinical demand and the domestic supply of licensed professionals. As of early 2026, the Health Resources and Services Administration (HRSA) projects a national shortage of 267,330 full-time registered nurses (RNs) by 2028, a figure expected to remain above 200,000 through 2033.1 This deficit is exacerbated by the "compounding cycle" of clinician burnout, an aging workforce nearing retirement, and the lingering effects of the pandemic on nursing education pipelines.1 In response, healthcare employers—ranging from large academic health systems to rural skilled nursing facilities (SNFs)—have increasingly relied on two primary immigration instruments: the TN nonimmigrant visa and the EB-3 employment-based immigrant visa.
+
+The following Statement of Trade provides a granular analysis of these pathways, detailing the current processing environment, recent regulatory shifts in 2025 and 2026, and the strategic economic considerations for healthcare staffing in an era of unprecedented backlogs and administrative reform.
+
+The EB-3 Employment-Based Pathway: Processing and Regulatory Realities
+
+The EB-3 visa remains the foundational instrument for permanent international recruitment in the healthcare sector. Covering skilled workers, professionals, and "other workers," this pathway is the primary route for Registered Nurses and Physical Therapists seeking long-term stability in the U.S. workforce. However, the pathway is defined by a complex, multi-agency adjudication process that currently faces significant temporal and financial hurdles.
+
+PERM Labor Certification and the Schedule A Advantage
+
+For most EB-3 applicants, the process begins with a Permanent Labor Certification (PERM) from the U.S. Department of Labor (DOL). This stage is designed to ensure that the employment of a foreign national does not adversely affect the wages or working conditions of similarly employed U.S. workers.3 In March 2026, the PERM landscape is characterized by historically long adjudication periods. The DOL reports an average processing time of 503 days for analyst reviews of Form ETA-9089, with some cases extending significantly further if selected for an audit.5
+
+4
+
+The "Schedule A" designation provides a critical regulatory bypass for Registered Nurses and Physical Therapists. These occupations are pre-certified by the DOL as having a chronic shortage, allowing employers to skip the recruitment and PERM filing stages entirely and proceed directly to the I-140 immigrant petition with USCIS.9 This bypass saves employers approximately 18 to 22 months of processing time, which is essential for maintaining operational continuity in high-acuity settings.8
+
+USCIS Petition Adjudication: Form I-140 and I-485
+
+Once the labor certification is secured—or immediately for Schedule A roles—the employer files Form I-140, the Immigrant Petition for Alien Worker. While regular processing for the I-140 can range from 5 to 22.5 months, the majority of healthcare employers utilize Premium Processing to ensure a decision within 15 business days.12
+
+Effective March 1, 2026, the Department of Homeland Security (DHS) implemented an inflationary adjustment for premium processing fees. The cost for Form I-907 in the EB-3 category (including E31, E32, and EW3) increased from $2,805 to $2,965.13 This revenue is intended to fund backlog reduction and system modernization at USCIS.13
+
+Following I-140 approval, the candidate must either adjust status (Form I-485) if they are already in the U.S. or undergo consular processing abroad. The I-485 process remains one of the slowest components of the immigration journey. As of March 2026, employment-based adjustment applications typically take between 11 and 31.5 months to process.12
+
+The Visa Bulletin and Priority Date Backlogs
+
+The availability of immigrant visas is governed by the monthly Visa Bulletin issued by the Department of State (DOS). Numerical limits and per-country caps create significant queues, particularly for oversubscribed chargeability areas such as India, China, and the Philippines. In March and April 2026, USCIS confirmed it would follow the "Dates for Filing" chart for employment-based filings, allowing some applicants to submit their adjustment of status packages sooner than they would under the "Final Action Dates" chart.17
+
+19
+
+A notable development in the April 2026 bulletin was the advancement of the "Rest of the World" (ROW) category to "Current" in the Dates for Filing chart. This allows thousands of international professionals already in the U.S. on nonimmigrant visas to file for adjustment of status, securing employment authorization (EAD) and advance parole (AP) while waiting for their green cards.19 However, the DOS has cautioned that retrogression may be necessary later in fiscal year 2026 if demand from consulates increases or if the "pause" on processing for 75 high-risk countries is lifted.19
+
+The TN (USMCA) Pathway: Modernized Scrutiny and 2025 Updates
+
+The TN visa, established under the North American Free Trade Agreement (NAFTA) and carried over into the U.S.-Mexico-Canada Agreement (USMCA), allows professionals from Canada and Mexico to work temporarily in the U.S. without a numerical cap or the need for a lottery.25 While highly efficient, the pathway underwent significant regulatory tightening in June 2025.
+
+The June 2025 Policy Manual Revisions
+
+On June 4, 2025, USCIS released updated guidance that introduced more rigorous standards for TN adjudications. These changes were aimed at aligning USCIS practice with the stricter vetting performed by Customs and Border Protection (CBP) at ports of entry.26
+
+Tightening the Scientific Technician/Technologist (ST/T) Category
+
+One of the most impactful changes for healthcare facilities involves the Scientific Technician/Technologist (ST/T) classification. Historically, some medical and laboratory support roles were staffed using the ST/T category. The 2025 guidance draws a "hard line" stating that any role involving patient care or clinical support is disqualified from the ST/T category.26 The category is now strictly limited to research and engineering support roles, leaving medical lab technicians and imaging technicians without a viable TN pathway unless they qualify as full professionals in a different treaty-listed category.26
+
+Elimination of Educational Substitutions
+
+The 2025 update also clarified that for occupations requiring a bachelor's degree, years of experience can no longer be substituted for educational credentials. Applicants must hold the specific degree listed in the USMCA treaty or a closely related discipline, supported by a formal U.S. equivalency evaluation for foreign degrees.27 This change particularly impacts experienced clinicians who may have entered the profession through certificate or diploma programs that do not meet the now-rigid bachelor's degree requirement.27
+
+Employer Entity Requirements
+
+Under the new rules, sponsorship must come directly from a U.S.-based entity. This prevents foreign parent companies from sponsoring TN workers for U.S. subsidiaries unless the U.S. entity exercises "meaningful control" over the employment.27 This has forced some staffing agencies and multinational healthcare firms to restructure their employment contracts to ensure compliance with U.S. entity rules.27
+
+TN Approval Trends and Processing Pathways
+
+Despite the increased scrutiny, TN approval rates for USCIS filings have remained high. After a temporary dip to 57% in fiscal year 2024—likely due to the transition period toward stricter vetting—approval rates recovered to 94.8% by the end of 2025.29
+
+29
+
+Canadian professionals continue to favor the "boundary processing" at major ports of entry for its immediacy, while Mexican professionals must navigate the DS-160 consular interview process. Both populations are increasingly being questioned about their "nonimmigrant intent," as the TN remains a non-dual-intent visa. Professionals who have held TN status for multiple terms and those with pending immigrant petitions may face heightened scrutiny during re-entry or renewal.26
+
+Comparative Strategic Landscape: Cost, Speed, and Retention
+
+Healthcare employers must balance the immediate need for clinical staff with the long-term goals of workforce stability and retention. The choice between TN and EB-3 pathways often hinges on these competing priorities.
+
+Speed-to-Start and Operational Urgency
+
+The TN visa is the fastest option for international recruitment, with a "speed-to-start" of 2 to 6 months.32 This makes it the preferred tool for hospitals facing sudden surges or vacancies in critical departments. In contrast, even with the Schedule A bypass, the EB-3 pathway typically requires 12 to 48 months of processing due to the cumulative delays in credentialing, visa allocation, and consular interviews.11
+
+Financial Commitment and Fee Structures
+
+The total cost of sponsorship has risen significantly due to the 2026 USCIS fee adjustments and the implementation of new asylum/HR-1 fees.
+
+13
+
+While a TN sponsorship may cost an employer between $7,000 and $15,000 including legal and recruitment fees, an EB-3 permanent placement often exceeds $25,000 to $35,000 per clinician.7 The higher upfront cost of the EB-3 is theoretically offset by higher retention rates, as these workers are granted permanent residency and are not tied to the 3-year renewal cycle of the TN.32
+
+Retention and Transition Strategies
+
+One of the most effective strategies observed in the 2025–2026 market is the use of the TN visa as a "bridge" to the EB-3. Employers hire Canadian or Mexican nurses on TN status for immediate deployment, then initiate the EB-3 green card process after 6 to 12 months of successful service.32 This approach secures the clinician's long-term commitment while they work in the U.S., effectively mitigating the impact of the multi-year EB-3 backlog. Retention for clinicians on this dual-track often exceeds 48 months, compared to higher turnover rates for domestic staff in high-stress specialties.32
+
+The Filipino Nurse Pipeline: Nuances and Regulatory Hurdles
+
+The Philippines remains the primary source of foreign-trained nurses for the U.S. healthcare system, a relationship built on aligned nursing education and a high volume of NCLEX-ready candidates.10 However, this pipeline is entirely dependent on the EB-3 pathway and is highly sensitive to priority date fluctuations.
+
+Credentialing and the CGFNS Process
+
+Filipino nurses must navigate a rigorous credentialing phase before they can enter the immigration queue. CGFNS International, the primary credentialing body, issued 90% of VisaScreen certificates within 3.5 business days once all primary source documents were validated in early 2026.35 However, the time required to receive those primary source documents from Philippine institutions remains a significant bottleneck, averaging 14 weeks.36
+
+A critical "audit risk" has emerged in 2025 regarding the Bachelor of Science in Nursing (BSN) transcripts from certain Philippine universities. CGFNS evaluators are increasingly scrutinizing "Psychiatric Nursing" and "Geriatric Nursing" clinical hours. If these are not explicitly itemized as standalone subjects with defined clinical components, the transcript may be flagged as deficient, halting the application for months while the nurse seeks supplemental certifications from their registrar.11
+
+Domestic Regulation: The DMW and OFW Travel Pass
+
+The Philippine Department of Migrant Workers (DMW) has introduced several digitalization initiatives to protect Overseas Filipino Workers (OFWs). In November 2025, the DMW implemented the "OFW Pass," a digital travel document intended to streamline the deployment process and replace the older, paper-based Overseas Employment Certificate (OEC).37 Additionally, the DMW now requires all licensed recruitment agencies to submit their official social media accounts for verification to prevent unauthorized individuals from advertising job openings to nurses.37
+
+Backlog Impact on SNFs and LTC Facilities
+
+For Skilled Nursing Facilities, the Filipino pipeline is indispensable. As of March 2026, many Filipino nurses have been waiting 2 to 3 years after their I-140 petition was approved because their priority dates have not yet been reached.10 This "dead air" in the recruitment pipeline creates significant challenges for SNF administrators who are under pressure to comply with CMS staffing standards despite a lack of available clinicians.10 When the Visa Bulletin shows forward movement—as it did in March 2026 with a 3-month advancement for the Philippines EB-3—it acts as a "workforce indicator" that recruitment pipelines are beginning to thaw.10
+
+Systemic Considerations: Fees, Legislation, and Global Dynamics
+
+The healthcare workforce immigration system in 2026 is being shaped by aggressive executive proclamations and reactive legislative attempts to carve out exemptions for the healthcare sector.
+
+The $100,000 H-1B Proclamation Fee
+
+A September 2025 Presidential Proclamation, "Restriction on Entry of Certain Nonimmigrant Workers," implemented a $100,000 fee for H-1B petitions filed for beneficiaries who are outside the U.S. and do not possess a valid visa.39 While the H-1B is less common than the TN or EB-3 for nurses, it is the primary pathway for international medical graduates (IMGs) and physicians.
+
+Hospitals and clinics have warned that this fee "shuts out" the physician workforce, particularly in rural and underserved areas.41 The "H-1Bs for Physicians and the Healthcare Workforce Act," introduced in the House on March 17, 2026, seeks to exempt healthcare workers from this fee and prohibit the government from imposing any new H-1B fees that exceed the standard rates established in the Immigration and Nationality Act.40
+
+The 75-Country Visa Pause and "Public Charge"
+
+On January 14, 2026, the Department of State announced a pause on immigrant visa processing for individuals from 75 countries identified as being at "high risk for use of public benefits".24 These countries contribute approximately 8% of the total U.S. healthcare workforce.24 For the long-term care sector, which relies heavily on nursing assistants and home care aides from many of the impacted nations (including various African and Central American countries), this pause represents a direct threat to staffing levels for "Other Worker" categories.24
+
+Legislative Solutions: Recapturing Unused Visas
+
+The "Healthcare Workforce Resilience Act" (HWRA), reintroduced with bipartisan support in late 2025, proposes to recapture up to 40,000 immigrant visas that were authorized by Congress but unused between 1992 and 2020.45
+
+46
+
+The bill would allow for these recaptured visas to be issued over a 3-year period following enactment. This would effectively eliminate the current priority date backlogs for nursing and physician categories from the Philippines and India.48
+
+Status of Long-Term Care (LTC) and Skilled Nursing Facilities (SNF)
+
+The LTC sector is currently seeing a fragile stabilization. Data from the American Health Care Association (AHCA) shows that nursing facilities gained 40,700 jobs in 2025, with turnover and agency use rates beginning to decline.50
+
+50
+
+While 62% of providers say their workforce situation improved in 2025, 90% still report that recruitment remains difficult.50 The repeal of the federal minimum staffing mandate in December 2025 was described by LeadingAge as a "recognition of real barriers" but not a signal to stop workforce development.52 The sector remains heavily dependent on foreign-born workers, who make up over 20% of RNs and nursing assistants in these facilities.44
+
+Analysis of Established vs. Contested Information
+
+The current trade landscape is characterized by high-quality data from primary agencies but contains several areas where data is either proprietary or in flux.
+
+1
+
+Conclusion: Strategic Outlook for 2026–2027
+
+The 2025–2026 cycle has marked a shift from pandemic-era crisis management to a new "managed pipeline" reality in healthcare immigration. For the EB-3 pathway, the advancement of the "Dates for Filing" for the Rest of the World provides a temporary but critical window for employers to stabilize their in-country foreign national workforce. However, the 16.5-month PERM backlog continues to force heavy reliance on the Schedule A nursing bypass.
+
+The TN visa remains the most agile tool for immediate needs, but the June 2025 USCIS Policy Manual updates have raised the bar for documentation. Employers must now ensure that job descriptions for North American talent are rigorously aligned with treaty definitions and that any clinical support roles are transitioned to other visa categories, given the "hard line" drawn on Scientific Technicians.
+
+As fees for both premium processing and standard filings continue to adjust for inflation, the cost of international recruitment is becoming a significant line-item in facility budgets. The persistent gap between pre-pandemic staffing levels and current capacity in the LTC sector suggest that without legislative relief, such as the Healthcare Workforce Resilience Act, the U.S. healthcare system will continue to operate in a state of chronic clinical deficit. The stability of the Filipino nurse pipeline, in particular, will remain the primary barometer for the health of the overall U.S. healthcare staffing market through 2027.
+
+Works cited
+
+Beyer Introduces Legislation to Address Nationwide Nursing ..., accessed March 27, 2026, https://beyer.house.gov/news/documentsingle.aspx?DocumentID=8921
+
+New Legislation Would Expand Visas for Internationally Trained Nurses - LeadingAge, accessed March 27, 2026, https://leadingage.org/new-legislation-would-expand-visas-for-internationally-trained-nurses/
+
+PERM Processing Times - March 2026 Latest Updates - Manifest Law, accessed March 27, 2026, https://manifestlaw.com/blog/perm-dol-processing-times/
+
+EB-3 PERM Processing Time in March 2026 - Manifest Law, accessed March 27, 2026, https://manifestlaw.com/blog/eb3-perm-processing-time/
+
+March 2026 DOL PERM & Prevailing Wage Processing Updates - Envoy Global, accessed March 27, 2026, https://www.envoyglobal.com/insight/perm-processing-updates-issued-by-dol/
+
+PERM Processing Update: March 2026 - USILAW, accessed March 27, 2026, https://usilaw.com/perm-processing-update-march-2026/
+
+PERM & Prevailing Wage Processing Times: March 2026 Update ..., accessed March 27, 2026, https://www.rnlawgroup.com/perm-prevailing-wage-processing-times-march-2026-update/
+
+EB-3 PERM Processing Time in 2026: A Complete Timeline for Employers and Workers, accessed March 27, 2026, https://www.sglegalgroup.com/blog/eb-3-perm-processing-time-in-2026-a-complete-timeline-for-employers-and-workers
+
+April 2026 Visa Bulletin Update: Breakthrough News for Nurses, PTs & OTs, accessed March 27, 2026, https://grandisonusa.com/immigration-updates/april-2026-visa-bulletin-update-breakthrough-news-for-nurses-pts-ots/
+
+March 2026 US Visa Bulletin Update: What It Means for Filipino USRNs - Grandison, accessed March 27, 2026, https://grandisonusa.com/immigration-updates/march-2026-us-visa-bulletin-update-what-it-means-for-filipino-usrns/
+
+USRN Timeline 2026: Real Duration from CGFNS to Visa (18-36 Mos) - NEAC Medical Exams Application Center, accessed March 27, 2026, https://medexamcenter.com/blogs/neac/usrn-application-timeline-philippines-cgfns-nclex-visa-guide
+
+USCIS Processing Times in March 2026 - Manifest Law, accessed March 27, 2026, https://manifestlaw.com/blog/uscis-processing-times/
+
+USCIS to Increase Premium Processing Fees, accessed March 27, 2026, https://www.uscis.gov/newsroom/alerts/uscis-to-increase-premium-processing-fees
+
+Adjustment to Premium Processing Fees - Federal Register, accessed March 27, 2026, https://www.federalregister.gov/documents/2026/01/12/2026-00321/adjustment-to-premium-processing-fees
+
+I-485 Processing Times in March 2026: What to Expect and How to Prevent Delays, accessed March 27, 2026, https://manifestlaw.com/blog/i485-processing-times/
+
+Historic Processing Times - Case Status Online - USCIS, accessed March 27, 2026, https://egov.uscis.gov/processing-times/historic-pt
+
+US Department of State Releases March 2026 Visa Bulletin - Morgan Lewis, accessed March 27, 2026, https://www.morganlewis.com/pubs/2026/02/us-department-of-state-releases-march-2026-visa-bulletin
+
+Department of State Releases March 2026 Visa Bulletin: Key Employment-Based Filing Opportunities and Priority Date Movement, accessed March 27, 2026, https://www.eb5insights.com/2026/02/25/department-of-state-releases-march-2026-visa-bulletin-key-employment-based-filing-opportunities-and-priority-date-movement/
+
+Department of State Releases April 2026 Visa Bulletin: Continued Advancement in Employment-Based Green Card Across Multiple Categories | Inside Business Immigration, accessed March 27, 2026, https://www.gtlaw-insidebusinessimmigration.com/visa-bulletin/department-of-state-releases-april-2026-visa-bulletin-continued-advancement-in-employment-based-green-card-across-multiple-categories/
+
+US Department of State Releases April 2026 Visa Bulletin - Morgan Lewis, accessed March 27, 2026, https://www.morganlewis.com/pubs/2026/03/us-department-of-state-releases-april-2026-visa-bulletin
+
+Visa Bulletin – EB Categories Mostly Advance for March 2026 - Foster LLP, accessed March 27, 2026, https://www.fosterglobal.com/blog/visa-bulletin-eb-categories-mostly-advance-for-march-2026/
+
+Visa Bulletin Updates - Conexus MedStaff, accessed March 27, 2026, https://www.conexusmedstaff.com/category/visa-bulletin-updates/
+
+April 2026 U.S. State Department Visa Bulletin: Continued Movement Signals Opportunity, accessed March 27, 2026, https://newlandchase.com/april-2026-u-s-state-department-visa-bulletin-continued-movement-signals-opportunity/
+
+Potential Impact of the Federal Pause on Immigrant Visas From 75 Countries on the U.S. Health Care Workforce | KFF, accessed March 27, 2026, https://www.kff.org/immigrant-health/potential-impact-of-the-federal-pause-on-immigrant-visas-from-75-countries-on-the-u-s-health-care-workforce/
+
+The TN Visa: A Practical Solution to US Labor Market Pressures That Already Exists, accessed March 27, 2026, https://www.cgdev.org/blog/tn-visa-practical-solution-us-labor-market-pressures-already-exists
+
+TN Visa June 2025 Updates - Reddy Neumann Brown PC, accessed March 27, 2026, https://www.rnlawgroup.com/tn-visa-june-2025-updates/
+
+TN Visa Changes in 2025: What Professionals and Employers Must Know Under USCIS' New Guidance - BBA Immigration, accessed March 27, 2026, https://www.immigrationlawyerstx.com/blog/tn-nafta-visa/tn-visa-changes-in-2025-what-professionals-and-employers-must-know-under-uscis-new-guidance/
+
+TN Visa Requirements After June 2025 Changes: Updated Guide For Mexican Professionals, accessed March 27, 2026, https://abogadolozano.com/tn-visa-requirements-june-2025-changes-mexican-professionals/
+
+TN Visa in Numbers: 2026 Approval Rates, Jobs, and Worker Demographics, accessed March 27, 2026, https://www.tryalma.com/learn/tn-visa-statistics
+
+TN Visa Approval Rates: What the Numbers Really Mean - Manifest Law, accessed March 27, 2026, https://manifestlaw.com/blog/tn-approval-rate/
+
+TN Visa Policy Manual Update in 2025, accessed March 27, 2026, https://www.usavisalaw.com/immigration-blog/tn-visa-policy-manual-update-in-2025
+
+Understanding Nurse Recruitment Options: Travel, TN Visa ..., accessed March 27, 2026, https://intellistaffmedical.com/2025/09/29/understanding-nurse-recruitment-options-travel-tn-visa-american-and-eb-3-nurses/
+
+USCIS Announces FY 2026 Inflation Increase for Certain Immigration-Related Fees, accessed March 27, 2026, https://www.uscis.gov/newsroom/alerts/uscis-announces-fy-2026-inflation-increase-for-certain-immigration-related-fees
+
+Frequently Asked Questions on the USCIS Fee Rule, accessed March 27, 2026, https://www.uscis.gov/archive/frequently-asked-questions-on-the-uscis-fee-rule
+
+TruMerit Application Processing Times, accessed March 27, 2026, https://www.trumerit.org/support/application-processing-times/
+
+CGFNS Application Processing Times, accessed March 27, 2026, https://www.cgfns.org/support/application-processing-times/
+
+Advisories - Issuances - DMW - Department of Migrant Workers, accessed March 27, 2026, https://dmw.gov.ph/resources/issuances/advisories
+
+Memorandum Circulars - Issuances - DMW - Department of Migrant Workers, accessed March 27, 2026, https://dmw.gov.ph/resources/issuances/memorandum-circulars
+
+H-1B Specialty Occupations - USCIS, accessed March 27, 2026, https://www.uscis.gov/working-in-the-united-states/h-1b-specialty-occupations
+
+House Bill Introduced to Exempt Healthcare Workers From $100000 H‑1B Fee, accessed March 27, 2026, https://www.envoyglobal.com/news-alert/house-bill-introduced-to-exempt-healthcare-workers-from-100000-h-1b-fee/
+
+Lawler, Bishop, Salazar, & Clarke Introduce Bipartisan Bill To Protect Health Care Workforce And Maintain Patient Access, accessed March 27, 2026, https://lawler.house.gov/news/documentsingle.aspx?DocumentID=5658
+
+AAMC-Endorsed H-1Bs for Physicians and the Healthcare Workforce Act Introduced, accessed March 27, 2026, https://www.aamc.org/advocacy-policy/washington-highlights/aamc-endorsed-h-1bs-physicians-and-healthcare-workforce-act-introduced
+
+House bill would exempt health care workers from $100,000 H-1B visa filing fee | AHA News, accessed March 27, 2026, https://www.aha.org/news/headline/2026-03-17-house-bill-would-exempt-health-care-workers-100000-h-1b-visa-filing-fee
+
+Pathways for Foreign-Born Workers - LeadingAge, accessed March 27, 2026, https://leadingage.org/serialpost/pathways-for-foreign-born-workers/
+
+Congress reintroduces AHA-supported, bipartisan workforce bill supporting foreign nurses, physicians | AHA News - American Hospital Association, accessed March 27, 2026, https://www.aha.org/news/headline/2025-09-11-congress-reintroduces-aha-supported-bipartisan-workforce-bill-supporting-foreign-nurses-physicians
+
+Healthcare Workforce Resilience Act – Section-By-Section, accessed March 27, 2026, https://cole.house.gov/sites/evo-subsites/cole-evo.house.gov/files/documents/BILL-SECTION-BY-SECTION-Healthcare-Workforce-Resilience-Act.pdf
+
+S2759 | US Congress 2025-2026 | Healthcare Workforce Resilience Act - PolicyEngage, accessed March 27, 2026, https://trackbill.com/bill/us-congress-senate-bill-2759-healthcare-workforce-resilience-act/2741861/
+
+Bill would fight doctor shortages by addressing green-card backlog, accessed March 27, 2026, https://www.ama-assn.org/education/international-medical-education/bill-would-fight-doctor-shortages-addressing-green-card
+
+Immigration issues: Visas and green cards - American Medical Association, accessed March 27, 2026, https://www.ama-assn.org/education/international-medical-education/immigration-issues-visas-and-green-cards
+
+Report: Nursing Homes Making Significant Progress with Workforce - AHCA/NCAL, accessed March 27, 2026, https://www.ahcancal.org/News-and-Communications/Press-Releases/Pages/Report-Nursing-Homes-Making-Significant-Progress-Workforce.aspx
+
+Nursing Home Workforce Report - AHCA/NCAL, accessed March 27, 2026, https://www.ahcancal.org/News-and-Communications/Documents/2026-Long-Term-Care-Workforce-Report.pdf
+
+Repeal of Nursing Home Minimum Staffing Standards - LeadingAge Reax, accessed March 27, 2026, https://leadingage.org/leadingage-reax-repeal-of-nursing-home-minimum-staffing-standards/

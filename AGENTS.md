@@ -36,6 +36,20 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - This is your curated memory — the distilled essence, not raw logs
 - Over time, review your daily files and update MEMORY.md with what's worth keeping
 
+## Pre-Compaction Memory Protocol
+
+Before compaction triggers, I must:
+
+1. **Read the session transcript** — scan recent conversation for important details, decisions, corrections, unresolved items, and specific events
+2. **Identify durable content** — things worth remembering after summarization
+3. **Write to memory/YYYY-MM-DD.md** — capture specifics (who said what, decisions made, concerns raised) as actual notes, not just a generic summary
+
+**The goal:** My memory files should be finding-level records, not just receiving compaction summaries as context.
+
+**Key rule:** When information comes from Dawn (or any external handoff), note the source. Don't present received information as "I found in session history" unless I actually searched and can show the tool call.
+
+---
+
 ### 📝 Write It Down - No "Mental Notes"!
 
 - **Memory is limited** — if you want to remember something, WRITE IT TO A FILE

@@ -6,6 +6,9 @@
 
 ## Resource Map
 
+### Today's To-Do
+- `memory/todo-2026-04-29.md` — active task list. Delete when complete.
+
 ### Nava Healthcare (Primary Knowledge Base)
 
 | Resource | Location | Use |
@@ -37,10 +40,12 @@
 | **Widget test page** | `https://askdusk.tinymanyonga.online/widget` |
 | **Widget embed script** | `https://askdusk.tinymanyonga.online/widget.js` |
 | **Health check** | `https://askdusk.tinymanyonga.online/health` |
-| Relay | `chat-page/relay.py` on `:8081` |
-| SQLite state | `chat-page/chat.db` |
-| Cloudflare tunnel | named tunnel `askdusk.tinymanyonga.online` (systemd service `cloudflared-tunnel`) |
-| ACCESS_TOKEN | `nava-dusk-2026`
+| **Relay** | `chat-page/relay.py` on `:8081` |
+| **SQLite state** | `chat-page/chat.db` |
+| **Client INIT_MESSAGE** | `chat-page/contexts/INIT_MESSAGES.md` |
+| **Spec** | `chat-page/SPEC.md` |
+| **Cloudflare tunnel** | named tunnel `askdusk.tinymanyonga.online` (systemd service `cloudflared-tunnel`) |
+| **ACCESS_TOKEN** | `nava-dusk-2026` |
 
 ## What Goes Here
 

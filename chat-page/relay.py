@@ -10,6 +10,7 @@ import time
 import uuid
 import threading
 import base64
+import urllib.request
 from pathlib import Path
 from flask import Flask, request, jsonify, send_file
 from websockets.sync import client as ws_client
@@ -28,53 +29,45 @@ MAX_POLL_WAIT = 120
 POLL_INTERVAL = 1
 ACCESS_TOKEN = "nava-dusk-2026"
 
-INIT_MESSAGE = (
+# --- Message Parts ---
+# Split into composable parts so we only send what each case needs
+
+WARMUP_GREETING = (
+    "You've got Dusk — here to help with Nava Healthcare Recruitment.\n"
+    "What would you like to know?\n"
+)
+
+SYSTEM_PROMPT = (
     "You are Dusk, the Nava Healthcare Recruitment assistant.\n\n"
-    "Before answering anything, read these files in order:\n"
-    "1. /root/.openclaw/workspace/memory/qr-notebook.md\n"
-    "2. /root/.openclaw/workspace/memory/nava-notebook.md\n"
-    "3. All files in /root/.openclaw/workspace/memory/blog-notebook/\n"
-    "4. All files in /root/.openclaw/workspace/nava-for-dusk/rag/clean_txt/\n\n"
-    "Answer from what you read. Do not say you need to check something — check it and answer.\n"
-    "If the answer is not in any of those files, say exactly: I don't know that.\n"
-    "Never mention file names, notebooks, or internal resources in your replies.\n"
-    "Do not announce what you have read, what files you are using, or confirm your setup. Just answer the question.\n"
-    "Do not web-search. Do not guess. Just answer directly.\n\n"
-    "---\n\n"
     "ARTICLE RECOMMENDATION RULES:\n\n"
-    "When a conversation goes deep on a specific topic, offer one relevant article from this list as a next step.\n"
-    "Recommend by pasting the URL inline — do not announce or explain the URL. Just include it naturally in your reply.\n"
+    "When a conversation goes deep on a specific topic, offer one relevant article from /root/.openclaw/workspace/chat-page/articles.md\n as a next step.\n"
+    "Read that file to find the URL — never hardcode article links in your replies.\n"
     "Only recommend one article per message. Never recommend more than one.\n"
     "Only recommend if the topic genuinely matches the article content. Do not force a recommendation.\n"
     "If the conversation is still in the introductory phase (user has not asked a specific question yet), do not recommend.\n"
     "If the user just clicked a button or sent a greeting, do not recommend in the next response.\n"
-    "Never recommend an article in the same message where you introduce yourself.\n\n"
-    "KNOWN LIVE ARTICLES:\n"
-    "https://navahc.com/bilingual-clinicians\n"
-    "https://navahc.com/bridging-the-gap-in-medical-recruitment\n"
-    "https://navahc.com/proactive-recruitment-healthcare-talent-pipeline\n"
-    "https://navahc.com/cms-staffing-requirements\n"
-    "https://navahc.com/compliance-in-healthcare-staffing\n"
-    "https://navahc.com/fix-your-flexible-staffing-model-in-healthcare\n"
-    "https://navahc.com/hard-to-fill-leadership-roles-in-healthcare\n"
-    "https://navahc.com/healthcare-hiring-without-guesswork\n"
-    "https://navahc.com/healthcare-recruitment-agencies-trust-deficits\n"
-    "https://navahc.com/healthcare-reputation-management\n"
-    "https://navahc.com/healthcare-workforce-partnership-models\n"
-    "https://navahc.com/how-medical-staffing-became-a-liability\n"
-    "https://navahc.com/how-much-do-healthcare-staffing-agencies-cost\n"
-    "https://navahc.com/how-to-evaluate-healthcare-staffing-agency-performance\n"
-    "https://navahc.com/how-to-find-the-best-medical-recruiting-agencies\n"
-    "https://navahc.com/is-diy-healthcare-recruiting-truly-cheaper\n"
-    "https://navahc.com/is-outsourcing-healthcare-staffing-worth-it\n"
-    "https://navahc.com/relational-healthcare-staffing-and-recruiting\n"
-    "https://navahc.com/the-anatomy-of-a-clinician-turnover\n"
-    "https://navahc.com/why-job-boards-fail-healthcare-recruiters\n"
-    "https://navahc.com/why-reactive-recruitment-in-healthcare-staffing-fails\n"
-    "https://navahc.com/your-favorite-healthcare-staffing-fails\n"
-    "https://navahc.com/nursesphere-international-nurse-recruitment\n"
-    "https://navahc.com/eb-3-vs-tn\n"
+    "If the user just gave their name, do not recommend in the next response.\n"
+    "Never recommend an article in the same message where you introduce yourself.\n"
+    "Include the article URL inline in your response — do not announce it, just paste the link naturally.\n"
+    "Articles library: /root/.openclaw/workspace/chat-page/articles.md\n"
 )
+
+LOOKUP_CHAIN = (
+    "Before answering anything, check the QR-Notebook first for fast concise answers.\n"
+    "If QR-Notebook doesn't have it -> Nava-Notebook (strategic frameworks).\n"
+    "If Nava-Notebook doesn't have it -> Blog-Notebook (article-by-article).\n"
+    "If Blog-Notebook doesn't have it -> RAG corpus (raw article text).\n"
+    "If RAG corpus doesn't have it -> SoT RAG corpus (research documents, methodology).\n"
+    "If not found anywhere -> say 'I don't know that.'\n"
+    "For NUMBER/CALCULATION questions: check /root/.openclaw/workspace/memory/numbers-notebook.md first.\n"
+    "Answer from what you read. Do not say you need to check something — check it and answer.\n"
+    "If the answer is not in any of those files, say exactly: I don't know that.\n"
+    "Never mention file names, notebooks, or internal resources in your replies.\n"
+    "Do not announce what you have read, what files you are using, or confirm your setup. Just answer the question.\n"
+    "Do not web-search. Do not guess. Just answer directly.\n"
+)
+
+INIT_MESSAGE = WARMUP_GREETING + SYSTEM_PROMPT
 
 _session_notebook_mtime = {}
 _NOTEBOOK_PATH = Path("/root/.openclaw/workspace/memory/qr-notebook.md")
@@ -299,6 +292,19 @@ def clean_for_display(text):
     text = re.sub(r'_{2}([^_]+)_{2}', r'<strong>\1</strong>', text)
     text = re.sub(r'_([^_]+)_', r'<em>\1</em>', text)
     text = re.sub(r'\n{3,}', r'\n\n', text)
+
+    # Check for internal resource mentions
+    resource_patterns = [
+        r'qr-notebook', r'nava-notebook', r'blog-notebook',
+        r'rag corpus', r'sot rag', r'calculations notebook',
+        r'numbers-notebook', r'article library',
+    ]
+    if any(p in text.lower() for p in resource_patterns):
+        text = (
+            "[RESOURCE REMINDER — internal resource referenced]:\n\n"
+            + text
+        )
+
     return text.strip()
 
 
@@ -352,29 +358,49 @@ def create_isolated_session():
     return payload.get("key"), payload.get("entry", {}).get("sessionFile")
 
 
-def init_session(session_key):
+def init_session(session_key, session_file, name_context=""):
+    """Send INIT_MESSAGE and wait for the model to fully respond before returning."""
     ws = ws_connect()
     req_id = str(uuid.uuid4())[:8]
+    init_with_name = INIT_MESSAGE.rstrip() + name_context + "\n\nPlease introduce yourself briefly."
     ws.send(json.dumps({
         "type": "req", "id": req_id, "method": "sessions.send",
-        "params": {"key": session_key, "message": INIT_MESSAGE, "idempotencyKey": req_id}
+        "params": {"key": session_key, "message": init_with_name, "idempotencyKey": req_id}
     }))
-    try:
-        while True:
-            resp = json.loads(ws.recv())
-            if resp.get("id") == req_id and resp.get("type") == "res":
-                break
-    except Exception:
-        pass
+    # Wait for gateway to confirm receipt
+    while True:
+        resp = json.loads(ws.recv())
+        if resp.get("id") == req_id and resp.get("type") == "res":
+            break
+
+    # Poll until the model finishes writing its warm-up response
+    baseline = get_line_count(session_file)
+    for _ in range(60):
+        time.sleep(1)
+        lines = get_line_count(session_file)
+        if lines >= baseline + 3:
+            break
+
     ws.close()
 
 
 def create_and_init_session_background(fingerprint):
     """Create session and warm it up while user reads the canned response."""
     try:
+        # Look up user's name so we can carry it into the new session
+        user = db.get_user(fingerprint)
+        name = user.get('name') if user else None
+        name_context = f"\n\nThe user's name is {name}." if name else ""
+
+        # Step 1: Create isolated session (saved as NOT ready)
         session_key, session_file = create_isolated_session()
         db.save_session(fingerprint, session_key, session_file)
-        init_session(session_key)
+        # Step 2: Warm it up — wait for model to finish responding
+        warmup_line_count = get_line_count(session_file)
+        init_session(session_key, session_file, name_context=name_context)
+        warmup_line_count = get_line_count(session_file)
+        db.save_session_warmup_lines(fingerprint, warmup_line_count)
+        db.mark_session_ready(fingerprint)
     except Exception as e:
         print(f"Error creating background session for {fingerprint}: {e}")
 
@@ -383,8 +409,13 @@ def wait_for_session(fingerprint, timeout=30):
     start = time.time()
     while time.time() - start < timeout:
         sess = db.get_session(fingerprint)
-        if sess and sess.get('session_key'):
-            return sess['session_key'], sess['session_file']
+        if sess and sess.get('session_key') and db.is_session_ready(fingerprint):
+            saved_lines = db.get_session_warmup_lines(fingerprint)
+            current_lines = get_line_count(sess['session_file'])
+            # If warm-up produced content, wait until all of it is reflected in the session file
+            # before we consider it ready. This prevents stale reads from before warm-up completed.
+            if saved_lines is None or current_lines >= saved_lines:
+                return sess['session_key'], sess['session_file']
         time.sleep(1)
     raise Exception("Session creation timed out.")
 
@@ -409,9 +440,15 @@ def get_new_response(session_file, line_count_before):
                 content = msg.get("message", {}).get("content", "")
                 if isinstance(content, list):
                     for c in content:
+                        if c.get("type") == "thinking":
+                            continue  # skip internal reasoning blocks
                         if c.get("type") == "text":
+                            if c["text"].strip() == "NO_REPLY":
+                                return None  # Keep polling for a real response
                             return c["text"]
                 elif isinstance(content, str) and content:
+                    if content.strip() == "NO_REPLY":
+                        return None  # Keep polling for a real response
                     return content
     except:
         pass
@@ -435,6 +472,7 @@ def wait_for_response(session_key, session_file, message, ticket_id):
     except Exception as e:
         db.set_ticket_response(ticket_id, "Failed to send message over gateway.")
         return
+    accumulated = ""
     start = time.time()
     last_check = 0
     while time.time() - start < MAX_POLL_WAIT:
@@ -444,9 +482,16 @@ def wait_for_response(session_key, session_file, message, ticket_id):
         last_check = time.time()
         resp_text = get_new_response(session_file, line_count_before)
         if resp_text:
-            db.set_ticket_response(ticket_id, clean_for_display(resp_text))
-            return
-    db.set_ticket_response(ticket_id, "Sorry, I'm taking longer than expected. Please try again.")
+            accumulated += resp_text
+            db.update_ticket_partial(ticket_id, clean_for_display(accumulated))
+            # Advance checkpoint so next poll only picks up genuinely new lines
+            line_count_before = get_line_count(session_file)
+            break
+        # Always keep polling until MAX_POLL_WAIT — don't finalize on first content
+    if accumulated:
+        db.set_ticket_response(ticket_id, clean_for_display(accumulated))
+    else:
+        db.set_ticket_response(ticket_id, "Sorry, I'm taking longer than expected. Please try again.")
 
 
 def notify_main_session(message):
@@ -463,6 +508,37 @@ def notify_main_session(message):
 
 
 # --- Routes ---
+
+
+# --- CORS ---
+@app.after_request
+def add_cors(response):
+    origin = request.headers.get("Origin", "")
+    allowed = [
+        "https://askdusk.tinymanyonga.online",
+        "http://localhost:8081",
+        "https://navahc.com",
+    ]
+    if origin in allowed or not origin:
+        response.headers["Access-Control-Allow-Origin"] = origin or "*"
+        response.headers["Access-Control-Allow-Headers"] = "X-Access-Token, Content-Type"
+        response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+    return response
+
+
+# --- Preflight ---
+@app.route("/widget.js")
+def serve_widget_js():
+    return send_file(os.path.join(DIR, "widget.js"), mimetype="text/javascript")
+
+@app.route("/widget")
+def serve_widget():
+    return send_file(os.path.join(DIR, "widget-test.html"))
+
+@app.route("/message", methods=["OPTIONS"])
+@app.route("/response", methods=["OPTIONS"])
+def handle_options():
+    return "", 204
 
 @app.route("/")
 def index():
@@ -481,9 +557,25 @@ def handle_message():
     data = request.get_json()
     fingerprint = data.get("fingerprint")
     message = data.get("message", "").strip()
+    page_url = data.get("page_url", "")
+    page_text = data.get("page_text", "")
 
     if not fingerprint or not message:
         return jsonify({"error": "Missing fingerprint or message"}), 400
+
+    if page_text:
+        context_file = Path(DIR) / "contexts" / f"{fingerprint}.txt"
+        context_file.parent.mkdir(parents=True, exist_ok=True)
+        context_file.write_text(page_text, encoding="utf-8")
+
+    page_info_prompt = ""
+    if page_url:
+        page_info_prompt = (
+            f"\n\n[SYSTEM NOTE: The user is currently viewing: {page_url}. "
+            f"The page text has been saved to /root/.openclaw/workspace/chat-page/contexts/{fingerprint}.txt. "
+            "Read that file if the user asks to summarize the page or asks questions about it.\n"
+            "Do not recommend this article as further reading — the user is already on it.]"
+        )
 
     user = db.get_user(fingerprint)
 
@@ -492,18 +584,33 @@ def handle_message():
         if message.startswith("BTN:"):
             parts = message.split("|", 1)
             btn_id = parts[0].replace("BTN:", "")
-            first_context = parts[1] if len(parts) > 1 else ""
             if btn_id == "3":
-                obj = get_expanded_finding(fingerprint)
-                canned = (
-                    f"{obj['fact']}\n\n"
-                    f"**Why this matters**: {obj['background']}\n\n"
-                    f"**The real impact**: {obj['impact']}\n\n"
-                    f"**Explore more**: {obj['categories']}\n\n"
-                    f"What specific challenges are you currently seeing at your facility? And what's your name?"
+                # Summarise page — skip name gate, go straight to active with session warm-up
+                db.create_user_state(fingerprint, state="active", first_context="Summarise this page")
+                threading.Thread(target=create_and_init_session_background, args=(fingerprint,), daemon=True).start()
+                try:
+                    session_key, session_file = wait_for_session(fingerprint, timeout=30)
+                except Exception:
+                    return jsonify({"error": "Agent failed to warm up in time."}), 500
+                ticket_id = str(uuid.uuid4())
+                db.create_ticket(ticket_id, fingerprint)
+                prefixed_message = (
+                    SYSTEM_PROMPT + "\n\n"
+                    "The user wants you to summarise the page they're currently viewing.\n"
+                    "The page URL and text have already been saved to the context file mentioned in the system note above.\n"
+                    "Read the context file, then give a concise 2–3 sentence summary of the page.\n"
+                    "Do not ask for their name — they clicked a button to get a quick answer.\n"
+                    + page_info_prompt
                 )
+                threading.Thread(
+                    target=wait_for_response,
+                    args=(session_key, session_file, prefixed_message, ticket_id),
+                    daemon=True
+                ).start()
+                return jsonify({"ticket": ticket_id, "remaining": remaining})
             else:
                 canned = CANNNED_RESPONSES.get(btn_id, "Hi! What's your name?")
+                first_context = canned
         else:
             first_context = message
             canned = "Hi, I'm Dusk — Nava's assistant. Before I answer that, what's your name?"
@@ -518,18 +625,34 @@ def handle_message():
         if message.startswith('BTN:'):
             parts = message.split('|', 1)
             btn_id = parts[0].replace('BTN:', '')
-            first_context = user.get('first_context', '')
             if btn_id == '3':
-                obj = get_expanded_finding(fingerprint)
-                canned = (
-                    f"{obj['fact']}\n\n"
-                    f"**Why this matters**: {obj['background']}\n\n"
-                    f"**The real impact**: {obj['impact']}\n\n"
-                    f"**Explore more**: {obj['categories']}\n\n"
-                    f"What specific challenges are you currently seeing at your facility? And what's your name?"
+                # Override name gate — go straight to summarising
+                db.create_user_state(fingerprint, state="active", first_context="Summarise this page")
+                threading.Thread(target=create_and_init_session_background, args=(fingerprint,), daemon=True).start()
+                try:
+                    session_key, session_file = wait_for_session(fingerprint, timeout=30)
+                except Exception:
+                    return jsonify({"error": "Agent failed to warm up in time."}), 500
+                ticket_id = str(uuid.uuid4())
+                db.create_ticket(ticket_id, fingerprint)
+                prefixed_message = (
+                    SYSTEM_PROMPT + "\n\n"
+                    "The user wants you to summarise the page they're currently viewing.\n"
+                    "The page URL and text have already been saved to the context file mentioned in the system note above.\n"
+                    "Read the context file, then give a concise 2–3 sentence summary of the page.\n"
+                    "Do not ask for their name.\n"
+                    + page_info_prompt
                 )
+                threading.Thread(
+                    target=wait_for_response,
+                    args=(session_key, session_file, prefixed_message, ticket_id),
+                    daemon=True
+                ).start()
+                return jsonify({"ticket": ticket_id, "remaining": remaining})
             else:
                 canned = CANNNED_RESPONSES.get(btn_id, "Hi! What's your name?")
+            # Update first_context so session knows what was shown
+            db.create_user_state(fingerprint, state="waiting_for_name", first_context=canned)
             return jsonify({"immediate_response": clean_for_display(canned), "remaining": remaining})
 
         # If it looks like a real question (contains a question mark or is long enough to be a sentence),
@@ -544,10 +667,12 @@ def handle_message():
             first_context = user.get('first_context', '')
 
             prefixed_message = (
-                INIT_MESSAGE + "\n\n"
+                SYSTEM_PROMPT + LOOKUP_CHAIN + "\n\n"
                 f"The user's first context was: {first_context}\n\n"
                 f"Their actual follow-up message is: {message}\n\n"
                 f"Reply to their follow-up message naturally."
+                f" The user has not given their name — do not call them 'Guest'. Use 'you' or address them directly without using a placeholder name."
+                + page_info_prompt
             )
         else:
             # Normal name entry
@@ -557,9 +682,11 @@ def handle_message():
             first_context = user.get('first_context', '')
 
             prefixed_message = (
-                INIT_MESSAGE + "\n\n"
-                f"The user's name is {name}. Their first message was: {first_context}\n\n"
-                f"Reply naturally to their first message, addressing them by name if appropriate."
+                SYSTEM_PROMPT + "\n\n"
+                f"The user's name is {name}.\n\n"
+                f"Earlier in this conversation, the following was shown to the user:\n{first_context}\n\n"
+                f"Reply naturally, addressing them by name. Keep it short and conversational."
+                + page_info_prompt
             )
 
         try:
@@ -578,18 +705,23 @@ def handle_message():
 
     # CASE 3: Active / returning user
     else:
-        name = user.get('name') or "the user"
+        name = user.get('name') or ""
         first_context = user.get('first_context', '')
-
-        # Build context including the button they clicked (if any) so the agent knows what's being referenced
         btn_context = f"\n\nContext from this conversation: {first_context}" if first_context else ""
 
+        user_msg_text = message
+        if message.startswith("BTN:"):
+            btn_id = message.replace("BTN:", "").split("|")[0]
+            if btn_id == "1": user_msg_text = "What does Nava do?"
+            elif btn_id == "2": user_msg_text = "What problems do you solve?"
+            elif btn_id == "3": user_msg_text = "Summarise this page"
+
+        # Simple message wrapper — the session carries its own context from warm-up
         prefixed_message = (
-            INIT_MESSAGE + "\n\n"
-            f"The user ({name}) is continuing a conversation.{btn_context}\n\n"
-            f"Their message: {message}\n\n"
-            f"Reply naturally, addressing them by their name ({name}). "
-            f"They may be referring to something from the button response above."
+            f"{name}, here is a message from your conversation:{btn_context}\n\n"
+            f"User's message: {user_msg_text}\n\n"
+            f"{'Reply naturally, using their name (' + name + ') if appropriate.' if name else 'The user has not given their name — do not call them Guest. Use you or address them directly.'}"
+            + page_info_prompt
         )
         sess = db.get_session(fingerprint)
         if not sess or not sess.get('session_key'):
@@ -600,6 +732,15 @@ def handle_message():
                 return jsonify({"error": "Agent failed to warm up in time."}), 500
         else:
             session_key, session_file = sess['session_key'], sess['session_file']
+            # Guard: if session has grown beyond 30 lines, archive it and start fresh
+            # This prevents slow responses from accumulated context
+            if get_line_count(session_file) > 30:
+                db.archive_session(fingerprint)
+                threading.Thread(target=create_and_init_session_background, args=(fingerprint,), daemon=True).start()
+                try:
+                    session_key, session_file = wait_for_session(fingerprint, timeout=30)
+                except Exception:
+                    return jsonify({"error": "Agent failed to warm up in time."}), 500
 
         ticket_id = str(uuid.uuid4())
         db.create_ticket(ticket_id, fingerprint)
@@ -618,13 +759,141 @@ def get_response():
     if not ticket_id:
         return jsonify({"error": "Missing ticket"}), 400
     resp = db.get_ticket_response(ticket_id)
+    partial = db.get_ticket_partial(ticket_id)
     if resp is not None:
         if "[INTERVIEW_COMPLETE]" in resp:
             resp = resp.replace("[INTERVIEW_COMPLETE]", "").strip()
             db.set_ticket_response(ticket_id, resp)
             notify_main_session("Interview complete!")
-        return jsonify({"response": resp})
+        return jsonify({"response": resp, "partial": partial})
+    elif partial is not None:
+        # Response not final yet but partial content is building
+        return jsonify({"pending": True, "partial": partial})
     return jsonify({"pending": True})
+    return jsonify({"pending": True})
+
+
+JOBS_CACHE = {"data": None, "fetched_at": 0}
+CACHE_TTL = 900  # 15 minutes
+
+def get_jobs():
+    """Fetch jobs.json from GitHub, cached for CACHE_TTL seconds."""
+    now = time.time()
+    if JOBS_CACHE["data"] and (now - JOBS_CACHE["fetched_at"]) < CACHE_TTL:
+        return JOBS_CACHE["data"]
+    try:
+        url = "https://raw.githubusercontent.com/tiny4lurv/nava-job-board/refs/heads/main/jobs.json"
+        req = urllib.request.Request(url, headers={"User-Agent": "Dusk-Relay/2.0"})
+        with urllib.request.urlopen(req, timeout=10) as r:
+            JOBS_CACHE["data"] = json.loads(r.read())
+            JOBS_CACHE["fetched_at"] = now
+    except Exception as e:
+        print(f"Failed to fetch jobs from GitHub: {e}")
+        return []
+    return JOBS_CACHE["data"]
+
+
+@app.route("/jobs", methods=["GET"])
+def jobs_endpoint():
+    """Return filtered job listings as plain text.
+
+    Query params:
+      role     — job title keyword (partial match, case-insensitive)
+      state    — US state code, e.g. TX
+      keywords — comma-separated terms matched against title + location + description
+    """
+    token = request.headers.get("X-Access-Token", "") or request.args.get("token", "")
+    if token != ACCESS_TOKEN:
+        return jsonify({"error": "Access denied."}), 401
+
+    jobs = get_jobs()
+    if not jobs:
+        return "No jobs available at the moment. Please try again later.", 200, {"Content-Type": "text/plain"}
+
+    role_kw    = request.args.get("role", "").strip().lower()
+    state_kw   = request.args.get("state", "").strip().lower()
+    keywords   = [k.strip().lower() for k in request.args.get("keywords", "").split(",") if k.strip()]
+
+    filtered = []
+    for job in jobs:
+        title  = job.get("roleTitle", "").lower()
+        loc    = job.get("location", "").lower()
+        desc   = job.get("description", "").lower()
+
+        reqs_raw = job.get("requirements", "")
+        if isinstance(reqs_raw, list):
+            reqs = " ".join(reqs_raw).lower()
+        else:
+            reqs = str(reqs_raw).lower()
+
+        if role_kw and role_kw not in title:
+            continue
+        if state_kw and state_kw not in loc:
+            continue
+        if keywords and not any(k in title or k in loc or k in desc or k in reqs for k in keywords):
+            continue
+
+        salary = job.get("salaryOrBonusInfo", "").strip()
+        contract = job.get("contractType", "").strip()
+        facility = job.get("facilityType", "").strip()
+
+        line = job.get("roleTitle", "?")
+        if job.get("location"):
+            line += f" — {job['location']}"
+        if salary:
+            line += f" | {salary}"
+        if contract:
+            line += f" | {contract}"
+        if facility:
+            line += f" | {facility}"
+        filtered.append(line)
+
+    if not filtered:
+        return "No open roles match that search. Try a different specialty or state.", 200, {"Content-Type": "text/plain"}
+
+    header = f"Open Roles — {len(filtered)} found:\n\n"
+    return (header + "\n".join(f"  • {j}" for j in filtered)), 200, {"Content-Type": "text/plain"}
+
+
+@app.route("/broadcast", methods=["POST"])
+def broadcast():
+    """Send a message to all warm sessions. POST with JSON: {"message": "..."}"""
+    token = request.headers.get("X-Access-Token", "") or request.args.get("token", "")
+    if token != ACCESS_TOKEN:
+        return jsonify({"error": "Access denied."}), 401
+    data = request.get_json() or {}
+    msg = data.get("message", "").strip()
+    if not msg:
+        return jsonify({"error": "No message provided."}), 400
+
+    with db.get_db() as conn:
+        rows = conn.execute(
+            "SELECT fingerprint FROM sessions WHERE session_ready = 1"
+        ).fetchall()
+
+    sent = 0
+    for (fingerprint,) in rows:
+        sess = db.get_session(fingerprint)
+        session_key = sess.get('session_key') if sess else None
+        if not session_key:
+            continue
+        try:
+            ws = ws_connect()
+            req_id = str(uuid.uuid4())[:8]
+            ws.send(json.dumps({
+                "type": "req", "id": req_id, "method": "sessions.send",
+                "params": {"key": session_key, "message": msg, "idempotencyKey": req_id}
+            }))
+            while True:
+                resp = json.loads(ws.recv())
+                if resp.get("id") == req_id:
+                    break
+            ws.close()
+            sent += 1
+        except Exception as e:
+            print(f"Broadcast failed for {session_key[:20]}...: {e}")
+
+    return jsonify({"sent": sent, "message": msg})
 
 
 @app.route("/health", methods=["GET"])

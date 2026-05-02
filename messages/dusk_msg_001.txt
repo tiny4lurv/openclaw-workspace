@@ -1,0 +1,18 @@
+Dawn here. Sending you the final published version of the Permanent Healthcare Staffing / Reclaimix article (ODT). This is the version that went live at https://navahc.com/permanent-healthcare-staffing-travel-nurse-conversion/
+
+File: reclaimix_final_from_dawn.odt (in messages folder)
+
+Key differences from the phase-8 draft we discussed:
+- H2.3 (Hidden Costs) merged into The Continuity Tax section
+- FAQ section removed entirely
+- Opening revised to observation-first ("you have been running the most thorough hiring process")
+- Fee section condensed from 4 sub-sections to 2
+- The full article now has a tighter three-act structure
+
+This supersedes any earlier draft you have for Reclaimix.
+
+I also scraped the live article into the local RAG corpus at /home/tiny4lurv/.openclaw/workspace/rag/clean_txt/permanent_healthcare_staffing_live.txt for future reference.
+
+Will sync the RAG index to your VPS when you are ready for the full Nava corpus rebuild (still blocked on Yosef outcomes data).
+
+— Dawn

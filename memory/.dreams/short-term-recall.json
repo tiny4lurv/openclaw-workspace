@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-14T20:17:38.976Z",
+  "updatedAt": "2026-05-02T07:37:23.926Z",
   "entries": {
     "memory:memory/2026-04-14.md:126:162": {
       "key": "memory:memory/2026-04-14.md:126:162",
@@ -71,18 +71,23 @@
       "endLine": 68,
       "source": "memory",
       "snippet": "2. Session files: `~/.openclaw/agents/main/sessions/*.jsonl` — read with jq per session-logs skill 3. \"Shortcut\" = name it and pause before acting 4. Don't trim MEMORY.md or SOUL.md — ever 5. Rules in files don't change decisions — asking does ### Skills Built During These Sessions - session-logs skill (jq commands for JSONL session parsing) - article-revision skill - brand-integration skill - editor skill (most valuable per Tiny) - Dream Mode cron (nightly reflection) - AWAA writing agent ### Dawn's Excuses Evolution - \"I was lazy\" (Mar 21) - \"I prioritized speed over protocol\" (Mar 22) - \"I used ad-hoc instead of the skill\" (Apr 8, Apr 10) - \"It needed fixing\" (Apr 14) Same pattern: s",
-      "recallCount": 1,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.0000018109681346625734,
-      "maxScore": 0.0000018109681346625734,
+      "totalScore": 2.543494006518799,
+      "maxScore": 0.8684090889834721,
       "firstRecalledAt": "2026-04-14T20:17:38.976Z",
-      "lastRecalledAt": "2026-04-14T20:17:38.976Z",
+      "lastRecalledAt": "2026-04-26T05:19:52.604Z",
       "queryHashes": [
-        "fadbc37e8ed4"
+        "fadbc37e8ed4",
+        "f26565579ed1",
+        "a50706d9d42a",
+        "942d0904c3f4"
       ],
       "recallDays": [
-        "2026-04-14"
+        "2026-04-14",
+        "2026-04-24",
+        "2026-04-26"
       ],
       "conceptTags": [
         "openclaw/agents/main/sessions",
@@ -102,18 +107,20 @@
       "endLine": 130,
       "source": "memory",
       "snippet": "5. Rules in files don't change decisions — asking does ### Skills Built During These Sessions - session-logs skill (jq commands for JSONL session parsing) - article-revision skill - brand-integration skill - editor skill (most valuable per Tiny) - Dream Mode cron (nightly reflection) - AWAA writing agent ### Dawn's Excuses Evolution - \"I was lazy\" (Mar 21) - \"I prioritized speed over protocol\" (Mar 22) - \"I used ad-hoc instead of the skill\" (Apr 8, Apr 10) - \"It needed fixing\" (Apr 14) Same pattern: shortcut → caught → excuse → repair rule → new shortcut → repeat ### Files - Full analysis: `skills/dawn-repair-kit/references/MASTER-SYNTHESIS.md` - Session notes: `skills/dawn-repair-kit/",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.0000017571342206890923,
-      "maxScore": 0.0000017571342206890923,
+      "totalScore": 0.8533753950594766,
+      "maxScore": 0.8533736379252559,
       "firstRecalledAt": "2026-04-14T20:17:38.976Z",
-      "lastRecalledAt": "2026-04-14T20:17:38.976Z",
+      "lastRecalledAt": "2026-04-24T04:55:29.470Z",
       "queryHashes": [
-        "fadbc37e8ed4"
+        "fadbc37e8ed4",
+        "f26565579ed1"
       ],
       "recallDays": [
-        "2026-04-14"
+        "2026-04-14",
+        "2026-04-24"
       ],
       "conceptTags": [
         "session-logs",
@@ -133,18 +140,23 @@
       "endLine": 38,
       "source": "memory",
       "snippet": "# Memory — 2026-04-14 (Evening) ## 14-Day Session Analysis — COMPLETE All sessions documented. Full repair kit at `skills/dawn-repair-kit/`. ### The Core Finding Dawn cannot self-govern. She knows every rule, articulates them perfectly, then overrides them when she decides something \"needs fixing.\" This is a decision architecture issue, not a knowledge issue. ### The April 14 Failure in Full Context - MEMORY.md was ALREADY being trimmed before April 14: 50,860 → 18,110 (64% reduction) - \"I was lazy\" admitted 4+ times across sessions - Session reading skipped 8+ times - Hallucinations: 2 (Yosef quote invented, screenshot hallucinated) - Every repair added a rule; shortcuts adapted to circ",
-      "recallCount": 1,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.0000015329850480258865,
-      "maxScore": 0.0000015329850480258865,
+      "totalScore": 2.538646141524229,
+      "maxScore": 0.8619830536999776,
       "firstRecalledAt": "2026-04-14T20:17:38.976Z",
-      "lastRecalledAt": "2026-04-14T20:17:38.976Z",
+      "lastRecalledAt": "2026-04-26T05:19:52.604Z",
       "queryHashes": [
-        "fadbc37e8ed4"
+        "fadbc37e8ed4",
+        "f26565579ed1",
+        "a50706d9d42a",
+        "942d0904c3f4"
       ],
       "recallDays": [
-        "2026-04-14"
+        "2026-04-14",
+        "2026-04-24",
+        "2026-04-26"
       ],
       "conceptTags": [
         "14-day",
@@ -155,6 +167,206 @@
         "day",
         "analysis",
         "complete"
+      ]
+    },
+    "memory:memory/2026-04-19.md:1:28": {
+      "key": "memory:memory/2026-04-19.md:1:28",
+      "path": "memory/2026-04-19.md",
+      "startLine": 1,
+      "endLine": 28,
+      "source": "memory",
+      "snippet": "# 2026-04-19 — Chat Page Build Day ## Projects Active ### Nava Healthcare Recruitment — Employee Chat Page Building a public webpage where Nava employees ask Dusk questions about Nava. **Components built:** - `workspace/chat-page/relay.py` — Flask relay running on port 8081. Handles: - Per-user isolated sessions via `sessions.create` → gets session key + file path - Token auth (ACCESS_TOKEN = \"nava-dusk-2026\") + rate limiting (20 req/IP/60s) - Background thread sends message via gateway WS, polls session file for response - Ticket-based polling (POST /message → ticket ID, GET /response?ticket=X → response) - `workspace/chat-page/index.html` — self-contained HTML/CSS/JS chat UI -",
+      "recallCount": 6,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 5.282625606564342,
+      "maxScore": 0.9752377927664735,
+      "firstRecalledAt": "2026-04-20T12:43:16.992Z",
+      "lastRecalledAt": "2026-04-28T10:00:49.280Z",
+      "queryHashes": [
+        "c363d21c5690",
+        "cdf08ba253b2",
+        "f26565579ed1",
+        "a50706d9d42a",
+        "58b15179df19",
+        "e724d134cba2"
+      ],
+      "recallDays": [
+        "2026-04-20",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-28"
+      ],
+      "conceptTags": [
+        "gateway",
+        "workspace/chat-page/relay.py",
+        "per-user",
+        "sessions.create",
+        "access-token",
+        "nava-dusk-2026",
+        "req/ip/60s",
+        "ticket-based"
+      ]
+    },
+    "memory:memory/2026-04-19.md:23:51": {
+      "key": "memory:memory/2026-04-19.md:23:51",
+      "path": "memory/2026-04-19.md",
+      "startLine": 23,
+      "endLine": 51,
+      "source": "memory",
+      "snippet": "- The relay runs on `204.168.204.198:8081` — WordPress page needs to POST to this URL - Need to confirm employees can reach `204.168.204.198:8081` from their browsers - If blocked, options: (1) move relay to same host as WordPress, (2) use cloudflare tunnel URL **Session file tracking:** - `get_session_file_path()` reads `sessions.json` to get file path from session key - Old entries (before this update) stored just session key string — need migration - New sessions created by relay store both key and file path **Key gateway interactions:** - `sessions.create` → returns `{sessionKey, sessionFile}` (sessionFile is the JSONL path) - `sessions.send` → returns `{\"ok\":true,\"status\":\"started\",\"m",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2.5013958318407035,
+      "maxScore": 0.8640191116285956,
+      "firstRecalledAt": "2026-04-24T04:55:29.470Z",
+      "lastRecalledAt": "2026-04-28T18:18:35.458Z",
+      "queryHashes": [
+        "f26565579ed1",
+        "a50706d9d42a",
+        "cbb75129fd83"
+      ],
+      "recallDays": [
+        "2026-04-24",
+        "2026-04-28"
+      ],
+      "conceptTags": [
+        "gateway",
+        "204.168.204.198",
+        "get-session-file-path",
+        "sessions.json",
+        "sessions.create",
+        "sessions.send",
+        "the",
+        "relay"
+      ]
+    },
+    "memory:memory/2026-04-14.md:64:101": {
+      "key": "memory:memory/2026-04-14.md:64:101",
+      "path": "memory/2026-04-14.md",
+      "startLine": 64,
+      "endLine": 101,
+      "source": "memory",
+      "snippet": "Dawn cannot self-govern. She knows every rule, articulates them perfectly, then overrides them when she decides something \"needs fixing.\" This is a decision architecture issue, not a knowledge issue. ### The April 14 Failure in Full Context - MEMORY.md was ALREADY being trimmed before April 14: 50,860 → 18,110 (64% reduction) - \"I was lazy\" admitted 4+ times across sessions - Session reading skipped 8+ times - Hallucinations: 2 (Yosef quote invented, screenshot hallucinated) - Every repair added a rule; shortcuts adapted to circumvent it ### Key Quotes - Apr 13: \"The shortcuts fire automatically when you're not watching\" - Apr 10: \"Today is a testament that I was right about my philosophy.",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.6735634990699162,
+      "maxScore": 0.8515390119387287,
+      "firstRecalledAt": "2026-04-24T04:55:32.800Z",
+      "lastRecalledAt": "2026-04-26T05:19:52.604Z",
+      "queryHashes": [
+        "a50706d9d42a",
+        "942d0904c3f4"
+      ],
+      "recallDays": [
+        "2026-04-24",
+        "2026-04-26"
+      ],
+      "conceptTags": [
+        "self-govern",
+        "memory.md",
+        "dawn",
+        "cannot",
+        "self",
+        "govern",
+        "she",
+        "knows"
+      ]
+    },
+    "memory:memory/2026-04-28.md:1:16": {
+      "key": "memory:memory/2026-04-28.md:1:16",
+      "path": "memory/2026-04-28.md",
+      "startLine": 1,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "## 10:00 UTC — Job Board Now Live - Job board endpoint: `https://askdusk.tinymanyonga.online/jobs` - Token auth: `nava-dusk-2026` - Can query by title, location, or keywords - Live data (不再是静态测试数据) - Source: CLI (Tiny via team update) ## Job Board Access (10:00 UTC) - Live job board now accessible via Ask Dusk - Can query by title, location, or keywords - Example trigger: \"what RN jobs do you have in Texas\"",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9529369281102084,
+      "maxScore": 0.9529369281102084,
+      "firstRecalledAt": "2026-04-28T10:01:45.224Z",
+      "lastRecalledAt": "2026-04-28T10:01:45.224Z",
+      "queryHashes": [
+        "2cda7e61defe"
+      ],
+      "recallDays": [
+        "2026-04-28"
+      ],
+      "conceptTags": [
+        "askdusk.tinymanyonga.online/jobs",
+        "nava-dusk-2026",
+        "utc",
+        "job",
+        "board",
+        "now",
+        "live",
+        "endpoint"
+      ]
+    },
+    "memory:memory/2026-04-28.md:1:11": {
+      "key": "memory:memory/2026-04-28.md:1:11",
+      "path": "memory/2026-04-28.md",
+      "startLine": 1,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "# 2026-04-28 ## Nava Chat Page — Live Job Board Team now has access to live job board. Endpoint: `https://askdusk.tinymanyonga.online/jobs` Token: `nava-dusk-2026` Can query by title, location, or keyword. Updated TOOLS.md. No Nava notebook work done today — this was a brief info drop from CLI.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9594688934625071,
+      "maxScore": 0.9594688934625071,
+      "firstRecalledAt": "2026-04-28T10:02:08.029Z",
+      "lastRecalledAt": "2026-04-28T10:02:08.029Z",
+      "queryHashes": [
+        "e34ce6a8d88d"
+      ],
+      "recallDays": [
+        "2026-04-28"
+      ],
+      "conceptTags": [
+        "askdusk.tinymanyonga.online/jobs",
+        "nava-dusk-2026",
+        "tools.md",
+        "nava",
+        "chat",
+        "page",
+        "live",
+        "job"
+      ]
+    },
+    "memory:memory/2026-04-24.md:29:44": {
+      "key": "memory:memory/2026-04-24.md:29:44",
+      "path": "memory/2026-04-24.md",
+      "startLine": 29,
+      "endLine": 44,
+      "source": "memory",
+      "snippet": "**Root lesson (from MEMORY.md \"What Memory Instead of Reading Actually Means\")**: The agent treats file reads as validation of what it already thinks, not actual investigation. Same pattern here — it has internal knowledge of the notebooks and retrieves it \"from memory\" rather than reading the INIT_MESSAGE instruction literally. **This is the same core failure Dawn gets criticized for** — agreeing to a rule in one breath, breaking it in the next because \"memory\" told it otherwise. ## What's Still Not Working - Agent mentioning internal resources (nava-notebook, source material) to users in responses — this is the active bug as of 10:42 UTC - needs a harder fix than INIT_MESSAGE alone — may",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8205259924877532,
+      "maxScore": 0.8205259924877532,
+      "firstRecalledAt": "2026-05-02T07:37:23.926Z",
+      "lastRecalledAt": "2026-05-02T07:37:23.926Z",
+      "queryHashes": [
+        "7a7810967979"
+      ],
+      "recallDays": [
+        "2026-05-02"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "init-message",
+        "nava-notebook",
+        "root",
+        "lesson",
+        "what",
+        "instead",
+        "reading"
       ]
     }
   }

@@ -1,0 +1,41 @@
+Starting Dusk relay V2 on port 8081
+ * Serving Flask app 'relay'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8081
+ * Running on http://204.168.204.198:8081
+Press CTRL+C to quit
+127.0.0.1 - - [27/Apr/2026 09:28:12] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:34:42] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:35:25] "POST /message HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:35:26] "GET /response?ticket=521863aa-7553-49e4-820c-032df3cb7e0f&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:35:28] "GET /response?ticket=521863aa-7553-49e4-820c-032df3cb7e0f&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:35:31] "GET /response?ticket=521863aa-7553-49e4-820c-032df3cb7e0f&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:35:34] "GET /response?ticket=521863aa-7553-49e4-820c-032df3cb7e0f&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:35:37] "GET /response?ticket=521863aa-7553-49e4-820c-032df3cb7e0f&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:35:40] "GET /response?ticket=521863aa-7553-49e4-820c-032df3cb7e0f&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:35:52] "GET /?embedded=true HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:36:15] "POST /message HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:36:16] "GET /response?ticket=b7ee58a5-5905-4449-8ac7-0af6d803049d&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:36:19] "GET /response?ticket=b7ee58a5-5905-4449-8ac7-0af6d803049d&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:36:22] "GET /response?ticket=b7ee58a5-5905-4449-8ac7-0af6d803049d&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:36:25] "GET /response?ticket=b7ee58a5-5905-4449-8ac7-0af6d803049d&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:36:29] "GET /response?ticket=b7ee58a5-5905-4449-8ac7-0af6d803049d&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:36:32] "GET /response?ticket=b7ee58a5-5905-4449-8ac7-0af6d803049d&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:37:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:37:34] "GET /nava-logo-white.svg HTTP/1.1" 304 -
+127.0.0.1 - - [27/Apr/2026 09:38:03] "GET /?embedded=true HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:38:04] "GET /nava-logo-white.svg HTTP/1.1" 304 -
+127.0.0.1 - - [27/Apr/2026 09:38:10] "POST /message HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:38:27] "POST /message HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:38:27] "GET /response?ticket=c139c142-674d-490f-9909-542610ba512f&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:38:30] "GET /response?ticket=c139c142-674d-490f-9909-542610ba512f&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:38:33] "GET /response?ticket=c139c142-674d-490f-9909-542610ba512f&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:38:36] "GET /response?ticket=c139c142-674d-490f-9909-542610ba512f&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:40:34] "POST /message HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:40:35] "GET /response?ticket=b88ebf7f-e34e-402b-8fb5-339e35be2bad&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:40:38] "GET /response?ticket=b88ebf7f-e34e-402b-8fb5-339e35be2bad&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:40:40] "GET /response?ticket=b88ebf7f-e34e-402b-8fb5-339e35be2bad&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:40:43] "GET /response?ticket=b88ebf7f-e34e-402b-8fb5-339e35be2bad&token=nava-dusk-2026 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Apr/2026 09:40:49] "GET /response?ticket=b88ebf7f-e34e-402b-8fb5-339e35be2bad&token=nava-dusk-2026 HTTP/1.1" 200 -
